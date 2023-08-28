@@ -1,0 +1,115 @@
+만들 사이트
+https://ongorongcake.modoo.at/?NaPm=ct%3Dlkw76as2%7Cci%3Dcheckout%7Ctr%3Dds%7Ctrx%3Dnull%7Chk%3D453090fb108956c31dc8a4617d9c32cdb42447d1
+
+색상정보
+https://mycolor.space/?hex=%23576252&sub=1
+
+참고사이트
+터틀힙 : https://turtlehip.com/main/main.html?
+
+    - 전체 구성요소 참고(케이크관련 사이트)
+        용도: 내용구성 순서도참고
+             디테일 요소 참고(검색창 안내문구, 그림선택 테두리그리기)
+             인기케이크, 픽업관련, 리뷰관련 등
+    - 서브사이트 소개방법 참고
+        용도: 케이크 관련 주의사항 안내용도로 사용
+
+웅진식품 : https://www.wjfood.co.kr/Main/Main.aspx#
+
+    - 오른쪽에서 화면 넘겨서 화면의 분할스크롤
+        용도: 메뉴소개페이지에서 항목별 예시사진 구역 스크롤
+    reference : wjfood_video_ref_scroll.webm
+
+양양 카펠라 : https://capellayangyang.co.kr/
+
+    - 메뉴 애니메이션
+        용도: 메뉴 선택시 애니메이션 그대로 사용
+    reference : capella_video_ref_ani.webm   
+
+요거프레소 : https://www.yogerpresso.co.kr/main/main.html
+
+    - 우측 네비게이션바, 메뉴상단 한영변경
+        용도: SNS페이지로 이동, 상단이동, 메뉴선택 등
+    reference : yogerpresso_video_ref.webm
+                yogerpresso_full.png
+
+컨텍스쳐 : http://contexture.kr/kr/works/list.php
+
+    - 이미지 위에 이미지 전환
+        용도: 메뉴 이미지 소개용도
+    reference : works_video_ref.webm
+
+아임에코몰 : https://imecomall.co.kr/v2/
+
+    - 메뉴바 바로 아래 아이콘 및 구성
+        용도: 케이크, 빠른픽업, 선물세트 등 특이구성요소 메뉴추가
+    reference : imecomall_full.png
+    - 목록 하단 시간표시
+        용도: 이벤트 기간 표시
+    reference : imecomall_video_ref_time.webm
+    - 소개페이지 구성
+        용도: 회사 소개페이지 구성요소 및 애니메이션
+    reference : imecomall_about.png
+                imecomall_video_ref_about
+
+무브투어 : https://tour.movv.co/?referer=www.movv.co
+    - 이미지 확인
+
+올벤 : https://allvan.kr/?referrer=naver8-0&NaPm=ct%3Dllniujdk%7Cci%3D0yS0002JNIjyuf5aNv2I%7Ctr%3Dsa%7Chk%3D7740bfaa71a0df0eaa5221dc0675291e9513b08e#step:20._.purpose:%EA%B3%B5%ED%95%AD._.roundtrip:3._.home:true
+    - 견적서 입력
+
+
+
+*******제작 동기*******
+친구가 운영하는 샵의 기존 사이트가 단순하여 사람들의 흥미를 이끌고자 함
+정보가 단순나열식 구조로 되어있어서 좀 더 시각화하여 주문자들의 편의성을 도모하고자 함
+사이트 자체에 흥미요소를 두어 방문자가 창을 넘기는 과정이 즐거웠으면 함
+
+****************
+<main page구성>
+상단 메뉴바
+
+홈, 온고롱은? 메뉴 후기 오시는길
+
+메뉴하위목록
+떡케이크
+쌀디저트
+답례품
+
+우측상단 로그인 회원가입 제품검색
+->로그인시 로그아웃 마이페이지 제품검색
+
+오른쪽 상단에 첫주문안내(닫을 수 있음)
+오른쪽 하단에 SNS 네비게이션바
+
+메인영역1에 시즌메뉴/신메뉴구성
+2가지
+
+메인영역2 케이크 디자인 8개 스크롤형태
+
+메인영역3 HOT상품 3개 (케이크1, 떡케이크1, 쌀디저트1) <-영역1로 이동가능
+
+하단부에 가게소개와 위치안내 링크
+
+<sub1-온고롱이란? 첫주문안내까지>
+온고롱은?
+수제~~~~
+산동진미~~
+당일제작~~~
+주문기간 포장 등 안내
+
+<sub2 메뉴안내>
+케이크
+디저트
+답례품
+세로형 메뉴가 샥샥 이동해서 가로형으로 붙어서 서브메뉴로 생성
+각 구역별로 나누어지면서 스크롤형태로 제품확인 가능
+(스크롤로 할지 도깨비처럼 업형태로 할 지 못정함)
+
+<후기>
+당근, 네이버 등 후기연계
+테이블형태로 보여줌
+
+<위치안내>
+오는 방법에 따른 안내 표시(버스 /지하철 등등?)
+
