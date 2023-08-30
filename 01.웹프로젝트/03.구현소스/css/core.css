@@ -25,16 +25,19 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
 }
 /* 공통 레이아웃 클래스 */
-/* 파트박스*/
+body *{
+    outline: 1px solid coral;
+}
+/* 파트박스
 .partbox {
     float: left;
     box-sizing: border-box;
-    outline: 1px dotted gray;
 }
-/* 메인박스  */
+메인박스
 .inbox {
     outline: 1px dashed red;
-}
+} 
+*/
 
 /* IR 숨기기 class */
 .ir{

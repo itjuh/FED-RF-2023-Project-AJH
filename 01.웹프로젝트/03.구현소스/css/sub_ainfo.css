@@ -6,9 +6,6 @@
 @import url(./core.css);
 @import url(./reset.css);
 
-body *{
-    outline: 1px solid coral;
-}
 /* 2. 메인영역 */
 /* 2-1. 온고롱소개 */
 /* 2-1-1. 브랜드소개타이틀 */
