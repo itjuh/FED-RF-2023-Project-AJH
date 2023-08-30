@@ -118,8 +118,6 @@
     max-width: 1650px;
     min-height: 650px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 }
 .main.inbox h2{
     position: absolute;

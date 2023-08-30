@@ -9,20 +9,22 @@
 /* 2-1. 이벤트배너 */
 .main .main-banner{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 700px;
 }
+/* 2-1-2. 배너박스 */
 .main .main-banner .partbox{
-    flex-basis: 7%;
-}
-.main .main-banner .partbox:nth-of-type(2),.main .main-banner .partbox:nth-of-type(3){
-    flex-basis: 43%;
+    flex-basis: 80%;
+    display: flex;
 }
 /* 이벤트 배너 이미지박스 */
 .main-banner section.banner-img{
     max-width: 660px;
     max-height: 660px;
-    margin: 50px auto;
+    /* 배너박스 상하 중앙정렬 */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 section.banner-img img{
     width: 100%;
@@ -31,9 +33,12 @@ section.banner-img img{
 }
 /* 이벤트 배너 설명박스 */
 .main-banner section.banner-desc{
-    max-width: 500px;
+    min-width: 400px;
     height: 300px;
-    margin: 150px auto;
+    /* 설명박스 상하 중앙정렬 */
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 /* 2-2. 메인테마 */
 .main .main-thema{

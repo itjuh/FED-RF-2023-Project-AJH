@@ -38,7 +38,9 @@ body *{
     outline: 1px dashed red;
 } 
 */
-
+img{
+    vertical-align: middle;
+}
 /* IR 숨기기 class */
 .ir{
     display: block;
