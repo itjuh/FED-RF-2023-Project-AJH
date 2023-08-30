@@ -3,6 +3,161 @@
 /* 온고롱 PJ : 공통 CSS - common.css */
 /* 공유기능요소 클래스 */
 
-/* 상단영역 */
-/* 메인영역 */
-/* 하단영역 */
+/* 0-1. 첫주문안내 */
+.partbox.first_info{
+    position: fixed;
+    /* 부모는?window */
+    top: 200px;
+    right: 0px;
+    height: 100px;
+    width: 45px;
+    background-color: blue;
+}
+/* 0-2. 상하네비바 */
+.partbox.top_bottom{
+    position: fixed;
+    /* 부모는?window */
+    bottom: 70px;
+    right: 70px;
+    height: 96px;
+    width: 56px;
+}
+/* 0-2. 상하네비바 버튼 공통*/
+.header button.btn{
+    position: absolute;
+    /* 부모는? .top_bottom */
+    top: calc(50% - 50px/2);
+    left: calc(50% - 50px/2);
+    width: 50px;
+    height: 50px;
+    margin: 3px 0;
+    border-radius: 50%;
+    background-color: #ffffff80;
+}
+/* 네비바 버튼 개별 */
+/* 페이지 중앙부터 개별로 갈라짐 */
+.header button.btn.up{
+    transform: translateY(calc(0px - 60% - 3px));
+}
+.header button.btn.down{
+    transform: translateY(calc(0px + 40% + 3px));
+}
+/*************** 1. 상단영역  ***************/
+/* 1. 상단영역 */
+#header{
+    background-color: #576252;
+}
+/* 상단영역 공통 */
+/* 1000px까지만 그 아래로는 메뉴 줄이기 필요 */
+.header.inbox{
+    max-width: 1650px;
+    height: 90px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+/* 사이드 그룹배치를 위한 margin-top */
+.header .partbox{
+    margin-top: auto;
+}
+/* 상단요소 공통 */
+.header .partbox a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+.header li {
+    float: left;
+    padding: 0 min(32px, 1.2vw);
+}
+/* 1-1. 메뉴구성 */
+.header .partbox .gnb-menu{
+    height: 45px;
+    padding-left: min(1vw, 9px);
+    line-height: 45px;
+    font-size: min(14px,1.6vw);
+}
+/* 1-2. 상단로고 */
+.header .logo{
+    width: 200px;
+    height: 50px;
+    background: url(../images/logo_en_wt.png) no-repeat center/auto min(3.8vw,37px);
+}
+/* 1-3. 로그인 검색 사이드그룹 */
+.header .side-group{
+    display: flex;
+    flex-direction: column;
+}
+/* 1-3-1. 로그인,회원가입 */
+.header .side-group .gnb-sign{
+    float: right;
+    padding-top: 10px;
+    padding-right: min(1vw, 9px);
+    line-height: 30px;
+    font-size: min(13px, 1.2vw);
+}
+/* 1-3-2. 검색 */
+.search-box{
+    line-height: 50px;
+    text-align: right;
+    padding-right: 1.5vw;
+}
+#search{
+    padding: min(1vw, 9px);
+    width: min(33vw,400px);
+    border-radius: 15px;
+    border: 0px solid #000;
+    box-shadow: 1px 1px 3px 0px #00000080;
+}
+/********* 2. 메인영역 **********/
+#main{
+    background-color: #fce8ce;
+}
+.main.inbox{
+    max-width: 1650px;
+    min-height: 650px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+.main.inbox h2{
+    position: absolute;
+}
+/******** 3. 하단영역 **********/
+#footer{
+    background-color: #576252;
+}
+.footer.inbox{
+    max-width: 1650px;
+    min-height: 250px;
+    margin: 0 auto;
+    display: flex;
+}
+.footer.inbox h2{
+    position: absolute;
+}
+.footer .footer-company-desc{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+}
+/* 3-1. 하단로고 */
+.footer .footer-company-desc .partbox:first-child{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+}
+.footer .logo{
+    height: 70px;
+    background: url(../images/logo_en_wt.png) no-repeat 3%/auto min(2.8vw,35px);
+}
+/* 3-2. 회사소개 */
+.footer .footer-company-desc .partbox:last-child{
+    flex-basis: 70%;
+    flex-grow: 1;
+}
+/* 3-3. SNS링크 */
+.footer .footer-sns{
+    flex-basis: 30%;
+}

@@ -1,0 +1,53 @@
+@charset "uft-8";
+/* 온고롱 서브B오시는길 - sub_bmap.css */
+/* CSS 불러오기 영역 */
+/* 리셋, 공통, 코어 외부 CSS합치기(merging) */
+@import url(./common.css);
+@import url(./core.css);
+@import url(./reset.css);
+
+/* 2. 메인영역 */
+/* 2-1.타이틀 */
+.main .title{
+    height: 80px;
+}
+/* 2-2.맵링크 */
+.main .map{
+    height: 500px;
+}
+/* 2-3.정보 */
+.main .info-group{
+    height: 350px;
+    display: flex;
+    flex-direction: row;
+}
+/* 정보그룹 타이틀공통 */
+.main div .sub-title{
+    font-size: min(14px,1.6vw);
+    height: 20%;
+}
+
+/* 2-3-1. 오시는법 */
+.main div .contact{
+    outline: 2px solid yellow;
+    flex-basis: 65%;
+}
+/* 2-3-1-1. 오시는법 타이틀 */
+
+/* 2-3-1-2. 오시는법 */
+main div .contact-info{
+    font-size: min(14px,1.6vw);
+    height: 80%;
+}
+/* 2-3-2. 이용안내 */
+.main div .use{
+    outline: 2px solid yellow;
+    flex-basis: 35%;
+}
+/* 2-3-1-1. 이용안내 타이틀 */
+
+/* 2-3-1-2. 이용안내 */
+main div .use-info{
+    font-size: min(14px,1.6vw);
+    height: 80%;
+}

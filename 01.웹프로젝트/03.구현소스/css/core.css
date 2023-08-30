@@ -24,5 +24,35 @@ html{
 body{
     font-family: 'Nanum Gothic', sans-serif;
 }
+/* 공통 레이아웃 클래스 */
+/* 파트박스*/
+.partbox {
+    float: left;
+    box-sizing: border-box;
+    outline: 1px dotted gray;
+}
+/* 메인박스  */
+.inbox {
+    outline: 1px dashed red;
+}
 
+/* IR 숨기기 class */
+.ir{
+    display: block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+/* 화면출력 숨기기 클래스 */
+.blind{
+    display: none;
+}
 
+/* top타이틀 */
+.top-title{
+    font-size: 1.6rem;
+}
+/* sub타이틀 */
+.sub-title{
+    font-size: 1.2rem;
+}
