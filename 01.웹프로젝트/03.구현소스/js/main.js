@@ -108,3 +108,19 @@ function goSlide(){
         },0);
     } ///////////if else //////////
 } /////////goSlide /////////////////
+
+
+//키워드 대상: .bubble-key
+const bubbleKey = qsa('.bubble-key');
+// 검색 input
+const searchInput = qs('#search');
+console.log(bubbleKey,searchInput);
+
+bubbleKey.forEach(ele=>{
+    addEvt(ele,'click',()=>{
+        let txt = ele.innerText.replace('@','');
+        console.log(txt);
+
+        searchInput.value = txt;
+    })
+})
