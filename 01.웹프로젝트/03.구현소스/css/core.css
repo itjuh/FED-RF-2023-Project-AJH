@@ -5,6 +5,12 @@
 
 /* 웹폰트 CDN */
 @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 /* 
     1. 캐릭터 설명 제목체
     font-family: 'Gugi', cursive;
@@ -25,8 +31,12 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
 }
 /* 공통 레이아웃 클래스 */
-body *{
+/* body *{
     outline: 1px solid coral;
+} */
+/* 상단영역 폰트공통 */
+#header{
+    font-family: 'GangwonEdu_OTFBoldA';
 }
 /* 파트박스
 .partbox {
@@ -38,8 +48,16 @@ body *{
     outline: 1px dashed red;
 } 
 */
-img{
-    vertical-align: middle;
+/* 기본값 설정 */
+:root{
+    --fz-big : 2rem;
+    --fz-top : 1.8rem;
+    --fz-sub : 1.4rem;
+    --fz-nav : min(14px,1.6vw);
+    --fz-sign : min(13px, 1.2vw);
+    --co-ongreen : rgb(87, 98, 82);
+    --co-onlightgreen: rgb(126, 136, 121);
+    --co-onbeige : rgb(252, 232, 206);
 }
 /* IR 숨기기 class */
 .ir{
@@ -52,12 +70,41 @@ img{
 .blind{
     display: none;
 }
-
 /* top타이틀 */
 .top-title{
-    font-size: 1.6rem;
+    font-size: var(--fz-top);
 }
 /* sub타이틀 */
 .sub-title{
-    font-size: 1.2rem;
+    font-size: var(--fz-sub);
+}
+/* 더보기 버튼 */
+.move-view-btn{
+    display: block;
+    position: absolute;
+    /* 부모는 더보기 안쪽 박스 */
+    left: 50%;
+    /* 중앙정렬 */
+    transform: translateX(-50%) scale(1.2);
+    /* 버튼디자인 */
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #fff;
+    padding-top: 3px;
+    padding-right: 10px;
+    font-size: var(--fz-sub);
+    font-family: 'GangwonEdu_OTFBoldA';
+    text-align: center;
+}
+.move-view-btn::after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    right: 13px;
+    width: 19px;
+    height: 19px;
+    background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
+    background-size: 625px 375px;
+    background-position: -328px -272px;
 }

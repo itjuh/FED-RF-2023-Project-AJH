@@ -6,120 +6,318 @@
 @import url(./core.css);
 @import url(./reset.css);
 
-/* 2-1. 이벤트배너 */
-.main .main-banner{
-    display: flex;
-    justify-content: center;
-    height: 700px;
-}
+/* 2-1. 이벤트배너 banner-area*/
 /* 2-1-2. 배너박스 */
-.main .main-banner .partbox{
-    flex-basis: 80%;
-    display: flex;
-}
-/* 이벤트 배너 이미지박스 */
-.main-banner section.banner-img{
-    max-width: 660px;
-    max-height: 660px;
-    /* 배너박스 상하 중앙정렬 */
+.banner-area{
+    height: 800px;
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+    overflow: hidden;
 }
-section.banner-img img{
+/* 왼쪽 배너로 이동 .prev-btn*/
+.prev-btn{
+    position: absolute;
+    width: 45px;
+    height: 51px;
+    left: 2vw;
+    top: 50%;
+    background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
+    background-size: 625px 375px;
+    background-position: -289px -179px;
+}
+/* 오른쪽 배너로 이동  next-btn*/
+.next-btn{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 51px;
+    right: 2vw;
+    top: 50%;
+    background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
+    background-size: 625px 375px;
+    background-position: -393px -180px;
+}
+/* 배너영역 내용ul */
+.banner-area>ul{
+    display: flex;
+    position: relative;
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
-/* 이벤트 배너 설명박스 */
-.main-banner section.banner-desc{
-    min-width: 400px;
-    height: 300px;
-    /* 설명박스 상하 중앙정렬 */
+.banner-area>ul>li{
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-/* 2-2. 메인테마 */
-.main .main-thema{
-    display: flex;
-    height: 400px;
-}
-.main .main-thema .partbox{
+    /* 설명박스 부모자격*/
+    flex-shrink: 0;
     flex-basis: 100%;
 }
+/* 배너이미지 ul>li>img*/
+.banner-area img{
+    display: block;
+    margin-left: 10%;
+    /*이미지는 박스에 맞춤!*/
+    height: 100%;
+    /* 이미지 비율유지 채우기! */
+}
+/* 배너설명 li>.banner-desc*/
+.banner-desc{
+    position: absolute;
+    /* 부모는 ul>li박스 */
+    top: 50%;
+    /* 이미지크기 800, 간격 50 이미지 마진 10% */
+    left: calc(10% + 850px);
+    transform: translateY(-50%);
+    width: 400px;
+    height: 300px;
+}
+/* 배너설명박스 전체 ol */
+.banner-desc ol{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+/* 설명타이틀.banner-desc>ol>li.tit */
+.banner-desc .tit{
+    flex-basis: 20%;
+    font-size: var(--fz-big);
+    text-align: center;
+}
+/* 설명내용.banner-desc>ol>li.txt */
+.banner-desc .txt{
+    flex-basis: 80%;
+    font-size: var(--fz-top);
+}
+/* 더보기버튼.banner-desc>ol>li.button */
+.banner-desc .move-view-btn{
+    top:110%;
+}
+
+/* 2-2. 메인테마 */
+.main-thema{
+    display: flex;
+    height: 300px;
+}
+.main-thema .partbox{
+    flex-basis: 100%;
+    background: rgb(87, 98, 82) url(../../01.자료수집/images/main04.jpg) no-repeat left/100%;
+}
 /* 2-3. 컨셉이미지 */
-.main .main-scroll-banner{
+.main-scroll-banner{
     display: flex;
     height: 600px;
 }
-.main .main-scroll-banner .partbox{
+.main-scroll-banner .partbox{
     flex-basis: 100%;
 }
-/* 2-4. 인기상품 */
-.main .main-hot-item{
-    display: flex;
-    flex-direction: column;
-    min-height: 500px;
-}
-/* 2-4-1. 인기상품 타이틀 */
-.main .main-hot-item>.partbox:first-of-type{
-    height: 50px;
-}
-/* 2-4-2. 인기상품 리스트 */
-.main .main-hot-item .hot-item-list{
-    display: flex;
-    flex-direction: auto;
-    height: 400px;
-}
-.main .main-hot-item .hot-item-list .partbox{
-    flex-basis: 25%;
-}
-/* 2-4-3. 인기상품 더보기 */
-.main .main-hot-item>.partbox:last-of-type{
-    height: 50px;
-}
-/* 2-5. 추천검색 */
-.main .main-key-search{
-    display: flex;
-    flex-direction: column;
-    height: 500px;
-}
-.main .main-key-search .partbox:first-of-type{
-    flex-basis: 50%;
-}
-.main .main-key-search .partbox:last-of-type{
-    /* display: none; */
-    flex-basis: 50%;
-}
-/* 2-6. 주문진행 */
-.main .main-order-process {
-    display: flex;
-    height: 150px;
-}
-.main .main-order-process .partbox{
-    flex-basis: 100%;
-}
+/* 목록형 상자 공통 */
+/* 인기상품 및 리뷰 */
 /* 2-7. 리뷰 */
-.main .main-review{
+/* 2-4. 인기상품 */
+.list-type{
     display: flex;
     flex-direction: column;
     min-height: 500px;
 }
 /* 2-7-1. 리뷰 타이틀 */
-.main .main-review>.partbox:first-of-type{
+/* 2-4-1. 인기상품 타이틀 */
+.list-type>.partbox:first-of-type{
     height: 50px;
+}
+/* 인기상품 타이틀 테두리 */
+.list-type h1.tit{
+    display: block;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    width: 100px;
+    height: 40px;
+    border-radius: 50%;
+    /* 글자세팅 */
+    font-size: var(--fz-top);
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 2px;
+    /* 중앙정렬 */
+    transform: translateY(-50%);
+    padding: 0 10px;
+    background-color: #fff;
+}
+/* 인기상품 타이틀 이미지 */
+.list-type h1.tit::before{
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0%;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-100%);
+    background-image: url(../images/ho_logo.jpg);
 }
 /* 2-7-2. 리뷰 리스트 */
-.main .main-review .review-list{
+/* 2-4-2. 인기상품 리스트 */
+.list-type .list{
     display: flex;
-    flex-direction: auto;
     height: 400px;
+    width: 80%;
+    margin: 0 auto;
+    gap: 0 10px;
 }
-.main .main-review .review-list .partbox{
+.list-type .list .partbox{
     flex-basis: 25%;
 }
+/* 이미지 */
+.img-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* 상품태그 */
+.prod-tag{
+    font-size: var(--fz-sub);
+}
 /* 2-7-3. 리뷰 더보기 */
-.main .main-review>.partbox:last-of-type{
+/* 2-4-3. 인기상품 더보기 */
+.list-type>.partbox:last-of-type{
+    position: relative;
     height: 50px;
+}
+.list-type>.partbox:last-of-type button{
+    top: 50%;
+    transform: translate(-50%,-50%) scale(1.2);
+}
+/* 리스트관련 개별세팅 */
+/* 인기상품******** */
+/* 이미지 */
+.hot-item-list .img-box{
+    width: 100%;
+    height: 300px;
+}
+/* 정보박스 */
+.hot-item-list .txt-box{
+    width: 100%;
+}
+/* 상품정보 공통 */
+.txt-box li{
+    margin-bottom: 5px;
+}
+/* 상품명 */
+.prod-name{
+    font-size: var(--fz-big);
+    font-weight: bold;
+}
+/* 상품가 */
+.prod-price{
+    font-size: var(--fz-top);
+}
+/* 리뷰************ */
+/* 정보박스 */
+.review-list .txt-box{
+    width: 100%;
+    height: 140px;
+}
+.review-list .txt-box ul{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+/* 이미지 */
+.review-list .img-box{
+    width: 100%;
+    height: 200px;
+}
+/* 작성자 */
+.reviewer{
+    font-size: var(--fz-sub);
+}
+/* 리뷰내용 */
+.review-txt{
+    height: 100%;
+    font-size: var(--fz-top);
+}
+/* 리뷰태그 */
+.review-list .prod-tag{
+    margin-bottom: 0;
+    margin-top:auto;
+}
+/* 2-5. 추천검색 */
+.main-key-search{
+    display: flex;
+    /* 키워드박스 부모 */
+    position: relative;
+    flex-direction: column;
+    height: 500px;
+}
+/* 추천검색 검색구역(검색부) */
+.main-key-search>.partbox:first-of-type{
+    flex-basis: 50%;
+}
+/* 검색창 */
+.key-search-box{
+    /* 위치 이동을 위한 relative */
+    position: relative;
+    top: 30%;
+    left: 50%;
+    line-height: 50px;
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1.8);
+}
+/* 키워드 말풍선 공통 */
+.bubble-key{
+    position: absolute;
+    width: 100px;
+    height: 65px;
+    background-color: lightblue;
+    border-radius: 40px;
+    box-shadow: 1px 1px 10px 0px #00000080;
+    /* 글자세팅 */
+    padding-left: 20px;
+    font-size: var(--fz-top);
+    line-height: 65px;
+    font-family: 'GangwonEdu_OTFBoldA';
+}
+/* 말풍선 위치 개별 */
+.bubble-key.b1{
+    top: 10px;
+    left: 12vw;
+}
+.bubble-key.b2{
+    top: 120px;
+    left: 10vw;
+}
+.bubble-key.b3{
+    top: 150px;
+    left: 20vw;
+}
+.bubble-key.b4{
+    top: 50px;
+    right: 10vw;
+}
+.bubble-key.b5{
+    top: 133px;
+    right: 18vw;
+}
+/* 말풍선꼬리 */
+.bubble-key::after{
+    position: relative;
+    top: 0%;
+    left: 10%;
+    content: '';
+    display: block;
+    width: 50px;
+    height: 30px;
+    background-color: lightblue;
+    clip-path: polygon(54% 28%, 44% 14%, 27% 0, 85% 0, 94% 13%, 99% 29%, 97% 55%, 84% 80%, 61% 100%, 66% 78%, 67% 58%, 62% 41%);
+    box-shadow: 1px 1px 10px 0px #00000080;
+}
+
+/* 추천검색 아래쪽구역(제품부) */
+.main-key-search>.partbox:last-of-type{
+    /* display: none; */
+    flex-basis: 50%;
+}
+/* 2-6. 주문진행 */
+.main-order-process {
+    display: flex;
+    height: 150px;
+}
+.main-order-process .partbox{
+    flex-basis: 100%;
 }
