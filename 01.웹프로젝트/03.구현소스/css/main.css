@@ -253,7 +253,7 @@
 .key-search-box{
     /* 위치 이동을 위한 relative */
     position: relative;
-    top: 30%;
+    top: 40%;
     left: 50%;
     line-height: 50px;
     text-align: center;
