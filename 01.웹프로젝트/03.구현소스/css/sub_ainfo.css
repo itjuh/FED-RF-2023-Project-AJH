@@ -123,8 +123,16 @@ main .partbox{
     gap: 10px 50px;
     transform: translateX(150%);
     /* 트랜지션 */
-    transition: 1s;
+    /* transition: 1s; */
+    animation: grad-ani 20s linear 1s infinite;
 }
+
+@keyframes grad-ani {
+    to{
+        left: calc(-350px*6);
+    }
+}
+
 /* 재료 박스 li*/
 .grad-box{
     /* span태그 부모자격 */
