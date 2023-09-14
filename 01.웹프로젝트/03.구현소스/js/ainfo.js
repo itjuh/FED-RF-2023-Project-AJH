@@ -106,29 +106,37 @@ function loadFn(){
     let listUl = domFn.qs('.intro-grad');
     // console.log(listUl);
     // 2. 이벤트 선정 ( 시간에 따른 이벤트 )
-    setTimeout(()=>{
-        // setInterval(() => {
-        //     scrollGrad();
-        // }, 1000);
-    },8000);
+    // setTimeout(()=>{
+        const myFn = ()=> setInterval(scrollGrad, 3000);
+
+        setTimeout(myFn,9000);
+    // },8000);
     // 재료이미지 자동스크롤 함수
     function scrollGrad(){
         // 이미지 li 새로읽기
         let list = domFn.qsaEl(listUl,'.grad-box');
+        // console.log(list);
         // 2. 이미지 이동
-        listUl.style.left = '-100%';
+        listUl.style.left = '-700px';
         // 1. 트랜지션 주기
         listUl.style.transition='1s';
         // -------
         setTimeout(() => {
-            // 4. 이미지 뒤로 붙이기
-            listUl.appendChild(list[0]);
-            // 5. 위치값 원래대로
-            listUl.style.left = "0";
-            // -------
-            // 3. 트랜지션삭제
-            listUl.style.transition = 'none';
-        }, 0);
+            let temp = 1;
+            for(let i=0;i<2;i++){
+                list = domFn.qsaEl(listUl,'.grad-box');
+                // 4. 이미지 뒤로 붙이기
+                listUl.appendChild(list[0]);
+                // 5. 위치값 원래대로
+                listUl.style.left = (-350*temp)+'px';
+                // -------
+                // 3. 트랜지션삭제
+                listUl.style.transition = 'none';
+
+                temp--;
+
+            }
+        }, 1000);
     } ////////scrollGrad///////////
 
     //////////////////////////////////////////////////////

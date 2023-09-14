@@ -20,7 +20,7 @@ main .partbox{
 /* 2-1. 온고롱소개 */
 .intro-brand{
     /* 브랜드 소개 타이틀용 부모역할 */
-    position: relative;
+    /* position: relative; */
     height: 100vh;
 }
 /* 2-1-1. 브랜드소개타이틀 */
@@ -66,7 +66,7 @@ main .partbox{
 /* 2-1-2. 안내타이틀 */
 .info-box{
     /* 재료소개용 부모자격 */
-    position: relative;
+    /* position: relative; */
     justify-content: flex-start;
     flex-direction: row;
     height: 400px;

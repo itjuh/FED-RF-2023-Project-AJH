@@ -134,6 +134,7 @@
     font-family: 'GangwonEdu_OTFBoldA';
 }
 .main.inbox{
+    position: relative;
     max-width: 1650px;
     min-height: 650px;
     margin: 0 auto;
