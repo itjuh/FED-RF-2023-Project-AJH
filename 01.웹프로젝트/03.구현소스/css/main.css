@@ -8,18 +8,95 @@
 
 /* 2-1. 이벤트배너 banner-area*/
 /* 2-1-2. 배너박스 */
+.main-banner{
+    position: relative;
+    /* 배너 설명박스용 부모 */
+}
 .banner-area{
     height: 800px;
-    position: relative;
+    width: 800px;
     overflow: hidden;
+    margin-left: 200px;
+}
+/* 배너 이미지영역 */
+.banner-ul{
+    position: relative;
+    /* 위치이동을 위한 포지션 */
+    display: flex;
+    left: 0;
+    aspect-ratio: 1/1;
+    height: 800px;
+}
+/* 배너이미지 ul>li>img*/
+.banner-area img{
+    display: block;
+    /*이미지는 박스에 맞춤!*/
+    height: 100%;
+    aspect-ratio: 1/1;
+    /* 이미지 비율유지 채우기! */
+}
+/* 배너 설명박스 영역*/
+.banner-desc{
+    position: absolute;
+    /* 부모는 ul>li박스 */
+    top: 50%;
+    /* 이미지크기 800 */
+    left: 1050px;
+    transform: translateY(-50%);
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 3px #00000080;
+
+}
+/* 배너설명박스 전체 ol */
+.banner-desc ol{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/* 설명박스 li */
+.banner-desc ol>li{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex-shrink: 0;
+}
+/* 설명타이틀.banner-desc>ol>li.tit */
+.banner-desc .tit{
+    display: block;
+    flex-basis: 20%;
+    background-color: var(--co-ondarkblue);
+    /* 타이틀 글자 */
+    font-size: var(--fz-big);
+    text-align: center;
+    line-height: 60px;
+}
+/* 설명내용.banner-desc>ol>li.txt */
+.banner-desc .txt{
+    display: block;
+    flex-basis: 80%;
+    font-size: var(--fz-top);
+    background-color: var(--co-ondarkgreen);
+    padding: 10px 30px;
+    line-height: 1.5;
+}
+/* 더보기버튼.banner-desc>ol>li.button */
+.banner-desc .move-view-btn{
+    top:80%;
 }
 /* 왼쪽 배너로 이동 .prev-btn*/
 .prev-btn{
     position: absolute;
     width: 45px;
     height: 51px;
-    left: 2vw;
-    top: 50%;
+    left: min(2vw, 100px);
+    top: calc(50% - 51px/2);
     background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
     background-size: 625px 375px;
     background-position: -289px -179px;
@@ -30,67 +107,12 @@
     position: absolute;
     width: 45px;
     height: 51px;
-    right: 2vw;
-    top: 50%;
+    right: min(2vw, 100px);
+    top: calc(50% - 51px/2);
     background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
     background-size: 625px 375px;
     background-position: -393px -180px;
 }
-/* 배너영역 내용ul */
-.banner-area>ul{
-    display: flex;
-    position: relative;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-.banner-area>ul>li{
-    position: relative;
-    /* 설명박스 부모자격*/
-    flex-shrink: 0;
-    flex-basis: 100%;
-}
-/* 배너이미지 ul>li>img*/
-.banner-area img{
-    display: block;
-    margin-left: 10%;
-    /*이미지는 박스에 맞춤!*/
-    height: 100%;
-    /* 이미지 비율유지 채우기! */
-}
-/* 배너설명 li>.banner-desc*/
-.banner-desc{
-    position: absolute;
-    /* 부모는 ul>li박스 */
-    top: 50%;
-    /* 이미지크기 800, 간격 50 이미지 마진 10% */
-    left: calc(10% + 850px);
-    transform: translateY(-50%);
-    width: 400px;
-    height: 300px;
-}
-/* 배너설명박스 전체 ol */
-.banner-desc ol{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-/* 설명타이틀.banner-desc>ol>li.tit */
-.banner-desc .tit{
-    flex-basis: 20%;
-    font-size: var(--fz-big);
-    text-align: center;
-}
-/* 설명내용.banner-desc>ol>li.txt */
-.banner-desc .txt{
-    flex-basis: 80%;
-    font-size: var(--fz-top);
-}
-/* 더보기버튼.banner-desc>ol>li.button */
-.banner-desc .move-view-btn{
-    top:110%;
-}
-
 /* 2-2. 메인테마 */
 .main-thema{
     display: flex;
@@ -120,7 +142,7 @@
 /* 2-7-1. 리뷰 타이틀 */
 /* 2-4-1. 인기상품 타이틀 */
 .list-type>.partbox:first-of-type{
-    height: 50px;
+    height: 80px;
 }
 /* 인기상품 타이틀 테두리 */
 .list-type h1.tit{
@@ -130,11 +152,12 @@
     margin: 0 auto;
     width: 100px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 45%;
+    box-shadow: 1px 1px 3px #00000080;
     /* 글자세팅 */
     font-size: var(--fz-top);
     text-align: center;
-    line-height: 40px;
+    line-height: 42px;
     letter-spacing: 2px;
     /* 중앙정렬 */
     transform: translateY(-50%);
@@ -146,29 +169,42 @@
     content: '';
     display: block;
     position: absolute;
-    left: 0%;
+    left: 4%;
     width: 40px;
     height: 40px;
     transform: translateX(-100%);
-    background-image: url(../images/ho_logo.jpg);
+    background-image: url(../../01.자료수집/images/info.png);
+    background-size: 700px 450px;
+    background-position: -664px -108px;
+    filter: drop-shadow(-1px 2px 2px #00000080);
 }
 /* 2-7-2. 리뷰 리스트 */
 /* 2-4-2. 인기상품 리스트 */
 .list-type .list{
-    display: flex;
     height: 400px;
-    width: 80%;
+    width: 1200px;
     margin: 0 auto;
-    gap: 0 10px;
 }
-.list-type .list .partbox{
+.list-type ol{
+    display: flex;
+    gap: 0px 20px;
+    height: 100%;
+}
+.list-type ol>li{
+    height: 100%;
     flex-basis: 25%;
+    flex-shrink: 1;
+}
+.list-type ol>li>.partbox{
+    height: 100%;
+    box-shadow: 1px 1px 6px #00000080;
 }
 /* 이미지 */
 .img-box img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* transform: translate(4px, 1px); */
 }
 /* 상품태그 */
 .prod-tag{
@@ -178,7 +214,7 @@
 /* 2-4-3. 인기상품 더보기 */
 .list-type>.partbox:last-of-type{
     position: relative;
-    height: 50px;
+    height: 80px;
 }
 .list-type>.partbox:last-of-type button{
     top: 50%;
@@ -193,7 +229,10 @@
 }
 /* 정보박스 */
 .hot-item-list .txt-box{
+    box-sizing: border-box;
     width: 100%;
+    height: calc(100% - 300px);
+    padding: 10px;
 }
 /* 상품정보 공통 */
 .txt-box li{
@@ -211,8 +250,11 @@
 /* 리뷰************ */
 /* 정보박스 */
 .review-list .txt-box{
+    box-sizing: border-box;
     width: 100%;
-    height: 140px;
+    /* 이미지 크기를 제외한 크기가 정보박스 */
+    height: calc(100% - 200px);
+    padding: 20px 10px;
 }
 .review-list .txt-box ul{
     display: flex;
@@ -230,8 +272,13 @@
 }
 /* 리뷰내용 */
 .review-txt{
-    height: 100%;
+    height: 105px;
     font-size: var(--fz-top);
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical; 
 }
 /* 리뷰태그 */
 .review-list .prod-tag{
@@ -270,7 +317,7 @@
     /* box-shadow: 1px 1px 10px 0px #00000080; */
     /* 글자세팅 */
     padding-left: 20px;
-    font-size: var(--fz-top);
+    font-size: var(--fz-sign);
     line-height: 65px;
     font-family: 'GangwonEdu_OTFBoldA';
     /* box-shadow대신 filter:drop-shadow를 써야 클립패쓰까지 그림자 적용됨!!! */
@@ -297,20 +344,26 @@
     top: 133px;
     right: 18vw;
 }
-/* 말풍선꼬리 */
+/* 말풍선꼬리 공통 */
 .bubble-key::after{
     position: relative;
-    top: 0%;
+    top: -10%;
     left: 10%;
     content: '';
     display: block;
     width: 50px;
     height: 30px;
     background-color: lightblue;
-    clip-path: polygon(54% 28%, 44% 14%, 27% 0, 85% 0, 94% 13%, 99% 29%, 97% 55%, 84% 80%, 61% 100%, 66% 78%, 67% 58%, 62% 41%);
-    box-shadow: 1px 1px 10px 0px #00000080;
 }
-
+/* 말풍선꼬리 왼쪽 */
+.bubble-key.b1::after, .bubble-key.b2::after, .bubble-key.b3::after{
+    clip-path: polygon(14% 33%, 19% 15%, 27% 0, 82% 0, 68% 20%, 61% 44%, 61% 64%, 65% 80%, 75% 100%, 49% 87%, 31% 73%, 18% 55%);
+}
+/* 말풍선꼬리 오른쪽 */
+.bubble-key.b4::after, .bubble-key.b5::after{
+    clip-path: polygon(54% 28%, 44% 14%, 27% 0, 85% 0, 94% 13%, 99% 29%, 97% 55%, 84% 80%, 61% 100%, 66% 78%, 67% 58%, 62% 41%);
+}
+/* clip-path: polygon(14% 33%, 19% 15%, 27% 0, 82% 0, 68% 20%, 61% 44%, 61% 64%, 65% 80%, 75% 100%, 49% 87%, 31% 73%, 18% 55%); */
 /* 추천검색 아래쪽구역(제품부) */
 .main-key-search>.partbox:last-of-type{
     /* display: none; */

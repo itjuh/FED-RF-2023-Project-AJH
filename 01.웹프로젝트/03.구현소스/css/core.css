@@ -31,9 +31,9 @@ body{
     font-family: 'Nanum Gothic', sans-serif;
 }
 /* 공통 레이아웃 클래스 */
-/* body *{
+body *{
     outline: 1px solid coral;
-} */
+}
 /* 상단영역 폰트공통 */
 #header{
     font-family: 'GangwonEdu_OTFBoldA';
@@ -50,11 +50,15 @@ body{
 */
 /* 기본값 설정 */
 :root{
-    --fz-big : 2rem;
-    --fz-top : 1.8rem;
-    --fz-sub : 1.4rem;
-    --fz-nav : min(14px,1.6vw);
-    --fz-sign : min(13px, 1.2vw);
+    --fz-tit : 3.5rem;
+    --fz-biger : 4rem;
+    --fz-big : 3rem;
+    --fz-top : 2.4rem;
+    --fz-sub : 1.6rem;
+    --fz-nav : 2.2rem;
+    --fz-sign : 2rem;
+    --co-ondarkgreen: rgb(17, 46, 24);
+    --co-ondarkblue: rgb(11, 33, 46);
     --co-ongreen : rgb(87, 98, 82);
     --co-onlightgreen: rgb(126, 136, 121);
     --co-onbeige : rgb(252, 232, 206);
@@ -72,11 +76,11 @@ body{
 }
 /* top타이틀 */
 .top-title{
-    font-size: var(--fz-top);
+    font-size: var(--fz-tit);
 }
 /* sub타이틀 */
 .sub-title{
-    font-size: var(--fz-sub);
+    font-size: var(--fz-big);
 }
 /* 더보기 버튼 */
 .move-view-btn{
@@ -96,7 +100,11 @@ body{
     font-size: var(--fz-sub);
     font-family: 'GangwonEdu_OTFBoldA';
     text-align: center;
+    box-shadow: 1px 1px 3px #00000080;
 }
+.move-view-btn:hover{
+    box-shadow: 1px 1px 8px #00000080;
+}   
 .move-view-btn::after{
     content: '';
     position: absolute;
@@ -108,3 +116,6 @@ body{
     background-size: 625px 375px;
     background-position: -328px -272px;
 }
+.move-view-btn:hover::after{
+    transform: translate(1px,-1px) scale(1.1)
+} 

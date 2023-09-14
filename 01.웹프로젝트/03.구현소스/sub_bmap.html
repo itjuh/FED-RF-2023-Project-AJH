@@ -6,6 +6,8 @@
     <title>온고롱 오시는길</title>
     <!-- 온고롱 서브B오시는길 CSS -->
     <link rel="stylesheet" href="./css/sub_bmap.css" />
+    <!-- 외부 JS연결 -->
+    <script src="./js/bmap.js" defer></script>
 </head>
 <body>
     <!-- 1. 상단영역 -->
@@ -25,7 +27,7 @@
                     <nav class="gnb-menu">
                         <ul>
                             <li><a href="#">제품보기</a></li>
-                            <li><a href="#">고객센터</a></li>
+                            <li><a href="./sub_cservies.html">고객센터</a></li>
                             <li><a href="./sub_bmap.html">오시는길</a></li>
                             <li><a href="./sub_ainfo.html">온고롱안내</a></li>
                         </ul>
@@ -64,25 +66,58 @@
     <div id="main">
         <main class="main inbox">
             <!-- 2-1.타이틀 -->
-            <div class="partbox top-title"></div>
+            <div class="partbox top-title">
+                <h1>온고롱 오시는 길</h1>
+            </div>
             <!-- 2-2.맵링크 -->
-            <div class="partbox map"></div>
+            <div class="partbox map">
+                <img src="" alt="">
+            </div>
             <!-- 2-3.정보-->
             <div class="partbox info-group">
                 <!-- 2-3-1. 오시는법 -->
-                <div class="contact">
+                <section class="contact">
                 <!-- 2-3-1-1. 오시는법 타이틀 -->
-                    <section class="contact sub-title"></section>
+                    <div class="contact sub-title">오시는 법</div>
                     <!-- 2-3-1-2. 오시는법 -->
-                    <section class="contact contact-info"></section>
-                </div>
+                    <div class="contact contact-info">
+                        <ul>
+                            <li class="contact-way subway on">
+                                지하철
+                            </li>
+                            <li class="contact-way bus">
+                                버스
+                            </li>
+                            <li class="contact-way car">
+                                차량
+                            </li>
+                        </ul>
+                    </div>
+                </section>
                 <!-- 2-3-2. 이용안내 -->
-                <div class="use">
+                <section class="use">
                 <!-- 2-3-1-1. 이용안내 타이틀 -->
-                <section class="use sub-title"></section>
+                <div class="use sub-title">이용안내</div>
                     <!-- 2-3-1-2. 이용안내 -->
-                    <section class="use use-info"></section>
-                </div>
+                    <div class="use-info">
+                        <dl>
+                            <dt class="use-info-icon"></dt>
+                            <dd>주차가능</dd>
+                        </dl>
+                        <dl>
+                            <dt class="use-info-icon"></dt>
+                            <dd>예약주문</dd>
+                        </dl>
+                        <dl>
+                            <dt class="use-info-icon"></dt>
+                            <dd>포장가능</dd>
+                        </dl>
+                        <dl>
+                            <dt class="use-info-icon"></dt>
+                            <dd>카드결제</dd>
+                        </dl>
+                    </div>
+                </section>
             </div>
     </main>
     </div>
