@@ -1,0 +1,345 @@
+@charset "uft-8";
+/* 온고롱 서브_고객센터 - sub_service.css */
+/* CSS 불러오기 영역 */
+/* 리셋, 공통, 코어 외부 CSS합치기(merging) */
+@import url(./common.css);
+@import url(./core.css);
+@import url(./reset.css);
+
+/* 2-1.타이틀 */
+.main .top-title{
+    height: 80px;
+    line-height: 120px;
+}
+.top-title h1{
+    width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+    font-size: var(--fz-biger);
+}
+.main .partbox{
+    width: 1400px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
+}
+/* 2-1. 고객센터 타이틀 */
+/* 2-2. 자주묻는 질문 */
+.faq-box{
+    position: relative;
+    /* speech-icon부모용 */
+    min-height: 500px;
+    border-radius: 20px 20px 10px 10px;
+    font-size: var(--fz-top);
+    border: 1px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+}
+/* 2-2-1. 서브타이틀 */
+.main div .sub-title span{
+    display: block;
+    padding-left: 80px;
+    font-size: var(--fz-big);
+    height: 20%;
+    line-height: 80px;
+    border-bottom: 1px solid #ccc;
+}
+/* 서브타이틀 아이콘 공통 */
+.sub-icon{
+    position: absolute;
+    /* 부모님은 faq-box */
+    top: 41px;
+    left: 43px;
+    width: 55px;
+    height: 48px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: 0px 0px;
+    background-size: 785px 534px;
+}
+/* 말풍선 아이콘 */
+.speech-icon{
+    background-position: -128px -62px;
+}
+/* 말풍선 아이콘 말하는효과 */
+.speech-talk{
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    width: 23px;
+    height: 16px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: -15px -72px;
+    background-size: 785px 534px;
+    
+    /* 트랜지션 */
+    transition: .2s ease-in;
+    /* 애니메이션 */
+    animation: talk-ani .7s ease-in-out infinite alternate;
+}
+/* 말하는 효과 */
+@keyframes talk-ani {
+    to{
+        width: 8px;
+    }
+}
+/* 2-2-2. 카테고리 */
+.faq-sub-cate ol{
+    display: flex;
+    justify-content: flex-start;
+    height: 100px;
+    align-items: center;
+    gap: 20px 60px;
+    padding-left: 20px;
+}
+/* 카테고리 세부 공통 */
+.faq-sub-cate li{
+    position: relative;
+    /* 아이콘용 부모자격 */
+    width: 140px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    line-height: 56px;
+    text-align: right;
+    padding-right: 30px;
+}
+/* 전체 박스공통 */
+.faq-sub-cate li:nth-child(1){
+    width: 110px;
+}
+/* 두번째 글자요소 위치 */
+.faq-sub-cate li:nth-child(2){
+    padding-left: 15px;
+}
+/* 카테고리 세부 아이콘 */
+.faq-sub-cate li::before{
+    content: '';
+    position: absolute;
+    /* 부모는 li */
+    left: 13px;
+    width: 50px;
+    height: 50px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: -53px 3px;
+    background-size: 707px 418px;
+
+}
+/* 아이콘 개별 */
+.faq-sub-cate li:nth-child(1)::before{
+    width: 48px;
+    height: 48px;
+    background-position: -182px -88px;
+}
+.faq-sub-cate li:nth-child(2)::before{
+    background-position: -53px 5px;
+}
+.faq-sub-cate li:nth-child(3)::before{
+    background-position: -169px 4px;
+}
+.faq-sub-cate li:nth-child(4)::before{
+    background-position: -110px 4px;
+}
+.faq-sub-cate li:nth-child(5)::before{
+    background-position: 5px 3px;
+}
+/* 마우스를 올리거나 클릭 시
+/* 마우스 클릭 시 on클래스 주기 */
+.faq-sub-cate li:hover,
+.faq-sub-cate li.on {
+    /* text-shadow: 1px 0px 0px; */
+    border-radius: 20px 20px 0px 20px;
+    /* box-shadow: 0px 0px 5px 1px #6d6d6d; */
+    background-color: var(--co-onlightgreen);
+    color: white;
+}
+/* 개별아이콘 on 일때 이미지 */
+.faq-sub-cate li:nth-child(1).on::before{
+    width: 48px;
+    height: 48px;
+    background-position: -543px -297px;
+}
+.faq-sub-cate li:nth-child(2).on::before{
+    /* background-position: -57px -211px; */
+    background-position: -409px -203px;
+}
+.faq-sub-cate li:nth-child(3).on::before{
+    /* background-position: -169px -211px; */
+    background-position: -527px -203px;
+}
+.faq-sub-cate li:nth-child(4).on::before{
+    /* background-position: -110px -211px; */
+    background-position: -468px -205px;
+}
+.faq-sub-cate li:nth-child(5).on::before{
+    /* background-position: 3px -212px; */
+    background-position: -354px -205px;
+}
+/* 2-2-3. 카테고리 서브 내용 */
+/* 카테고리별 질문 ul*/
+.faq-content ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 0 20px;
+}
+/* 질문 li박스 */
+.faq-content>ul>li{
+    position: relative;
+    /* 가상요소아이콘 부모자격 */
+    height: 60px;
+    border-radius: 3px;
+    line-height: 62px;
+    font-size: var(--fz-nav);
+}
+/* 질문 div박스 */
+.faq-content .quest-box{
+    background-color: #ddd;
+    width: 609px;
+    /* 트랜지션 */
+    transition: width 1s ease-out;
+}
+/* 카테고리별 질문 넘어가는 아이콘 */
+.faq-content>ul>li::before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 60px;
+    right: 20px;
+    background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
+    background-position: -240px -81px;
+    background-size: 378px 202px;
+}
+/* 카테고리 질문 li에 마우스오버 시 */
+/* .faq-content>ul>li:hover{
+    background-color: #c9ccc7;
+} */
+/* 카테고리 질문 화살표 애니 */
+.faq-content>ul>li:hover::before{
+    /* 애니메이션 */
+    animation: arrow-leri-swing-ani .3s linear alternate infinite;
+}
+@keyframes arrow-leri-swing-ani {
+    to{
+        background-position: -234px -81px;
+    }    
+}
+/* 카테고리 질문 클릭 시 grid바꾸기 */
+.faq-content>ul>li.open{
+    grid-column: 1/3;
+    border-radius: 3px 3px 0 0;
+}
+/* 질문 오버 시 quest-box늘어나기 */
+.faq-content>ul>li.open .quest-box{
+    background-color: #c9ccc7;
+    width: 100%;
+}
+/* 카테고리 질문li 클릭 시 가상요소 바뀌기 */
+.faq-content>ul>li.open::before{
+    width: 40px;
+    height: 60px;
+    /* 애니메이션 */
+    animation: arrow-updo-swing-ani .3s linear alternate infinite;
+}
+/* 상위 카테고리 질문 클릭 시 답변박스 열림 */
+.faq-content>ul>li.open .asked-box{
+    height: 63px;
+}
+@keyframes arrow-updo-swing-ani {
+    from{
+        background-position: -261px -79px;
+    }
+    to{
+        background-position: -261px -85px;
+    }
+}
+/* 카데고리 질문 열린 상태에서 마우스 오버 시 아이콘 */
+.faq-content>ul>li.open:hover::before{
+    width: 40px;
+    height: 47px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: -490px -84px;
+    background-size: 707px 418px;
+    animation: noen;
+}
+/* 카테고리 질문 답변박스 */
+.asked-box {
+    height: 0;
+    width: calc(100%);
+    background-image: linear-gradient(#c9ccc7 51%, #eee);
+    overflow: hidden;
+    /* 트랜지션 */
+    transition: height .5s ease-out 1s;
+}
+.asked-box span{
+    display: block;
+    height: 100%;
+    padding-left: 40px;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid #4d4d4d;
+    font-size: var(--fz-sign);
+}
+/* 2-3. 더 궁금하신 사항 */
+.qna-link{
+    position: relative;
+    /* question-icon부모용 */
+    border-radius: 20px 20px 10px 10px;
+    font-size: var(--fz-top);
+    border: 1px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+}
+/* 더 궁금하신 사항 서브아이콘 */
+.question-icon{
+    background-position: -5px -119px;
+}
+.qna-link-two ul{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    padding: 5px 100px;
+}
+.qna-link-two>ul>li{
+    position: relative;
+    /* 가상요소아이콘 부모자격 */
+    height: 60px;
+    padding-left: 100px;
+    border-radius: 3px;
+    line-height: 62px;
+}
+/* 카카오톡 채널 아이콘 */
+.qna-link-two>ul>li:first-child::after{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: 34%;
+    background: url(../../01.자료수집/images/sns_icon.png) no-repeat;
+    background-position: -458px -227px;
+    background-size: 530px 395px;
+    transition: .2s ease-in;
+}
+/* 전화문의 아이콘 */
+.qna-link-two>ul>li:last-child::after{
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    right: 40%;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: -200px -42px;
+    background-size: 750px 400px;
+    transition: .2s ease-in;
+}
+/* li에 마우스오버 시 */
+.qna-link-two>ul>li:hover{
+    color: var(--co-ongreen);
+}
+.qna-link-two>ul>li:hover::after{
+    transform: rotateY(20deg);
+}

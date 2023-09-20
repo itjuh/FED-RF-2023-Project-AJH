@@ -59,3 +59,11 @@ img {
 em,i{
     font-style: normal;
 }
+/* input focus제거 */
+input{
+    outline: none;
+}
+/* 테이블요소 간격 */
+table{
+    border-collapse : collapse;
+}

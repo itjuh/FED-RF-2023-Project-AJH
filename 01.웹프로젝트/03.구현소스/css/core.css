@@ -5,6 +5,8 @@
 
 /* 웹폰트 CDN */
 @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
+
 @font-face {
     font-family: 'GangwonEdu_OTFBoldA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
@@ -12,6 +14,7 @@
     font-style: normal;
 }
 /* 
+    
     1. 캐릭터 설명 제목체
     font-family: 'Gugi', cursive;
     2. 캐릭터 설명 내용체
@@ -28,26 +31,23 @@ html{
 }
 /* 전체 공통 글자체 세팅 */
 body{
-    font-family: 'Nanum Gothic', sans-serif;
+    font-family: 'GangwonEdu_OTFBoldA';
 }
 /* 공통 레이아웃 클래스 */
 body *{
-    outline: 1px solid coral;
+    /* outline: 1px solid coral; */
 }
 /* 상단영역 폰트공통 */
-#header{
+/* #header{
     font-family: 'GangwonEdu_OTFBoldA';
-}
-/* 파트박스
-.partbox {
-    float: left;
-    box-sizing: border-box;
-}
-메인박스
+} */
+/* 파트박스 */
+
+/* 메인박스
 .inbox {
     outline: 1px dashed red;
-} 
-*/
+}  */
+
 /* 기본값 설정 */
 :root{
     --fz-tit : 3.5rem;
@@ -57,6 +57,7 @@ body *{
     --fz-sub : 1.6rem;
     --fz-nav : 2.2rem;
     --fz-sign : 2rem;
+    --co-ondgop:rgb(17 46 24 / 50%);
     --co-ondarkgreen: rgb(17, 46, 24);
     --co-ondarkblue: rgb(11, 33, 46);
     --co-ongreen : rgb(87, 98, 82);
@@ -103,6 +104,7 @@ body *{
     box-shadow: 1px 1px 3px #00000080;
 }
 .move-view-btn:hover{
+    text-shadow: 1px 0px 0px #00000080;
     box-shadow: 1px 1px 8px #00000080;
 }   
 .move-view-btn::after{
@@ -118,4 +120,4 @@ body *{
 }
 .move-view-btn:hover::after{
     transform: translate(1px,-1px) scale(1.1)
-} 
+}

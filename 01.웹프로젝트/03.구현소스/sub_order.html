@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온고롱 주문하기 페이지</title>
+    <!-- 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- 온고롱 서브 주문하기 CSS -->
+    <link rel="stylesheet" href="./css/sub_order.css" />
+    <!-- 온고롱 데이터JS -->
+    <script src="./js/data.js"></script>
+    <!-- 외부 JS연결 -->
+    <script type="module" src="./js/order.js"></script>
+</head>
+<body>
+    <!-- 1. 상단영역 -->
+    <div id="header">
+        <header class="header inbox">
+            <!-- 0-1. 첫주문안내
+            <div class="partbox first_info"></div> -->
+            <!-- 0-2. 상하네비바 -->
+            <div class="partbox top_bottom">
+                <button class="btn up"></button>
+                <button class="btn down"></button>
+            </div>
+            <!-- 상단 고정박스 -->
+            <div class="top-box">
+                <!-- 1-1. 메뉴구성 -->
+                <div class="partbox">
+                    <nav class="gnb-menu">
+                        <ul>
+                            <li><a href="./sub_order.html">주문하기</a></li>
+                            <li><a href="./sub_service.html">고객센터</a></li>
+                            <li><a href="./sub_map.html">오시는길</a></li>
+                            <li><a href="./sub_info.html">온고롱안내</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- 1-2. 상단로고 -->
+                <div class="partbox">
+                    <h1 class="logo">
+                        <a href="./index.html">
+                            <span class="ir">온고롱 로고 이미지, 메인화면 바로가기</span>
+                        </a>
+                    </h1>
+                </div>
+                <div class="side-group">
+                    <!-- 1-3. 로그인,회원가입 -->
+                    <div class="partbox">
+                        <nav class="gnb-sign">
+                            <ul>
+                                <li><a href="#">로그인</a></li>
+                                <li><a href="#">회원가입</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- 1-4. 검색 -->
+                    <div class="partbox">
+                        <div class="search-box">
+                            <label for="search"></label>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div id="main">
+        <main class="main inbox">
+            <!-- 2-1.타이틀 -->
+            <div class="partbox top-title">
+                <h1>상품 주문하기</h1>
+            </div>
+            <!-- 2-2. 주문 -->
+            <div class="partbox order-box">
+                <section class="form-area">
+                    <!-- 2-3. 주문신청서 -->
+                    <div class="form-box">
+                        <!-- 신청서 타이틀 -->
+                        <div class="form-title">
+                            <i class="fa-regular fa-file-lines"></i>
+                            <h1>주문 신청서</h1>
+                        </div>
+                        <!-- 신청서 내용 -->
+                        <div class="form-content">
+                            <dl>
+                                <dt>목적</dt>
+                                <dd>주문하시는 용도를 선택해주세요</dd>
+                                <dt>일정</dt>
+                                <dd>필요하신 날짜와 시간을 입력해주세요</dd>
+                                <dt>픽업</dt>
+                                <dd>어떤 분이 픽업하시나요?</dd>
+                                <dt>주문자</dt>
+                                <dd>주문하시는 분 성함을 알려주세요</dd>
+                                <dt>연락처</dt>
+                                <dd>010-0000-0000</dd>
+                                <dt>상품</dt>
+                                <dd>필요하신 상품을 선택해주세요</dd>
+                                <dt>옵션</dt>
+                                <dd>세부 옵션을 선택해주세요</dd>
+                                <dt>추가</dt>
+                                <dd>더 필요하신 상품은 없으신가요?</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <!-- 제품고르기 박스 -->
+                    <div class="prod-box">
+                        <div class="list-type">
+                            <!-- 타이틀 -->
+                            <div class="partbox">
+                                <h1 class="tit">숫자케이크</h1>
+                            </div>
+                            <!-- 리스트 -->
+                            <div class="list">
+                                <ol>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 제품옵션 박스 (절차내용 4.옵션)-->
+                    <div class="prod-option">
+                        <div class="option-box">
+                            <!-- 고정옵션 왼쪽 -->
+                            <div class="option-basic">
+                                <div class="prod"></div>
+                                <dl></dl>
+                            </div>
+                            <!-- 선택옵션 오른쪽 -->
+                            <aside class="option-select">
+                                <dl></dl>
+                                <dl></dl>
+                                <dl></dl>
+                                <dl></dl>
+                                <div class="proceed-btn-box aside-btn">
+                                    <button class="btn prev">
+                                        <i class="fa-solid fa-circle-play fa-rotate-180"></i>
+                                        &nbsp;취소
+                                    </button>
+                                    <button class="btn next">다음&nbsp;
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </section>
+                <!-- 2-4. 주문진행 -->
+                <section class="proceed-box">
+                    <!-- 진행절차 -->
+                    <div class="proceed-nav">
+                        <ol>
+                            <div class="point-box"></div>
+                            <li>1.목적</li>
+                            <li>2.일정</li>
+                            <li>3.상품</li>
+                            <li>4.옵션</li>
+                            <li>5.추가</li>
+                            <li>6.주문</li>
+                        </ol>
+                    </div>
+                    <!-- 절차 타이틀 -->
+                    <div class="proceed-title">
+                        <h2>어떤 목적으로 주문하세요?</h2>
+                    </div>
+                    <!-- 절차 내용 -->
+                    <div class="proceed-content">
+                        <ol>
+                            <!-- 절차 내용(1. 목적) li -->
+                            <li class="proceed-list step-0">
+                                <ul>
+                                    <li>환갑/칠순</li>
+                                    <li>생일케이크</li>
+                                    <li>돌잔치</li>
+                                    <li>답례품</li>
+                                    <li>쌀디저트</li>
+                                </ul>
+                            </li>
+                            <!-- 절차 내용(2. 일정) li -->
+                            <li class="proceed-list step-1">
+                                <input class="day-time" type="text" value="찾아가실 날짜와 시간" readonly>
+                                <!-- 픽업박스 -->
+                                <div class="pick-up">
+                                    <h3>어느 분이 찾으러 오시나요?</h3>
+                                    <ul>
+                                        <li>주문자 본인</li>
+                                        <li>대리인 수령</li>
+                                        <li>퀵 기사</li>
+                                    </ul>
+                                    <input class="name" type="text" placeholder="성함">
+                                    <input class="number" type="text" placeholder="연락처">
+                                </div>
+                            </li>
+                            <!-- 절차 내용(3. 상품) li -->
+                            <li class="proceed-list step-2">
+                                <ul class="">
+                                    <li class="on">떡케이크
+                                        <div class="sub">
+                                            <div class="sub-menu">
+                                                <span class="open">숫자케이크</span>
+                                                <span>1단케이크</span>
+                                                <span>컵케이크</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>상차림떡</li>
+                                    <li>쌀디저트</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                    <!-- 숨김박스들 -->
+                    <div class="hide-box">
+                        <!-- 날짜선택(달력) -->
+                        <div class="calendar-box popup-box">
+                            <!-- 달력 타이틀 -->
+                            <div class="pop-head">찾아가실 날짜</div>
+                            <!-- 달력 -->
+                            <div class="pop-body">
+                                <div class="month">9월</div>
+                                <table class="calendar">
+                                    <tr>
+                                        <th>일</th>
+                                        <th>월</th>
+                                        <th>화</th>
+                                        <th>수</th>
+                                        <th>목</th>
+                                        <th>금</th>
+                                        <th>토</th>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>1</td>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                        <td>16</td>
+                                    </tr>
+                                    <tr>
+                                        <td>17</td>
+                                        <td>18</td>
+                                        <td>19</td>
+                                        <td>20</td>
+                                        <td>21</td>
+                                        <td>22</td>
+                                        <td>23</td>
+                                    </tr>
+                                    <tr>
+                                        <td>24</td>
+                                        <td>25</td>
+                                        <td>26</td>
+                                        <td>27</td>
+                                        <td>28</td>
+                                        <td>29</td>
+                                        <td class="check">30</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!-- 취소/다음버튼 -->
+                            <div class="pop-footer">
+                                <div class="proceed-btn-box pop-btn cal-btn">
+                                    <button class="btn prev">
+                                        <i class="fa-solid fa-circle-play fa-rotate-180"></i>
+                                        &nbsp;닫기
+                                    </button>
+                                    <button class="btn next">다음&nbsp;
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 시간선택 -->
+                        <div class="timer popup-box">
+                            <!-- 시간 타이틀 -->
+                            <div class="pop-head">찾아가실 시간</div>
+                            <!-- 시간 선택 -->
+                            <div class="pop-body">
+                                <aside class="up-btn thr-btn-box">
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <i class="fa-solid fa-caret-up"></i>
+                                    <i class="fa-solid fa-caret-up"></i>
+                                </aside>
+                                <div class="select-box"></div>
+                                <div class="time-box">
+                                    <ul class="time-part">
+                                        <li>오전</li>
+                                        <li>오후</li>
+                                    </ul>
+                                    <ul class="time-h">
+                                        <li>9</li>
+                                        <li>10</li>
+                                        <li>11</li>
+                                        <li>12</li>
+                                        <li>1</li>
+                                        <li>2</li>
+                                        <li>3</li>
+                                        <li>4</li>
+                                    </ul>
+                                    <ul class="time-m">
+                                        <li>0</li>
+                                        <li>15</li>
+                                        <li>30</li>
+                                        <li>45</li>
+                                    </ul>
+                                </div>
+                                <div class="white-box wbox1"></div>
+                                <div class="white-box wbox2"></div>
+                                <aside class="down-btn thr-btn-box">
+                                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                                </aside>
+                            </div>
+                            <!-- 취소/다음버튼 -->
+                            <div class="pop-footer">
+                                <div class="proceed-btn-box pop-btn time-btn">
+                                    <button class="btn prev">
+                                        <i class="fa-solid fa-circle-play fa-rotate-180"></i>
+                                        &nbsp;이전
+                                    </button>
+                                    <button class="btn next">완료&nbsp;
+                                        <i class="fa-solid fa-circle-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 절차버튼 -->
+                    <div class="proceed-btn-box main-btn">
+                        <button class="btn prev">
+                            <i class="fa-solid fa-circle-play fa-rotate-180"></i>
+                            &nbsp;이전
+                        </button>
+                        <button class="btn next">다음&nbsp;
+                            <i class="fa-solid fa-circle-play"></i>
+                        </button>
+                    </div>
+                </section>
+            </div>
+    </main>
+    </div>
+    <!-- 3. 하단영역 -->
+    <div id="footer">
+        <footer class="footer inbox">
+            <div class="footer-company-desc">
+                <!-- 3-1. 하단로고 -->
+                <div class="partbox">
+                    <h1 class="logo">
+                        <a href="#">
+                            <span class="ir">온고롱 로고 이미지</span>
+                        </a>
+                    </h1>
+                </div>
+                <!-- 3-2. 회사소개 -->
+                <div class="partbox">
+                    <ul>
+                        <li>상호 : 온고롱</li>
+                        <li>대표 : 김희진</li>
+                        <li>주소 : 서울 중랑구 동일로160길 8 1층 온고롱</li>
+                        <li>전화 : 0507-1358-0638</li>
+                        <li>메일 : ongorongcake@naver.com</li>
+                        <li>사업자번호 : 665-13-33017</li>
+                        <li>통신판매번호 : 신고면제 </li>
+                        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                    </ul>
+                </div>
+            </div>
+            <!-- 3-3. SNS링크 -->
+            <div class="footer-sns">
+                <div class="partbox">
+                    <ol>
+                        <li>
+                            <div class="sns-img kakao"></div>
+                            <span>카카오채널</span>
+                        </li>
+                        <li>
+                            <div class="sns-img insta"></div>
+                            <span>인스타그램</span>
+                        </li>
+                        <li>
+                            <div class="sns-img naver"></div>
+                            <span>네이버블로그</span>
+                        </li>
+                        <li>
+                            <div class="sns-img dang"></div>
+                            <span>당근마켓</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

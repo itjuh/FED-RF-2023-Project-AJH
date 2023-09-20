@@ -1,0 +1,328 @@
+@charset "uft-8";
+/* 온고롱 서브_안내페이지CSS - sub_info.css */
+/* CSS 불러오기 영역 */
+/* 리셋, 공통, 코어 외부 CSS합치기(merging) */
+@import url(./common.css);
+@import url(./core.css);
+@import url(./reset.css);
+
+/* 2. 메인영역 */
+/* 각 타이틀 공통 */
+.top-title{
+    display: flex;
+    width: 1400px;
+}
+/* 각 박스 공통 */
+main .partbox{
+    width: 1400px;
+    margin: 0 auto;
+}
+/* 2-1. 온고롱소개 */
+.intro-brand{
+    /* 브랜드 소개 타이틀용 부모역할 */
+    /* position: relative; */
+    height: 100vh;
+}
+/* 2-1-1. 브랜드소개타이틀 */
+/* 타이틀 배치관련 */
+.revers-type{
+    height: 400px;
+    flex-direction: row-reverse;
+    align-items: end;
+}
+/* 우측코멘트 */
+.right-box{
+    height: 330px;
+    width: 500px;
+    margin-left:auto;
+    text-align: right;
+}
+/* 좌측코멘트 */
+.left-box{
+    height: 200px;
+    width: 500px;
+}
+/* 코멘트 공통 */
+.intro-brand .brand-span{
+    height: 60px;
+    overflow: hidden;
+}
+/* 우측코멘트 마지막 */
+.right-box>.brand-span:last-child{
+    margin-top:50px;
+}
+/* 코멘트 이동용span설정 */
+.brand-span span{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+    opacity: 0;
+    line-height: 80px;
+    /* 트랜지션 */
+    transition: .4s ease-in;
+}
+/* 2-1-2. 안내타이틀 */
+.info-box{
+    /* 재료소개용 부모자격 */
+    /* position: relative; */
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 400px;
+    gap: 100px;
+    align-items: end;
+}
+/* 안내 타이틀 후방 배경박스 */
+.background-box{
+    position: absolute;
+    /* 부모는 info-box */
+    left: 0px;
+    width: 100vw;
+    height: 400px;
+    background-color: #45454580;
+    transform: translateX(120%);
+    /* 트랜지션 */
+    transition: .9s ease-out;
+}
+/* 안내타이틀 사이드 */
+.info-box aside{
+    position: relative;
+    /* 안내타이틀 후방박스 앞쪽위치 */
+    height: 300px;
+    width: 600px;
+    opacity: 0;
+    /* 트랜지션 */
+    transition : 3s ease-in
+}
+.info-box h1{
+    margin: 20px 0;
+    font-size: var(--fz-big);
+}
+.info-box p{
+    width: 500px;
+    font-size: var(--fz-top);
+    margin-top: 30px;
+}
+/* 2-1-3. 온고롱재료소개 */
+.grad-list{
+    position: relative;
+    /* 위치이동을 위해 */
+    top: 100px;
+    width: 650px;
+    overflow: hidden;
+}
+/* 재료박스 ul */
+.intro-grad{
+    position: relative;
+    /* 위치이동을 위해 */
+    left: 0;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px 50px;
+    opacity: 0;
+    /* 트랜지션 */
+    transition: 1s;
+    animation: grad-ani 20s linear 9.5s infinite;
+}
+
+@keyframes grad-ani {
+    to{
+        left: calc(-350px*6);
+    }
+}
+
+/* 재료 박스 li*/
+.grad-box{
+    /* span태그 부모자격 */
+    position: relative;
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    /* 트랜지션 */
+    transition: 1s;
+}
+/* 재료박스 이미지 */
+.grad-box img{
+    width: 300px;
+    aspect-ratio: 12/16;
+}
+/* 재료박스 글자 */
+.grad-box mark{
+    position: absolute;
+    /* 부모는 grad-box */
+    bottom: 0px;
+    display: block;
+    width: 100%;
+    height: 70px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    background-color: #45454580;
+    /* 내부 글자세팅 */
+    text-align: left;
+    line-height: 73px;
+    color: white;
+}
+/* 2-2. 제품소개 */
+.intro-prod{
+    height: 700px;
+}
+.intro-prod section{
+    padding-bottom: 50px;
+}
+/* 2-2-1. 소개타이틀 */
+/* 2-2-2. 제품소개 */
+.prod-info ol{
+    height: 500px;
+    display: flex;
+    /* gap: 0 30px; */
+    justify-content: center;
+    align-items: center;
+}
+.product{
+    flex-shrink: 0;
+    width: 300px;
+    height: 400px;
+    background: rgba(244, 165, 96, 0.575);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+/* 제품소개 중 클릭한 대상 */
+.product.prev{
+    transform: scale(1.1);
+    z-index: 1;
+}
+/* 2-3. 주문절차 */
+/* 2-3-1. 절차타이틀 */
+.intro-process .top-title{
+    padding-bottom: 40px;
+}
+/* 2-3-2. 주문절차 */
+/* 주문절차 불릿 */
+.bullet-box{
+    width: 1200px;
+    height: 80px;
+    margin: 0 auto;
+    background: url(../../01.자료수집/images/long_arrow_icon.png) no-repeat 0px 30px/1306px 276px;
+}
+/* 주문절차 불릿ul */
+.bullet-box ul{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+/* 주문절차 불릿 안내문구 */
+.bullet-box em{
+    font-size: var(--fz-top);
+    color: #666;
+}
+/* 주문절차 불릿 클릭 시 안내문구*/
+.bullet-box li.on em{
+    color: #000;
+}
+/* 주문절차 불릿 도형 */
+.bullet-box .circle{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 0 auto;
+    /* 트랜지션 */
+    transition: .3s ease-in;
+}
+/* 주문절차 불릿 클릭 도형 */
+.bullet-box li.on .circle{
+    background-color: lightcoral;
+}
+/* 주문절차 카드 */
+.process-info ol{
+    height: 450px;
+    display: flex;
+    justify-content: center;
+}
+.process{
+    flex-shrink: 0;
+    margin: 0 -60px;
+    width: 300px;
+    height: 400px;
+    background: rgba(244, 165, 96, 0.575);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    /* 트랜지션 */
+    transition: .3s ease-in;
+}
+/* 제품소개 중 클릭한 대상 */
+.process.on{
+    margin: 0 10px;
+    background: rgba(244, 165, 96);
+    z-index: 1;
+}
+/* 2-4. 주의사항 */
+/* 2-4-1. 주의사항타이틀 */
+.intro-cautions .top-title{
+    height: 100px;
+    width: 800px;
+    margin: 0 auto;
+}
+.intro-cautions h3{
+    height: 100%;
+    width: 280px;
+}
+/* 2-4-2. 주의사항 박스 */
+.cautions-info{
+    /* .caution-box 부모자격 */
+    position: relative;
+}
+/* 주의사항 ol */
+.cautions-info ol{
+    width: 800px;
+    margin: 0 auto;
+}
+/* 주의사항 li박스 */
+.caution-box{
+    /* 위치이동을 위한 */
+    position: relative;
+    width: 300px;
+    /* height: 400px; */
+    background: rgba(244, 165, 96, 0.575);
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    /* 초기: 아래위치, 투명하게 */
+    transform: translateY(30%);
+    opacity: 0;
+    /* 트랜지션 */
+    transition: .3s ease-in;
+}
+/* 박스 타이틀 */
+.caution-box h3{
+    width: calc(100% - 40px);
+    height: auto;
+    padding: 30px 20px 20px 20px;
+}
+/* 박스 컨텐츠 */
+.cont {
+    font-size: var(--fz-sign);
+    width: 100%;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 20px;
+    box-sizing: border-box;
+}
+/* 주의사항 오른쪽 li박스 */
+.caution-box:nth-child(odd){
+    left: calc(100% - 300px);
+    top: -100px;
+}
+/* 주의사항 왼쪽 li박스 */
+.caution-box:nth-child(even){
+    top: -100px;
+}
+/* 주의사항 박스 스크롤이동 시 */
+.caution-box.on{
+    transform: translateY(0);
+    opacity: 1;
+}

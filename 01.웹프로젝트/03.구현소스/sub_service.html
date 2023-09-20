@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>온고롱 고객센터</title>
+    <!-- 온고롱 서브_고객센터 CSS -->
+    <link rel="stylesheet" href="./css/sub_service.css" />
+    <!-- 온고롱 데이터JS -->
+    <script src="./js/data.js"></script>
+    <!-- 외부 JS연결 -->
+    <script type="module" src="./js/service.js"></script>
+</head>
+<body>
+    <!-- 1. 상단영역 -->
+    <div id="header">
+        <header class="header inbox">
+            <!-- 0-1. 첫주문안내
+            <div class="partbox first_info"></div> -->
+            <!-- 0-2. 상하네비바 -->
+            <div class="partbox top_bottom">
+                <button class="btn up"></button>
+                <button class="btn down"></button>
+            </div>
+            <!-- 상단 고정박스 -->
+            <div class="top-box">
+                <!-- 1-1. 메뉴구성 -->
+                <div class="partbox">
+                    <nav class="gnb-menu">
+                        <ul>
+                            <li><a href="./sub_order.html">주문하기</a></li>
+                            <li><a href="./sub_service.html">고객센터</a></li>
+                            <li><a href="./sub_map.html">오시는길</a></li>
+                            <li><a href="./sub_info.html">온고롱안내</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- 1-2. 상단로고 -->
+                <div class="partbox">
+                    <h1 class="logo">
+                        <a href="./index.html">
+                            <span class="ir">온고롱 로고 이미지, 메인화면 바로가기</span>
+                        </a>
+                    </h1>
+                </div>
+                <div class="side-group">
+                    <!-- 1-3. 로그인,회원가입 -->
+                    <div class="partbox">
+                        <nav class="gnb-sign">
+                            <ul>
+                                <li><a href="#">로그인</a></li>
+                                <li><a href="#">회원가입</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- 1-4. 검색 -->
+                    <div class="partbox">
+                        <div class="search-box">
+                            <label for="search"></label>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div id="main">
+        <main class="main inbox">
+            <!-- 2-1. 고객센터 타이틀 -->
+            <div class="top-title">
+                <h1>온고롱에 대해 궁금하신 점 고객센터에서 답변해드릴게요.</h1>
+            </div>
+            <!-- 2-2. 자주묻는 질문 -->
+            <div class="partbox">
+                <div class="faq-box">
+                    <!-- 2-2-1. 서브 타이틀 -->
+                    <section class="faq-tit sub-title">
+                        <div class="sub-icon speech-icon">
+                            <div class="speech-talk"></div>
+                        </div>
+                        <span>자주묻는 질문</span>
+                    </section>
+                    <!-- 2-2-2. 카테고리 -->
+                    <section class="faq-sub-cate">
+                        <ol>
+                            <li class="on">전체</li>
+                            <li>예약&변경</li>
+                            <li>결제관련</li>
+                            <li>상품관련</li>
+                            <li>픽업관련</li>
+                        </ol>
+                    </section>
+                    <!-- 2-2-3. 카테고리 서브내용 -->
+                    <div class="faq-content">
+                        <!-- 카테고리별 질문 -->
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 2-3. 더 궁금하신 사항 -->
+            <div class="partbox">
+                <div class="qna-link">
+                    <!-- 2-3-1. 서브타이틀 -->
+                    <section class="faq-tit sub-title">
+                        <div class="sub-icon question-icon">
+                        </div>
+                        <span>더 궁금하신 사항은</span>
+                    </section>
+                    <section class="qna-link-two">
+                        <ul>
+                            <li>카카오톡채널 바로가기</li>
+                            <li>전화문의 바로가기</li>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+        <!-- 3. 하단영역 -->
+        <div id="footer">
+            <footer class="footer inbox">
+                <div class="footer-company-desc">
+                    <!-- 3-1. 하단로고 -->
+                    <div class="partbox">
+                        <h1 class="logo">
+                            <a href="#">
+                                <span class="ir">온고롱 로고 이미지</span>
+                            </a>
+                        </h1>
+                    </div>
+                    <!-- 3-2. 회사소개 -->
+                    <div class="partbox">
+                        <ul>
+                            <li>상호 : 온고롱</li>
+                            <li>대표 : 김희진</li>
+                            <li>주소 : 서울 중랑구 동일로160길 8 1층 온고롱</li>
+                            <li>전화 : 0507-1358-0638</li>
+                            <li>메일 : ongorongcake@naver.com</li>
+                            <li>사업자번호 : 665-13-33017</li>
+                            <li>통신판매번호 : 신고면제 </li>
+                            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- 3-3. SNS링크 -->
+                <div class="footer-sns">
+                    <div class="partbox">
+                        <ol>
+                            <li>
+                                <div class="sns-img kakao"></div>
+                                <span>카카오채널</span>
+                            </li>
+                            <li>
+                                <div class="sns-img insta"></div>
+                                <span>인스타그램</span>
+                            </li>
+                            <li>
+                                <div class="sns-img naver"></div>
+                                <span>네이버블로그</span>
+                            </li>
+                            <li>
+                                <div class="sns-img dang"></div>
+                                <span>당근마켓</span>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

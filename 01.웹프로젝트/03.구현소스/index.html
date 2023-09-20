@@ -4,23 +4,34 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>온고롱 메인페이지</title>
+        <!-- 아이콘 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
         <!-- 온고롱 메인페이지 CSS -->
         <link rel="stylesheet" href="./css/main.css" />
         <!-- 온고롱 데이터JS -->
         <script src="./js/data.js"></script>
         <!-- 온고롱 메인JS -->
-        <script src="./js/main.js" defer></script>
+        <script type="module" src="./js/main.js"></script>
     </head>
     <body>
         <!-- 1. 상단영역 -->
         <div id="header">
             <header class="header inbox">
-                <!-- 0-1. 첫주문안내 -->
-                <div class="partbox first_info"></div>
+                <!-- 0-1. 첫주문안내
+                <div class="partbox first_info"></div> -->
                 <!-- 0-2. 상하네비바 -->
                 <div class="partbox top_bottom">
                     <button class="btn up"></button>
                     <button class="btn down"></button>
+                </div>
+                <!--1-3. 로그인,회원가입 -->
+                <div class="side-group partbox">
+                    <nav class="gnb-sign">
+                        <ul>
+                            <li><a href="#">로그인</a></li>
+                            <li><a href="#">회원가입</a></li>
+                        </ul>
+                    </nav>
                 </div>
                 <!-- 상단 고정박스 -->
                 <div class="top-box">
@@ -28,10 +39,10 @@
                     <div class="partbox">
                         <nav class="gnb-menu">
                             <ul>
-                                <li><a href="#">제품보기</a></li>
-                                <li><a href="./sub_cservies.html">고객센터</a></li>
-                                <li><a href="./sub_bmap.html">오시는길</a></li>
-                                <li><a href="./sub_ainfo.html">온고롱안내</a></li>
+                                <li><a href="./sub_order.html">주문하기</a></li>
+                                <li><a href="./sub_service.html">고객센터</a></li>
+                                <li><a href="./sub_map.html">오시는길</a></li>
+                                <li><a href="./sub_info.html">온고롱안내</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -43,22 +54,12 @@
                             </a>
                         </h1>
                     </div>
-                    <div class="side-group">
-                        <!-- 1-3. 로그인,회원가입 -->
-                        <div class="partbox">
-                            <nav class="gnb-sign">
-                                <ul>
-                                    <li><a href="#">로그인</a></li>
-                                    <li><a href="#">회원가입</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- 1-4. 검색 -->
-                        <div class="partbox">
-                            <div class="search-box">
-                                <label for="search"></label>
-                                <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
-                            </div>
+                    <!-- 1-4. 검색 -->
+                    <div class="partbox">
+                        <div class="search-box">
+                            <label for="search"></label>
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
                         </div>
                     </div>
                 </div>
@@ -68,24 +69,16 @@
         <div id="main">
             <main class="main inbox">
                 <!-- 2-1. 이벤트배너 -->
-                <h2>이벤트배너위치:|←|이미지|설명|→|</h2>
                 <!-- 2-1-2. 배너박스 -->
-                <div class="main-banner">
+                <div class="main-banner group-box">
                     <section class="banner-area">
                         <!-- 배너이미지 -->
                         <ul class="banner-ul">
-                            <!-- <li>
-                                <img src="../01.자료수집/ongorong_prod/img_event01.jpeg" alt="event">
-                            </li> -->
                         </ul>
                     </section>
                     <!-- 배너설명 -->
                     <div class="banner-desc">
                         <ol>
-                            <!-- <li>
-                                <h1 class="tit">온고롱 2023 추석선물세트 출시</h1>
-                                <p class="txt">출시기념 이벤트로 9월 5일부터 9월 12일까지 주문예약 시 추석 선물세트를 5% 할인해드립니다.</p>
-                            </li> -->
                         </ol>
                         <!-- 더보기버튼 -->
                         <button class="move-view-btn">더보기</button>
@@ -96,19 +89,23 @@
                     <button class="move-btn next-btn"></button>
                 </div>
                 <!-- 2-2. 메인테마 -->
-                <div class="main-thema">
-                    <h2>메인테마위치</h2>
+                <div class="main-thema group-box">
                     <div class="partbox"></div>
                 </div>
                 <!-- 2-3. 컨셉이미지 -->
                 <!-- 스크롤 배너형태 -->
-                <div class="main-scroll-banner">
-                    <h2>스크롤배너위치</h2>
-                    <div class="partbox"></div>
+                <div class="main-scroll-banner group-box">
+                    <div class="partbox">
+                        <div class="scroll-banner-box">
+                            <ul>
+                            </ul>
+                            <div class="white-box"></div>
+                            <div class="white-box"></div>
+                        </div>
+                    </div>
                 </div>
                 <!-- 2-4. 인기상품 -->
-                <div class="list-type main-hot-item">
-                    <h2>인기상품:타이틀>이미지>더보기로구성</h2>
+                <div class="list-type main-hot-item group-box">
                     <!-- 인기상품 타이틀 -->
                     <div class="partbox">
                         <h1 class="tit">인기상품</h1>
@@ -116,20 +113,6 @@
                     <!-- 인기상품 리스트 -->
                     <div class="hot-item-list list">
                         <ol>
-                            <!-- <li>
-                                <div class="partbox">
-                                    <div class="img-box">
-                                        <img src="../01.자료수집/ongorong_prod/img_cake02.jpeg" alt="상품이미지1">
-                                    </div>
-                                    <div class="txt-box">
-                                        <ul>
-                                            <li class="prod-name">작약케이크</li>
-                                            <li class="prod-price">30,000</li>
-                                            <li class="prod-tag">@떡케이크</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li> -->
                         </ol>
                     </div>
                     <!-- 인기상품 더보기 -->
@@ -138,35 +121,43 @@
                     </div>
                 </div>
                 <!-- 2-5. 추천검색 -->
-                <div class="main-key-search">
-                    <h2>추천검색:검색창>추천창(열리는형태)</h2>
+                <div class="main-key-search group-box">
                     <!-- 키워드검색창 -->
                     <div class="partbox">
                         <!-- 검색 -->
                         <div class="key-search-box">
                             <!-- 타이틀 -->
                             <h1>지금 나에게 필요한 온고롱의 다양한 상품을 검색하세요</h1>
-                            <label for="search"></label>
-                            <!-- <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/> -->
                         </div>
                         <!-- 키워드말풍선 -->
-                        <div class="bubble-key b1">@떡케이크</div>
-                        <div class="bubble-key b2">@숫자케이크</div>
-                        <div class="bubble-key b3">@답례품</div>
-                        <div class="bubble-key b4">@상차림떡</div>
-                        <div class="bubble-key b5">@쌀디저트</div>
+                        <div class="bubble-key b1">#떡케이크</div>
+                        <div class="bubble-key b2">#숫자케이크</div>
+                        <div class="bubble-key b3">#답례품</div>
+                        <div class="bubble-key b4">#상차림떡</div>
+                        <div class="bubble-key b5">#쌀디저트</div>
                     </div>
                     <!-- 키워드 선택 시 열리는 추천창 -->
-                    <div class="partbox"></div>
+                    <!-- 제품고르기 박스 -->
+                    <div class="key-prod-box">
+                        <div class="list-type">
+                            <!-- 타이틀
+                            <div class="partbox">
+                                <h1 class="tit">숫자케이크</h1>
+                            </div> -->
+                            <!-- 리스트 -->
+                            <div class="list">
+                                <ol>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <!-- 2-6. 주문진행 -->
-                <div class="main-order-process">
-                    <h2>주문진행:모식도절차</h2>
+                <!-- 2-6. 주문진행
+                <div class="main-order-process group-box">
                     <div class="partbox"></div>
-                </div>
+                </div> -->
                 <!-- 2-7. 리뷰 -->
-                <div class="list-type main-review">
-                    <h2>리뷰:타이틀>이미지>더보기로구성</h2>
+                <div class="list-type main-review group-box">
                     <!-- 리뷰 타이틀 -->
                     <div class="partbox">
                         <h1 class="tit">후기</h1>
@@ -174,20 +165,6 @@
                     <!-- 리뷰 리스트 -->
                     <div class="review-list list">
                         <ol>
-                            <!-- <li>
-                                <div class="partbox">
-                                    <div class="txt-box">
-                                        <ul>
-                                            <li class="reviewer">작성자</li>
-                                            <li class="review-txt">리뷰내용~~너무 맛있고 맛있고 맛있어요~ 최고에요</li>
-                                            <li class="prod-tag">@떡케이크</li>
-                                        </ul>
-                                    </div>
-                                    <div class="img-box">
-                                        <img src="../01.자료수집/ongorong_prod/img_cake02.jpeg" alt="상품이미지1">
-                                    </div>
-                                </div>
-                            </li> -->
                         </ol>
                     </div>
                     <!-- 리뷰 더보기 -->
@@ -203,7 +180,6 @@
         <div id="footer">
             <footer class="footer inbox">
                 <div class="footer-company-desc">
-                    <h2>하단:로고>회사소개|SNS링크</h2>
                     <!-- 3-1. 하단로고 -->
                     <div class="partbox">
                         <h1 class="logo">
@@ -222,6 +198,7 @@
                             <li>메일 : ongorongcake@naver.com</li>
                             <li>사업자번호 : 665-13-33017</li>
                             <li>통신판매번호 : 신고면제 </li>
+                            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
                         </ul>
                     </div>
                 </div>
