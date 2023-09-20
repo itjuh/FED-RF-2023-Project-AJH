@@ -176,8 +176,10 @@
 /* 검색박스 아이콘 */
 .search-box i{
     position: absolute;
-    right: 6%;
-    top: calc(50% - 12px);
+    /* right: 6%; */
+    /* top: calc(50% - 12px); */
+    left: 50%;
+    transform: translate(calc(-50% + min(16vw,174px)),66%);
     font-size: 20px;
     cursor: pointer;
 }

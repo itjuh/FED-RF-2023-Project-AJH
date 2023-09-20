@@ -20,6 +20,7 @@ function loadFn(){
     // html 코드저장 함수
     let hcode = '';
     // 코드 저장하기
+    
     for(let i=0;i<2;i++){
         grad_info.forEach(ele=>{
             // console.log(ele, introGrad);
@@ -88,11 +89,10 @@ function loadFn(){
     /* 그림 움직이기 */ 
     setTimeout(()=>{
         // 1. 대상선정 : 재료박스 .intro-grad
-        const gradBox = domFn.qs('.intro-grad');
+        const gradBox = domFn.qs('.grad-list');
         // 2-1. 위치이동(1회성)
         // gradBox.style.transform = 'translateX(0)';
         gradBox.style.opacity = '1';
-        setTimeout(()=>{gradBox.style.transition = '0s';}, 500);
     }, 8000);
 
     // 원리 : ul을 이동, li의 2번째와 ul왼쪽이 만나면 
