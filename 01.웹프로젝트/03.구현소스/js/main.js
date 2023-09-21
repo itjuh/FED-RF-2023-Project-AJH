@@ -323,6 +323,7 @@ let glass = domFn.qs('.search-box i');
 let eleH = keyBox.clientHeight;
 // 이벤트 설정하기
 domFn.addEvt(window,'scroll',leaveOutOn);
+domFn.addEvt(window,'ResizeObserver',leaveOutOn);
 // 윈도우 높이
 let winH = window.innerHeight;
 
@@ -337,21 +338,35 @@ function leaveOutOn(){ //추후에 확인할 요소값 받기
     let endPoint = 70;
     // console.log('bTop:',bTop,winH);
     // 시작지점 : bTop >= winH 박스내려오자
-    if(bTop < winH && bTop >= endPoint){
-        // 검색박스 위치이동
-        sBox.style.top = bTop + 'px';
-        sBox.style.transition = '0s';
-        sBox.style.paddingRight = '0';
-        sBox.style.textAlign = 'center';
-        sBox.style.left = '-74%';
-        // 돋보기 위치이동(화면이 작을수록 작아짐)
-
-        // console.log('들어왔다',bTop);
+    if(bTop < winH && bTop >= endPoint && winW >= 1050){
+        // // 검색박스 위치이동
+        // sBox.style.top = bTop + 'px';
+        // sBox.style.transition = '0s';
+        // sBox.style.paddingRight = '0';
+        // sBox.style.textAlign = 'center';
+        // sBox.style.left = '-74%';
+        // // console.log('들어왔다',bTop);
+        // // 돋보기 위치 이동
+        // glass.style.transform = 'translate(calc(-50% + min(16vw,174px)),66%)';
         if(winW > 1450){
             sBox.style.transform = 'scale(1.9)';
-
+            // 검색박스 위치이동
+            sBox.style.top = bTop + 'px';
+            sBox.style.transition = '0s';
+            sBox.style.paddingRight = '0';
+            sBox.style.textAlign = 'center';
+            sBox.style.left = '-74%';
+            // 돋보기 위치 이동
+            glass.style.transform = 'translate(calc(-50% + min(16vw,174px)),66%)';
         }else if(winW <= 1450){ // 미디어쿼리 시작지점
             sBox.style.transform = 'scale(1.7)';
+            sBox.style.top = bTop + 'px';
+            sBox.style.transition = '0s';
+            sBox.style.paddingRight = '0';
+            sBox.style.textAlign = 'center';
+            sBox.style.left = '-74%';
+            // 돋보기 위치 이동
+            glass.style.transform = 'translate(calc(-50% + min(16vw,174px)),66%)';
         }
     }else{
         // 검색박스 위치 복구
@@ -359,11 +374,10 @@ function leaveOutOn(){ //추후에 확인할 요소값 받기
         sBox.style.transition = '.5s';
         sBox.style.paddingRight = '1.5vw';
         sBox.style.textAlign = 'right';
-        sBox.style.left = 0;
+        sBox.style.left = '0';
         sBox.style.transform = 'scale(1)';
         // 돋보기 위치 복구
-        glass.style.right = '6%';
+        glass.style.transform = 'translate(calc(-50% + min(15vw,249px)),66%)';
         // console.log('나갔다',bTop);
     }
-
 }

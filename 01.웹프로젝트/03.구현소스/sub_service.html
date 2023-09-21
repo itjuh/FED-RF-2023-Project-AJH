@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>온고롱 고객센터</title>
+        <!-- 아이콘 -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- 온고롱 서브_고객센터 CSS -->
     <link rel="stylesheet" href="./css/sub_service.css" />
     <!-- 온고롱 데이터JS -->
@@ -21,6 +23,15 @@
             <div class="partbox top_bottom">
                 <button class="btn up"></button>
                 <button class="btn down"></button>
+            </div>
+            <!--1-3. 로그인,회원가입 -->
+            <div class="side-group partbox">
+                <nav class="gnb-sign">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                    </ul>
+                </nav>
             </div>
             <!-- 상단 고정박스 -->
             <div class="top-box">
@@ -43,23 +54,12 @@
                         </a>
                     </h1>
                 </div>
-                <div class="side-group">
-                    <!-- 1-3. 로그인,회원가입 -->
-                    <div class="partbox">
-                        <nav class="gnb-sign">
-                            <ul>
-                                <li><a href="#">로그인</a></li>
-                                <li><a href="#">회원가입</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- 1-4. 검색 -->
-                    <div class="partbox">
-                        <div class="search-box">
-                            <label for="search"></label>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
-                        </div>
+                <!-- 1-4. 검색 -->
+                <div class="partbox">
+                    <div class="search-box">
+                        <label for="search"></label>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
         <main class="main inbox">
             <!-- 2-1. 고객센터 타이틀 -->
             <div class="top-title">
-                <h1>온고롱에 대해 궁금하신 점 고객센터에서 답변해드릴게요.</h1>
+                <h1>온고롱에 대해 궁금하신 점 답변해드릴게요.</h1>
             </div>
             <!-- 2-2. 자주묻는 질문 -->
             <div class="partbox">

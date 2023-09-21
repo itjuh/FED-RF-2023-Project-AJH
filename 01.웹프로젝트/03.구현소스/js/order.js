@@ -11,7 +11,7 @@ startFooterFn();
 ////////////////////단계이동//////////////////////
 // 변경대상 : .proceed-list
 // 변경 : transform: translateX(pageNum * -100%);
-// 변경대상 : .point-box
+// 변경대상 : .point-box .proceed-nav li
 // 변경 : left: pageNum * 33%; top: pageNum>2?0:60%; 
 // 이벤트 대상 : .main-btn button.next .main-btn button.prev
 // 단계변수 : pageNum
@@ -38,6 +38,7 @@ const pointBox = domFn.qs('.point-box');
 const mainNxBtn = domFn.qs('.main-btn button.next');
 const mainPvBtn = domFn.qs('.main-btn button.prev');
 const proceedTitle = domFn.qs('.proceed-title h2');
+const proNav = domFn.qsa('.proceed-nav li');
 // console.log("proceedList",proceedList,"pointBox",pointBox,"mainNxBtn",mainNxBtn,"mainPvBtn",mainPvBtn)
 // 이벤트 등록
 domFn.addEvt(mainNxBtn,'click',stepFn);
@@ -52,10 +53,6 @@ function stepFn(){
         colNum--;
         if(pageNum < 0){ //1단계 일때
             pageNum = 0;
-            colNum = 0;
-        }else if(pageNum == 2){//3단계일때
-            rowNum = 0;
-            colNum = 2;
         }
         console.log('이전클릭;',pageNum);
     }else{ //다음버튼
@@ -63,10 +60,6 @@ function stepFn(){
         colNum++;
         if(pageNum == 6){ //6단계 일때
             pageNum = 5;
-            colNum = 2;
-        }else if(pageNum == 3){ //3단계일때
-            rowNum = 1;
-            colNum = 0;
         }
         console.log('다음클릭;',pageNum,colNum);
     // 데이터 업데이트하기
@@ -85,13 +78,15 @@ function stepFn(){
     }
     // 변수설정
     let trX = pageNum * -551;
-    let leftVal = colNum * 33;
-    let topVal = rowNum==0?0:53; 
     // 값 고치기
     proceedList.style.transform = `translateX(${trX}px)`;
-    pointBox.style.left = leftVal + '%';
-    pointBox.style.top = topVal + '%';
     proceedTitle.innerText = step_title[pageNum];
+    proNav.forEach((ele,idx)=>{
+        ele.classList.remove('on');
+        if(idx == pageNum){
+            ele.classList.add('on');
+        }
+    }); 
 } ///////////stepChg 함수 /////////////////////
 
 //////////////////목적선택/////////////////////////

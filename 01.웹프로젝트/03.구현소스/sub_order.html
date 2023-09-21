@@ -24,6 +24,15 @@
                 <button class="btn up"></button>
                 <button class="btn down"></button>
             </div>
+            <!--1-3. 로그인,회원가입 -->
+            <div class="side-group partbox">
+                <nav class="gnb-sign">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                    </ul>
+                </nav>
+            </div>
             <!-- 상단 고정박스 -->
             <div class="top-box">
                 <!-- 1-1. 메뉴구성 -->
@@ -45,23 +54,12 @@
                         </a>
                     </h1>
                 </div>
-                <div class="side-group">
-                    <!-- 1-3. 로그인,회원가입 -->
-                    <div class="partbox">
-                        <nav class="gnb-sign">
-                            <ul>
-                                <li><a href="#">로그인</a></li>
-                                <li><a href="#">회원가입</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- 1-4. 검색 -->
-                    <div class="partbox">
-                        <div class="search-box">
-                            <label for="search"></label>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
-                        </div>
+                <!-- 1-4. 검색 -->
+                <div class="partbox">
+                    <div class="search-box">
+                        <label for="search"></label>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
                     </div>
                 </div>
             </div>
@@ -152,13 +150,12 @@
                     <!-- 진행절차 -->
                     <div class="proceed-nav">
                         <ol>
-                            <div class="point-box"></div>
-                            <li>1.목적</li>
-                            <li>2.일정</li>
-                            <li>3.상품</li>
-                            <li>4.옵션</li>
-                            <li>5.추가</li>
-                            <li>6.주문</li>
+                            <li class="on"><span>1.목적</span></li>
+                            <li><span>2.일정</span></li>
+                            <li><span>3.상품</span></li>
+                            <li><span>4.옵션</span></li>
+                            <li><span>5.추가</span></li>
+                            <li><span>6.주문</span></li>
                         </ol>
                     </div>
                     <!-- 절차 타이틀 -->

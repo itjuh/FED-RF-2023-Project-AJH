@@ -32,10 +32,11 @@ function input_cate_all(){
         // console.log(seqNum);
         hcode += `
         <li data-seq=${ele.seq}>
-            <div class="quest-box"> ${ele.질문}  
+            <div class="quest-box"> 
+                <span class='q'>${ele.질문}</span>
             <!-- ${ele.카테고리} 질문${seqNum} 답변박스 -->
                 <div class="asked-box">
-                    <span>${ele.응답}</span>
+                    <span class='a'>${ele.응답}</span>
                 </div>
             </div>
         </li>
@@ -58,7 +59,8 @@ function input_cate(cateName){
             console.log('ele.카테고리',ele.카테고리);
             hcode += `
             <li data-seq=${ele.seq}>
-              <div class="quest-box"> ${ele.질문}  
+              <div class="quest-box"> 
+                 <span class='q'>${ele.질문}</span>
              <!-- ${ele.카테고리} 질문${seqNum} 답변박스 -->
                  <div class="asked-box">
                      <span>${ele.응답}</span>
@@ -139,22 +141,38 @@ function open_evt(){
     // 클릭이벤트 만들어주기
     faqContLi.forEach((ele,idx)=>{
         domFn.addEvt(ele,'click',()=>{
-            // 모든 li에 open빼기
-            faqContLi.forEach(ele=>{
-                ele.classList.remove('open');
-                ele.style.gridRow = "";
-                ele.style.marginBottom = "";
-            });
-            // 클릭한 요소에 open 넣기
-            ele.classList.add('open');
-            // 클릭한 요소의 위치값에 따라 grid조정
-            // 조정변수 n : row조정을 위한 변수
-            let n = Math.floor(idx/2 + 1);
-            ele.style.gridRow = `${n}/${n+1}`;
-            ele.style.marginBottom = '70px';
-            // 클릭한 요소 번호보다 큰 홀수번의 
-            //quest-box float:right 짝수번은 float:left
+            // 클릭한 시점의 너비를 넣어줌
+            let winW = window.innerWidth;
 
+            if(ele.classList.contains('open')){
+                // 이미 누른 대상 누른 경우
+                // 모든 li에 open빼기
+                faqContLi.forEach(ele=>{
+                    ele.classList.remove('open');
+                    ele.style.gridRow = "";
+                    ele.style.marginBottom = "";
+                });
+            }else{ //새로운 대상 누른경우 
+                // 모든 li에 open빼기
+                faqContLi.forEach(ele=>{
+                    ele.classList.remove('open');
+                    ele.style.gridRow = "";
+                    ele.style.marginBottom = "";
+                });
+                // 클릭한 요소에 open 넣기
+                ele.classList.add('open');
+                if(winW>1050){
+                    // 클릭한 요소의 위치값에 따라 grid조정
+                    // 조정변수 n : row조정을 위한 변수
+                    let n = Math.floor(idx/2 + 1);
+                    ele.style.gridRow = `${n}/${n+1}`;
+                    ele.style.marginBottom = '70px';
+                    // 클릭한 요소 번호보다 큰 홀수번의 
+                    //quest-box float:right 짝수번은 float:left
+                }else{
+                    ele.style.marginBottom = '50px';
+                }
+            }
         });
     }); ////////faqContLi forEach ////////////
 }

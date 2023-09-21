@@ -7,800 +7,870 @@
 @import url(./reset.css);
 
 /* 2. 메인영역 */
-/* body *{
-    outline: 1px solid coral;
-} */
+#main {
+  background-color: #ffffff00;
+  background-image: linear-gradient(to bottom, var(--co-ongreen), var(--co-onlightgreen));
+  overflow: hidden;
+}
 /* 2-1.타이틀 */
-.main .top-title{
-    height: 80px;
-    border-bottom: 1px solid #000;
-    line-height: 120px;
+.main .top-title {
+  height: 80px;
+  line-height: 120px;
 }
-.top-title h1{
-    width: 1400px;
-    height: 100%;
-    margin: 0 auto;    
-    padding-bottom: 10px;
-    font-size: var(--fz-biger);
+/* 타이틀 글자 h1 */
+.top-title h1 {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #fff;
+  font-size: var(--fz-biger);
+  color: #fff;
 }
+
 /* 2-2. 주문창 */
-.order-box{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0 100px;
+.order-box {
+  max-width: 1400px;
+  margin: 10px auto 0;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 0 100px; */
+  align-items: flex-start;
 }
 /* 폼구역 박스공통 */
-.form-area>div{
-    position: relative;
-    flex-basis: 60%;
-    border-radius: 20px 20px 10px 10px;
-    background-color: #fff;
-    box-sizing: border-box;
-    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+.form-area > div {
+  position: relative;
+  flex-basis: 60%;
+  border-radius: 20px 20px 10px 10px;
+  background-color: #fff;
+  box-sizing: border-box;
+  box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
 }
 /* 2-3. 주문신청서 */
-.form-box{
-    height: 600px;
-    padding: 30px 100px;
+/* 신청서 박스 개별 */
+.form-area .form-box {
+  transform: translateY(100px);
+  overflow: scrollY;
+  height: 600px;
+  padding: 30px 50px;
+}
+/* 신청서 박스 스크롤 */
+.form-box::-webkit-scrollbar {
+  /* 세로축 스크롤바 폭 너비 */
+  width: 10px;
 }
 /* 신청서 타이틀 */
-.form-title{
-    font-size: var(--fz-tit);
-    margin: 40px 0;
+.form-title {
+  font-size: var(--fz-tit);
+  margin: 30px 0;
 }
 /* 신청서 타이틀 아이콘 */
-.form-title i{
-    float: left;
-    margin-right: 10px;
+.form-title i {
+  float: left;
+  margin-right: 10px;
 }
 /* 신청서 내용 */
-.form-content{
-    font-size: var(--fz-top);
-    color: #aaa;
-    width: 800px;
-    margin: 0 auto;
+.form-content {
+  font-size: var(--fz-top);
+  color: #aaa;
+  max-width: 750px;
+  margin: 0 auto;
 }
 /* 신청서 내용 dl */
-.form-content dl{
-    display: flex;
-    flex-wrap: wrap;
+.form-content dl {
+  display: flex;
+  flex-wrap: wrap;
 }
 /* 신청서 내용 dt */
-.form-content dt{
-    width: 200px;
-    margin: 10px 0;
+.form-content dt {
+  width: 25%;
+  margin: 10px 0;
 }
 /* 신청서 내용 dd */
-.form-content dd{
-    width: 600px;
-    margin: 10px 0;
+.form-content dd {
+  width: 75%;
+  margin: 10px 0;
 }
-/* 2-4. 주문진행 */
-.proceed-box{
-    min-height: 860px;
-    flex-basis: 30%;
-    border-left: 1px solid #ccc;
-    background-color: rgba(240, 128, 128, 0.144);
+/*********** 2-4. 주문진행 *************/
+.proceed-box {
+  min-height: 860px;
+  flex-basis: 30%;
+  border-left: 1px solid #ccc;
+  background-color: rgb(255 255 255 / 27%);
 }
 /* 진행절차 */
-.proceed-nav{
-    width: 450px;
-    height: 90px;
-    color: #555;
-    margin: 20px;
-    font-size: var(--fz-top);
+.proceed-nav {
+  width: 450px;
+  height: 90px;
+  color: #555;
+  margin: 20px;
+  font-size: var(--fz-top);
 }
 /* 진행절차 ol */
-.proceed-nav ol{
-    position: relative;
-    /* point-box부모 */
-    display: flex;
-    height: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-between;
+.proceed-nav ol {
+  position: relative;
+  /* point-box부모 */
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: space-between;
 }
 /* 진행절차 li */
-.proceed-nav li{
-    position: relative;
-    /* point-box 상단위치(인덱스) */
-    flex-shrink: 0;
-    width: 120px;
-    height: 40px;
-    line-height: 42px;
+.proceed-nav li {
+  position: relative;
+  /* on 가상요소 부모 */
+  flex-shrink: 0;
+  width: 120px;
+  height: 40px;
+  line-height: 42px;
 }
-.proceed-nav li.on{
-    color: #000;
+.proceed-nav span{
+    position: relative;
+}
+.proceed-nav li.on {
+  color: #000;
+}
+.proceed-nav li.on::before{
+content: '';
+position: absolute;
+  /* 부모는 proceed-nav li */
+  left: -12px;
+  top: 0;
+  width: 110px;
+  height: 40px;
+  background-color: white;
+  clip-path: polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%);
 }
 /* 진행절차 li에 배경박스*/
-.point-box{
-    position: absolute;
-    /* 부모는 proceed-nav ol */
-    left: 0;
-    top: 0;
-    width: 110px;
-    height: 40px;
-    background-color: white;
-    clip-path: polygon(0% 0%, 70% 0%, 100% 50%, 70% 100%, 0% 100%);
-}
+/* .point-box {
+  
+} */
 /* 진행절차 타이틀 */
-.proceed-title{
-    width: 100%;
-    letter-spacing: 2px;
+.proceed-title {
+  width: 100%;
+  letter-spacing: 2px;
 }
-.proceed-title h2{
-    font-size: var(--fz-tit);
-    padding: 20px 30px 20px;
+.proceed-title h2 {
+  font-size: var(--fz-tit);
+  padding: 20px 30px 20px;
 }
 /* 절차내용 겉박스: 단계별 절차 */
-.proceed-content{
-    width: 500px;
-    height: 100%;
-    overflow: hidden;
+.proceed-content {
+  width: 500px;
+  height: 100%;
+  overflow: hidden;
 }
 /* 절차내용 ol: 전 단계*/
-.proceed-content ol{
-    display: flex;
-    width: 2500px;
-    transform: translateX(0%);
+.proceed-content ol {
+  display: flex;
+  width: 2500px;
+  transform: translateX(0%);
 }
 /* 절차내용 ol>li: 단계별 절차*/
-.proceed-list{
-    width: 550px;
-    height: 100%;
-    border-right: 1px dashed red;
+.proceed-list {
+  width: 550px;
+  height: 100%;
+  border-right: 1px dashed red;
 }
 /* 절차 내용 ul*/
-.proceed-content ul{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 10px 30px;
-    box-sizing: border-box;
-    font-size: var(--fz-big);
+.proceed-content ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  font-size: var(--fz-big);
 }
 /********* 절차 내용(1. 목적) li *********/
-.proceed-content ul>li{
-    position: relative;
-    /* 절차 3, 케이크박스용 */
-    width: 180px;
-    height: 80px;
-    border-radius: 20px;
-    line-height: 3;
-    text-align: center;
-    color: #555;
-    background-color: #fff;
-    border: 1px solid var(--co-onlightgreen);
-    box-shadow: 0px 0px 4px 1px var(--co-ondgop);
+.proceed-content ul > li {
+  position: relative;
+  /* 절차 3, 케이크박스용 */
+  width: 180px;
+  height: 80px;
+  border-radius: 20px;
+  line-height: 3;
+  text-align: center;
+  color: #555;
+  background-color: #fff;
+  border: 1px solid var(--co-onlightgreen);
+  box-shadow: 0px 0px 4px 1px var(--co-ondgop);
 }
 /* 절차 내용(1. 목적) li 마우스오버*/
-.proceed-content ul>li.on,
-.proceed-content ul>li:hover{
-    background-color: var(--co-ongreen);
-    box-shadow: 0px 0px 4px 1px var(--co-ondgop);
-    color:white;
+.proceed-content ul > li.on,
+.proceed-content ul > li:hover {
+  background-color: var(--co-ongreen);
+  box-shadow: 0px 0px 4px 1px var(--co-ondgop);
+  color: white;
 }
 /********* 절차 내용(2. 일정) li *********/
 /* input달력보기 박스 설정 */
-.proceed-list .day-time{
-    width: 400px;
-    height: 60px;
-    border-radius: 10px;
-    margin-left:20px;
-    padding: 0px 30px;
-    background-color: #eee;
-    font-size: var(--fz-big);
-    font-family: 'GangwonEdu_OTFBoldA';
+.proceed-list .day-time {
+  width: 400px;
+  height: 60px;
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 0px 30px;
+  background-color: #eee;
+  font-size: var(--fz-big);
+  font-family: "GangwonEdu_OTFBoldA";
 }
 /* input 플레이스홀더 글자색상 */
-.proceed-list .day-time::placeholder{
-    color: var(--co-ondarkgreen);
+.proceed-list .day-time::placeholder {
+  color: var(--co-ondarkgreen);
 }
 /* 달력보기 박스 오버시 */
 .proceed-list .day-time:focus,
-.proceed-list .day-time:hover{
-    outline: 1px solid var(--co-ongreen);
-    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+.proceed-list .day-time:hover {
+  outline: 1px solid var(--co-ongreen);
+  box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
 }
 /* 숨김박스들 공통 */
-.hide-box{
-    position: fixed;
-    /* 위치값 주기 */
-    top: 0;
-    left: 0;
-    z-index: 999;
-    /* 화면 최 상단으로 */
-    width: 100vw;
-    height: 100vh;
-    background-color:rgb(11 58 22 / 19%);
-    /* 기본 숨기기 */
-    display: none;
+.hide-box {
+  position: fixed;
+  /* 위치값 주기 */
+  top: 0;
+  left: 0;
+  z-index: 999;
+  /* 화면 최 상단으로 */
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(11 58 22 / 19%);
+  /* 기본 숨기기 */
+  display: none;
 }
 /* 달력보기 박스 클릭 시 */
-.popup-box{
-    position: absolute;
-    /* 박스 화면 맨 위로 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    height: 520px;
-    padding: 30px 20px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
-    background-color: #fff;
-    padding-left: 30px;
-    /* 글자설정 */
-    font-size: var(--fz-top);
+.popup-box {
+  position: absolute;
+  /* 박스 화면 맨 위로 */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 520px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+  background-color: #fff;
+  padding-left: 30px;
+  /* 글자설정 */
+  font-size: var(--fz-top);
 }
 /* 달력보기 박스 숨기기 */
-.calendar-box{
-    /* 기본 숨기기 */
-    display: none;
+.calendar-box {
+  /* 기본 숨기기 */
+  display: none;
 }
 /* 팝업박스 바디 */
-.pop-body{
-    position: relative;
-    /* 시간선택박스 white-box 부모자격 */
+.pop-body {
+  position: relative;
+  /* 시간선택박스 white-box 부모자격 */
 }
 /* 달력 타이틀 */
-.pop-head{
-    text-align: center;
-    margin-bottom: 30px;
+.pop-head {
+  text-align: center;
+  margin-bottom: 30px;
 }
 /* 달력 월 선택 */
-.month{
-    position: relative;
-    /* 가상요소 버튼부모 */
-    text-align: center;
-    padding-bottom: 30px;
+.month {
+  position: relative;
+  /* 가상요소 버튼부모 */
+  text-align: center;
+  padding-bottom: 30px;
 }
 /* 이전 월 버튼 */
-.month::before{
-    content: '\f0d9';
-    position: absolute;
-    left: 20%;
-    top: -2px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: var(--fz-big);
-    color: #555;
+.month::before {
+  content: "\f0d9";
+  position: absolute;
+  left: 20%;
+  top: -2px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: var(--fz-big);
+  color: #555;
 }
 /* 이후 월 버튼 */
-.month::after{
-    content: '\f0da';
-    position: absolute;
-    right: 20%;
-    top: -2px;
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: var(--fz-big);
-    color: #555;
+.month::after {
+  content: "\f0da";
+  position: absolute;
+  right: 20%;
+  top: -2px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: var(--fz-big);
+  color: #555;
 }
 /* 달력 table */
-.calendar tr{
-    width:45px;
-    height:45px;
-    border: 1px solid #ccc;
+.calendar tr {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #ccc;
 }
-.calendar th, td{
-    width:45px;
-    height:45px;
-    text-align: center;
-    border: 1px solid #ccc;
+.calendar th,
+td {
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  border: 1px solid #ccc;
 }
 /* 달력 일요일 */
-th:first-child, td:first-child{
-    color: orangered;
+th:first-child,
+td:first-child {
+  color: orangered;
 }
 /* 달력 토요일 */
-th:last-child, td:last-child{
-    color:blue;
+th:last-child,
+td:last-child {
+  color: blue;
 }
 /* 달력 날짜선택 */
-th.check, td.check{
-    border-radius: 50%;
-    background-color: #555;
-    color: #fff;
+th.check,
+td.check {
+  border-radius: 50%;
+  background-color: #555;
+  color: #fff;
 }
 /* 팝업박스 개별 */
-.popup-box.timer{
-    height: 450px;
+.popup-box.timer {
+  height: 450px;
 }
 /* 시간선택 박스 */
-.time-box{
-    position: relative;
-    /* 위치를 적용하기 위해서 */
-    display: flex;
-    align-items: center;
-    text-align: center;
+.time-box {
+  position: relative;
+  /* 위치를 적용하기 위해서 */
+  display: flex;
+  align-items: center;
+  text-align: center;
 }
 /* 시간선택 박스 숨기기 */
-.timer{
-    /* 기본 숨기기 */
-    display: none;
+.timer {
+  /* 기본 숨기기 */
+  display: none;
 }
 /* 시간선택 버튼공통 */
-.thr-btn-box{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 30px;
+.thr-btn-box {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 30px;
 }
 /* 시간선택 버튼 i*/
-.thr-btn-box i{
-    /* 등분할 */
-    flex: 1;
-    height: 100%;
-    color: #ccc;
+.thr-btn-box i {
+  /* 등분할 */
+  flex: 1;
+  height: 100%;
+  color: #ccc;
 }
 /* 시간선택 세로박스 */
-.time-box ul{
-    /* 등분할 */
-    flex: 1;
-    height: 100%;
+.time-box ul {
+  /* 등분할 */
+  flex: 1;
+  height: 100%;
 }
 /* 시간선택 중앙 */
-.select-box{
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    height: 30px;
-    background-color: #ccc;
-    transform: translateY(-15%);
+.select-box {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 30px;
+  background-color: #ccc;
+  transform: translateY(-15%);
 }
 /* 시간선택 상하단 */
-.white-box{
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 80px;
+.white-box {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 80px;
 }
 /* 첫번째 박스 */
-.wbox1{
-    top: 30px;
-    background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+.wbox1 {
+  top: 30px;
+  background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
 }
 /* 두번째 박스 */
-.wbox2{
-    bottom: 30px;
-    background-image: linear-gradient(to top, white, rgba(255, 255, 255, 0));
+.wbox2 {
+  bottom: 30px;
+  background-image: linear-gradient(to top, white, rgba(255, 255, 255, 0));
 }
 /* 픽업박스 */
 /* 픽업박스 h3 */
-.pick-up h3{
-    font-size: var(--fz-big);
-    margin: 20px;
+.pick-up h3 {
+  font-size: var(--fz-big);
+  margin: 20px;
 }
 /* 픽업박스 input */
-.pick-up input{
-    display: block;
-    width: 350px;
-    height: 40px;
-    border-radius: 15px;
-    margin: 20px 30px;
-    padding: 0 10px;
-    border: none;
-    box-shadow: 1px 3px 5px 0 rgb(11 58 22 / 19%);
-    background-color: #eee;
-    font-size: var(--fz-big);
-    font-family: 'GangwonEdu_OTFBoldA';
+.pick-up input {
+  display: block;
+  width: 350px;
+  height: 40px;
+  border-radius: 15px;
+  margin: 20px 30px;
+  padding: 0 10px;
+  border: none;
+  box-shadow: 1px 3px 5px 0 rgb(11 58 22 / 19%);
+  background-color: #eee;
+  font-size: var(--fz-big);
+  font-family: "GangwonEdu_OTFBoldA";
 }
 /********* 절차 내용(3 상품) *********/
 
 /* 서브메뉴 겉박스 */
-.proceed-list:nth-child(3) .sub{
-    position: absolute;
-    top: 80px;
-    width: 100%;
-    height: 0;
-    border-radius: 10px;
-    background-color: #ffffffe8;
-    font-size: var(--fz-top);
-    /* 하위메뉴 숨기기 */
-    overflow: hidden;
-    /* 트랜지션 */
-    transition: .5s;
+.proceed-list:nth-child(3) .sub {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  height: 0;
+  border-radius: 10px;
+  background-color: #ffffffe8;
+  font-size: var(--fz-top);
+  /* 하위메뉴 숨기기 */
+  overflow: hidden;
+  /* 트랜지션 */
+  transition: 0.5s;
 }
 /* 서브메뉴 속박스 */
-.proceed-list:nth-child(3) .sub-menu{
-    padding: 10px 0;
+.proceed-list:nth-child(3) .sub-menu {
+  padding: 10px 0;
 }
 /* 상품명 오버시 + 선택시 서브 보이기*/
-.proceed-list ul>li.open .sub,
-.proceed-list ul>li:hover .sub{
-    color: #555;
-    height: 160px;
-    z-index: 10;
-    box-shadow: 0px 0px 5px 2px var(--co-onlightgreen);
+.proceed-list ul > li.open .sub,
+.proceed-list ul > li:hover .sub {
+  color: #555;
+  height: 160px;
+  z-index: 10;
+  box-shadow: 0px 0px 5px 2px var(--co-onlightgreen);
 }
 /* 상품명 오버시 + 클릭 시 하위메뉴 밀기 */
-.step-2>ul.open{
-    gap: 180px 30px;
+.step-2 > ul.open {
+  gap: 180px 30px;
 }
 /* 상품명 오버시 열리기 */
 /* 절차내용 서브박스 span */
-.sub-menu span{
-    display: block;
-    width: 150px;
-    height: 40px;
-    margin: 5px auto;
-    line-height: 5rem;
+.sub-menu span {
+  display: block;
+  width: 150px;
+  height: 40px;
+  margin: 5px auto;
+  line-height: 5rem;
 }
 /* 서브메뉴 상품명 오버시 */
-.sub-menu span:hover{
-    cursor: pointer;
-    color: #000;
-    background-color: #fff;
-    background-image: radial-gradient(var(--co-onbeige) 40%,white);
+.sub-menu span:hover {
+  cursor: pointer;
+  color: #000;
+  background-color: #fff;
+  background-image: radial-gradient(var(--co-onbeige) 40%, white);
 }
 /***** 서브메뉴 선택시 ****/
-.sub-menu span.open{
-    color: #000;
-    background-color: #fff;
-    background-image: radial-gradient(var(--co-onbeige) 40%,white);
+.sub-menu span.open {
+  color: #000;
+  background-color: #fff;
+  background-image: radial-gradient(var(--co-onbeige) 40%, white);
 }
 /* 신청서 줄어들기*/
-.form-box.view{
-    height: 250px;
-    overflow-y: scroll;
-    margin: 30px 0;
-    padding: 30px 100px;
+.form-box.view {
+  height: 250px;
+  overflow-y: scroll;
+  margin: 30px 0;
+  padding: 30px 100px;
 }
 /* 신청서 타이틀 */
-.form-box.view .form-title{
-    margin: 20px 0;
+.form-box.view .form-title {
+  margin: 20px 0;
 }
 /* 신청서 내용 */
 .form-box.view .form-content dt,
-.form-box.view .form-content dd{
-    margin: 5px 0;
+.form-box.view .form-content dd {
+  margin: 5px 0;
 }
 /* 제품고르기 겉박스 */
 /* 초기값 */
-.prod-box{
-    height: 0;
-    overflow: hidden;
-    /* 트랜지션 */
-    transition: .4s;
+.prod-box {
+  height: 0;
+  overflow: hidden;
+  /* 트랜지션 */
+  transition: 0.4s;
 }
 /* 서브메뉴 선택 시 제품고르기 겉박스 올라오기 */
-.prod-box.view{
-    height: 500px;
+.prod-box.view {
+  height: 500px;
 }
 /* 제품고르기 박스 */
-.list-type{
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    margin-bottom: 50px;
-    padding: 30px 100px;
-    display: flex;
-    flex-direction: column;
-    min-height: 400px;
+.list-type {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+  padding: 30px 100px;
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
 }
 /* 상품 타이틀 구역 */
-.list-type>.partbox:first-of-type{
-    height: 80px;
-    box-shadow: none;
+.list-type > .partbox:first-of-type {
+  height: 80px;
+  box-shadow: none;
 }
 /* 상품 타이틀 테두리 */
-.list-type h1.tit{
-    display: inline-block;
-    position: relative;
-    top: 50%;
-    left: 50%;
-    height: 40px;
-    border-radius: 45%;
-    box-shadow: 1px 1px 3px #00000080;
-    /* 글자세팅 */
-    font-size: var(--fz-top);
-    text-align: center;
-    line-height: 43px;
-    letter-spacing: 2px;
-    /* 중앙정렬 */
-    transform: translate(-50%, -50%);
-    padding: 0 10px;
-    background-color: #fff;
+.list-type h1.tit {
+  display: inline-block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  height: 40px;
+  border-radius: 45%;
+  box-shadow: 1px 1px 3px #00000080;
+  /* 글자세팅 */
+  font-size: var(--fz-top);
+  text-align: center;
+  line-height: 43px;
+  letter-spacing: 2px;
+  /* 중앙정렬 */
+  transform: translate(-50%, -50%);
+  padding: 0 10px;
+  background-color: #fff;
 }
 /* 상품 타이틀 이미지 */
-.list-type h1.tit::before{
-    content: '\f164';
-    position: absolute;
-    display: block;
-    left: -25px;
-    line-height: 37px;
-    color: var(--co-ongreen);
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    text-shadow: -1px 2px 2px #00000080;
+.list-type h1.tit::before {
+  content: "\f164";
+  position: absolute;
+  display: block;
+  left: -25px;
+  line-height: 37px;
+  color: var(--co-ongreen);
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  text-shadow: -1px 2px 2px #00000080;
 }
 /* 상품 리스트박스 */
-.list-type .list{
-    height: 350px;
-    width: 100%;
-    margin: 0 auto;
+.list-type .list {
+  height: 350px;
+  width: 100%;
+  margin: 0 auto;
 }
 /* 리스트박스 ol */
-.list-type ol{
-    display: flex;
-    gap: 0px 20px;
-    height: 100%;
+.list-type ol {
+  display: flex;
+  gap: 0px 20px;
+  height: 100%;
 }
 /* 리스트박스 li */
-.list-type ol>li{
-    flex-shrink: 1;
+.list-type ol > li {
+  flex-shrink: 1;
 }
 /* 리스트 박스 li 오버 시 */
-.list-type ol>li:hover{
-    outline: 2px solid var(--co-onlightgreen);
-    cursor: pointer;
+.list-type ol > li:hover {
+  outline: 2px solid var(--co-onlightgreen);
+  cursor: pointer;
 }
 /* 리스트 박스 li안쪽 박스 */
-.list-type .partbox{
-    height: 100%;
-    box-shadow: 1px 1px 6px #00000080;
+.list-type .partbox {
+  height: 100%;
+  box-shadow: 1px 1px 6px #00000080;
 }
 /* 이미지 바깥쪽 박스 */
-.img-box{
-    width: 280px;
-    height: 280px;
+.img-box {
+  width: 280px;
+  height: 280px;
 }
 /* 이미지 */
-.img-box img{
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    /* transform: translate(4px, 1px); */
+.img-box img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  /* transform: translate(4px, 1px); */
 }
 /* 정보박스 */
-.txt-box{
-    box-sizing: border-box;
-    width: 100%;
-    padding: 10px 0 0 10px;
+.txt-box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px 0 0 10px;
 }
 /* 상품정보 공통 */
-.txt-box li{
-    margin-bottom: 5px;
+.txt-box li {
+  margin-bottom: 5px;
 }
 /* 상품명 */
-.prod-name{
-    font-size: var(--fz-big);
-    font-weight: bold;
+.prod-name {
+  font-size: var(--fz-big);
+  font-weight: bold;
 }
 /* 상품가 */
-.prod-price{
-    font-size: var(--fz-top);
+.prod-price {
+  font-size: var(--fz-top);
 }
 /************ 상품 선택 시 ************/
 /* 제품 옵션 박스 */
 /* 옵션 겉박스 */
-.form-area .prod-option{
-    position: absolute;
-    /* 박스위에 덮기 */
-    bottom:0;
-    width: 1048px;
-    /* height: 750px; */
-    /* 초기박스 높이값 0 */
-    overflow: hidden;
-    height: 0;
-    font-size: var(--fz-top);
-    /* 트랜지션 */
-    transition: .4s ease-out;
+.form-area .prod-option {
+  position: absolute;
+  /* 박스위에 덮기 */
+  bottom: 0;
+  width: 1048px;
+  /* height: 750px; */
+  /* 초기박스 높이값 0 */
+  overflow: hidden;
+  height: 0;
+  font-size: var(--fz-top);
+  /* 트랜지션 */
+  transition: 0.4s ease-out;
 }
 /* 옵션 겉박스 view클래스 */
-.prod-option.view{
-    height: 750px;
+.prod-option.view {
+  height: 750px;
 }
 /* 옵션 속박스 */
-.form-area .option-box{
-    display: flex;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 30px 50px;
-    margin-bottom: 50px;
-    gap: 0 100px;
+.form-area .option-box {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 30px 50px;
+  margin-bottom: 50px;
+  gap: 0 100px;
 }
 /* 왼쪽파트 */
-.option-basic{
-    /* 좌우 등분할 */
-    flex: 1;
+.option-basic {
+  /* 좌우 등분할 */
+  flex: 1;
 }
 /* 왼쪽파트 불러온 이미지 */
 .prod .partbox {
-    width: 350px;
-    margin: 0 auto;
+  width: 350px;
+  margin: 0 auto;
 }
 /* 왼쪽파트 안내부 */
-.option-basic dl{
-    text-align: center;
+.option-basic dl {
+  text-align: center;
 }
-.option-basic dt{
-    width: 80%;
-    margin: 0 auto;
-    padding: 5px 0 0 2px;
-    border-radius: 20px;
-    background: var(--co-ongreen);
-    color: #fff;
+.option-basic dt {
+  width: 80%;
+  margin: 0 auto;
+  padding: 5px 0 0 2px;
+  border-radius: 20px;
+  background: var(--co-ongreen);
+  color: #fff;
 }
-.option-basic dd{
-    width: 100%;
-    padding: 30px;
-    box-sizing: border-box;
-    font-size: var(--fz-sign);
-    color: #000;
+.option-basic dd {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  font-size: var(--fz-sign);
+  color: #000;
 }
 /* 오른쪽파트:옵션선택란*/
-.option-select{
-    /* 좌우 등분할 */
-    flex: 1;
+.option-select {
+  /* 좌우 등분할 */
+  flex: 1;
 }
 /* 옵션 dt */
-.option-select dt{
-    margin: 20px 10px 0 10px;
-    border-bottom: 1px solid #ccc;
+.option-select dt {
+  margin: 20px 10px 0 10px;
+  border-bottom: 1px solid #ccc;
 }
 /* 옵션 dt 1번 margin */
-.option-select dl:first-child dt{
-    margin: 0px 10px;
+.option-select dl:first-child dt {
+  margin: 0px 10px;
 }
 /* 옵션 dd */
-.option-select dd{
-    display: flex;
-    margin: 10px 0;
-    gap: 0 10px;
+.option-select dd {
+  display: flex;
+  margin: 10px 0;
+  gap: 0 10px;
 }
-.option-select dd>div{
-    flex: 1;
+.option-select dd > div {
+  flex: 1;
 }
 /* 맛선택 박스 */
 /* 맛선택 이미지 */
 .details .img-box {
-    width: 100px;
-    height: 100px;
-    margin: 0 auto;
-    border-radius: 50%;
-    box-shadow: 0px 0px 6px #00000080;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 6px #00000080;
 }
-.details .img-box img{
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    opacity: 0.85;
+.details .img-box img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  opacity: 0.85;
 }
 /* 이미지 마우스오버 시 */
-.details .img-box:hover img{
-    opacity: 1;
+.details .img-box:hover img {
+  opacity: 1;
 }
 /* 글자 */
-.details .txt-box{
-    text-align: center;
+.details .txt-box {
+  text-align: center;
 }
-.details .txt-box{
-    font-size: var(--fz-sign);
+.details .txt-box {
+  font-size: var(--fz-sign);
 }
 /* 크기 박스 */
-.container{
-    position: relative;
-    width: 100px;
-    height: 75px;
-    margin: 0 auto;
-    opacity: 0.85;
+.container {
+  position: relative;
+  width: 100px;
+  height: 75px;
+  margin: 0 auto;
+  opacity: 0.85;
 }
 /* 하단 원형 기둥 */
-.cylinder{
-    position: absolute;
-    /* 부모는 container */
-    width: 100px;
-    height: 75px;
-    border-radius: 50% / 25%;
-    background-color: var(--co-onlightgreen);
+.cylinder {
+  position: absolute;
+  /* 부모는 container */
+  width: 100px;
+  height: 75px;
+  border-radius: 50% / 25%;
+  background-color: var(--co-onlightgreen);
 }
 /* 상단 타원 */
-.cylinder::after{
-    content: '';
-    position: absolute;
-    width: 100px;
-    height: 37.5px;
-    border-radius: calc(100px/2) / calc(37.5px/2);
-    background-color: var(--co-ongreen);
+.cylinder::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 37.5px;
+  border-radius: calc(100px / 2) / calc(37.5px / 2);
+  background-color: var(--co-ongreen);
 }
 /* 크기 박스 마우스 오버시 */
-.container:hover{
-    opacity: 1;
+.container:hover {
+  opacity: 1;
 }
 /* 문구 박스 */
-#message{
-    display: block;
-    width: 370px;
-    height: 40px;
-    border-radius: 15px;
-    padding: 8px 0px 0px 10px;
-    border: none;
-    box-shadow: 1px 3px 5px 0 rgb(11 58 22 / 19%);
-    background-color: #eee;
-    font-size: var(--fz-top);
-    font-family: 'GangwonEdu_OTFBoldA';
+#message {
+  display: block;
+  width: 370px;
+  height: 40px;
+  border-radius: 15px;
+  padding: 8px 0px 0px 10px;
+  border: none;
+  box-shadow: 1px 3px 5px 0 rgb(11 58 22 / 19%);
+  background-color: #eee;
+  font-size: var(--fz-top);
+  font-family: "GangwonEdu_OTFBoldA";
 }
 /* 요청사항 박스 */
-#request{
-    display: block;
-    width: 370px;
-    height: 100px;
-    border-radius: 15px;
-    padding: 8px 0px 0px 10px;
-    border: none;
-    box-shadow: 1px 3px 5px 0 rgb(11 58 22 / 19%);
-    background-color: #eee;
-    font-size: var(--fz-top);
-    font-family: 'GangwonEdu_OTFBoldA';
+#request {
+  display: block;
+  width: 370px;
+  height: 100px;
+  border-radius: 15px;
+  padding: 8px 0px 0px 10px;
+  border: none;
+  box-shadow: 1px 3px 5px 0 rgb(11 58 22 / 19%);
+  background-color: #eee;
+  font-size: var(--fz-top);
+  font-family: "GangwonEdu_OTFBoldA";
 }
 /* 사이즈 박스 */
 /******** 버튼들 *******/
 /* 절차 버튼 박스*/
-.proceed-btn-box{
-    display: flex;
-    width: 100%;
-    height: 100px;
-    padding-left: 30px;
-    gap: 50px;
-    margin-top: 20px;
-    align-items: center;
-    box-sizing: border-box;
+.proceed-btn-box {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  padding-left: 30px;
+  gap: 50px;
+  margin-top: 20px;
+  align-items: center;
+  box-sizing: border-box;
 }
 /* 버튼 공통 클래스 */
 .btn {
-    width: 180px;
-    height: 50px;
-    border-radius: 30px;
-    box-shadow: 0px 0px 5px 2px var(--co-onlightgreen);
-    /* 글자세팅 */
-    font-size: var(--fz-nav);
-    font-family: 'GangwonEdu_OTFBoldA';
-    color: var(--co-onlightgreen);
-    text-align: center;
-    letter-spacing: 4px;
-    line-height: 2.2px;
+  width: 180px;
+  height: 50px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 5px 2px var(--co-onlightgreen);
+  /* 글자세팅 */
+  font-size: var(--fz-nav);
+  font-family: "GangwonEdu_OTFBoldA";
+  color: var(--co-onlightgreen);
+  text-align: center;
+  letter-spacing: 4px;
+  line-height: 2.2px;
 }
 /* 팝업용 버튼 박스 */
-.pop-btn{
-    gap: 30px;
+.pop-btn {
+  gap: 30px;
 }
 /* 팝업용 버튼 */
-.pop-btn .btn{
-    width: 130px;
-    height: 40px;
-    border-radius: 20px;
-    letter-spacing: 2px;
+.pop-btn .btn {
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
+  letter-spacing: 2px;
 }
 /* 옵션용 버튼 박스 */
-.aside-btn{
-    height: auto;
-    padding-left: 10px;
-    gap: 50px;
-    margin-top: 20px;
+.aside-btn {
+  height: auto;
+  padding-left: 10px;
+  gap: 50px;
+  margin-top: 20px;
 }
 /* 옵션용 버튼박스 */
-.aside-btn .btn{
-    width: 130px;
-    height: 40px;
-    border-radius: 20px;
-    letter-spacing: 2px;
+.aside-btn .btn {
+  width: 130px;
+  height: 40px;
+  border-radius: 20px;
+  letter-spacing: 2px;
 }
 /* 버튼 화살표 아이콘 */
-.btn i{
-    color: var(--co-onlightgreen);
-    font-size: var(--fz-nav);
+.btn i {
+  color: var(--co-onlightgreen);
+  font-size: var(--fz-nav);
 }
 /* 버튼 오버시 */
 .btn:hover {
-    background-color: var(--co-onlightgreen);
-    color: white;
+  background-color: var(--co-onlightgreen);
+  color: white;
 }
-.btn:hover i{
-    background-color: var(--co-onlightgreen);
-    color: white;
+.btn:hover i {
+  background-color: var(--co-onlightgreen);
+  color: white;
 }
+
+/*****************미디어쿼리*****************/
+/* 1450px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1450px) {
+    /* 메인영역 partbox */
+    main .partbox {
+        padding: 0 10px;
+    }
+    /* 주문하기 겉박스 */
+    .order-box {
+        gap: 0 10px;
+    }
+    /* 주문절차 박스 */
+    .proceed-box {
+        min-height: 860px;
+        width: 35vw;
+    }
+    /* 주문절차 안쪽박스 */
+    .proceed-nav {
+        width: auto;
+        margin: 17px;
+    }
+    /* 주문절차 li */
+    .proceed-nav li {
+    width: 10.3vw;
+    }
+    .proceed-title h2 {
+        font-size: var(--fz-big);
+        padding: 1vw 1.5vw;
+    }
+    .proceed-content ul {
+        gap: 1.5vw;
+        padding: 10px 10px;
+    }
+} /* 1450px이하 미디어쿼리 종료 */
+/* 1050px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1050px) {
+} /* 1050px이하 미디어쿼리 종료 */
+/* 750px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 750px) {
+} /* 750px이하 미디어쿼리 종료 */
+/* 500px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+} /* 500px이하 미디어쿼리 종료 */

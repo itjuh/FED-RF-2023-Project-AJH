@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>온고롱 오시는길</title>
+    <!-- 아이콘 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <!-- 온고롱 서브_오시는길 CSS -->
     <link rel="stylesheet" href="./css/sub_map.css" />
     <!-- 외부 JS연결 -->
@@ -19,6 +21,15 @@
             <div class="partbox top_bottom">
                 <button class="btn up"></button>
                 <button class="btn down"></button>
+            </div>
+            <!--1-3. 로그인,회원가입 -->
+            <div class="side-group partbox">
+                <nav class="gnb-sign">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                    </ul>
+                </nav>
             </div>
             <!-- 상단 고정박스 -->
             <div class="top-box">
@@ -41,23 +52,12 @@
                         </a>
                     </h1>
                 </div>
-                <div class="side-group">
-                    <!-- 1-3. 로그인,회원가입 -->
-                    <div class="partbox">
-                        <nav class="gnb-sign">
-                            <ul>
-                                <li><a href="#">로그인</a></li>
-                                <li><a href="#">회원가입</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- 1-4. 검색 -->
-                    <div class="partbox">
-                        <div class="search-box">
-                            <label for="search"></label>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
-                        </div>
+                <!-- 1-4. 검색 -->
+                <div class="partbox">
+                    <div class="search-box">
+                        <label for="search"></label>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
                     </div>
                 </div>
             </div>
@@ -73,15 +73,16 @@
             <!-- 2-2.맵링크 -->
             <div class="partbox map">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3160.642052702756!2d127.07570277646172!3d37.610582521600264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbb25952d435d%3A0x2ac6e7c724f5f77c!2z7Jio6rOg66Gx!5e0!3m2!1sko!2skr!4v1694680397650!5m2!1sko!2skr" 
-                    width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+                <div class="map-box"></div>
             </div>
             <!-- 2-3.정보-->
             <div class="partbox info-group">
                 <!-- 2-3-1. 오시는법 -->
                 <section class="contact">
                 <!-- 2-3-1-1. 오시는법 타이틀 -->
-                    <div class="contact sub-title">오시는 법</div>
+                    <div class="contact sub-title"><span>오시는 법</span></div>
                     <!-- 2-3-1-2. 오시는법 -->
                     <div class="contact contact-info">
                         <ul>
@@ -100,7 +101,7 @@
                 <!-- 2-3-2. 이용안내 -->
                 <section class="use">
                 <!-- 2-3-1-1. 이용안내 타이틀 -->
-                <div class="use sub-title">이용안내</div>
+                <div class="use sub-title"><span>이용안내</span></div>
                     <!-- 2-3-1-2. 이용안내 -->
                     <div class="use-info">
                         <dl>
