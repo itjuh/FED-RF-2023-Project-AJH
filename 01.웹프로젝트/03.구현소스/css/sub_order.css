@@ -718,7 +718,7 @@ input[type=radio] {
   opacity: 1;
 }
 /* 선택사항 선택 가상요소이미지 */
-.option-select [type="radio"]:checked + label .details::after{
+.option-select [type="radio"]:checked + .details::after{
   content: '\f00c';
   position: absolute;
   font-family: "Font Awesome 5 Free";

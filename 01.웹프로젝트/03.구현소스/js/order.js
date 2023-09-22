@@ -495,9 +495,9 @@ function depth2(list){
     for(let x in list){
         // console.log(list[x].name);
         depCode += `
+        <input type="radio" name="${list[x].img?'flavor':'size'}" id="${list[x].img?'flavor':'size'}${radioNum}" value="${list[x].name}">
         <div class="details ${list[x].img?'flavor':'size-box'}">
         <label for="${list[x].img?'flavor':'size'}${radioNum}">
-        <input type="radio" name="${list[x].img?'flavor':'size'}" id="${list[x].img?'flavor':'size'}${radioNum}" value="${list[x].name}">
                 <div class="${list[x].img?'img-box':'container'}">
                     ${list[x].img?`<img src="${list[x].img}" alt="${list[x].alt}">`:`<div class="container"><div class="cylinder"></div></div>`}
                 </div>
