@@ -7,6 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
 
+
 @font-face {
     font-family: 'GangwonEdu_OTFBoldA';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
@@ -134,3 +135,16 @@ body *{
         font-size: 9px;
     }
 }/* 1050px이하 미디어쿼리 종료 */
+/* 750px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 750px) {
+    html{
+        font-size: 8px;
+    }
+    :root{
+        --fz-sub : 1.8rem;
+        --fz-sign : 2.1rem;
+    }
+} /* 750px이하 미디어쿼리 종료 */
+/* 500px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 500px) {
+} /* 500px이하 미디어쿼리 종료 */

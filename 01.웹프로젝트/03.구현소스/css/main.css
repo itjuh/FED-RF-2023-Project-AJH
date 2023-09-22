@@ -184,6 +184,7 @@
     background-image: linear-gradient(to left, var(--co-ondarkgreen), rgba(255, 255, 255, 0));
 }
 .scroll-banner-box li {
+    border-radius: 3px;
     flex-shrink: 0;
     flex-basis: 250px;
     aspect-ratio: 25/60;
@@ -849,7 +850,7 @@
     /* 리뷰 텍스트상자 */
     li.review-txt {
         margin-bottom: 1px;
-        height: 57px;
+        height: 52px;
         -webkit-line-clamp: 3;
     }
     .review-list .txt-box {

@@ -76,7 +76,7 @@ function loadFn(){
         const bgBox = domFn.qs('.background-box');
 
         // 2. 변경내용
-        bgBox.style.transform = 'translateX(0)';
+        bgBox.style.transform = 'translateX(-20%)';
         bgBox.style.transitionDelay= DELAY_TIME*7 + 's';
     }, 0);
     /* 배경박스 나오고 글자 올라오기, 그림 움직이기 */

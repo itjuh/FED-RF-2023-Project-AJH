@@ -262,7 +262,7 @@
   }
   /* 오시는법 가상요소 공통 */
   .contact-way::after {
-    width: 90vw;
+    width: 95vw;
   }
   /* 오시는법 상세 설명박스 */
   .contact-way {

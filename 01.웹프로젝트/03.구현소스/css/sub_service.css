@@ -10,255 +10,256 @@
 
 /* 메인페이지 배경 */
 #main {
-  background-color: #ffffff00;
-  background-image: linear-gradient(to bottom, var(--co-ongreen), var(--co-onlightgreen));
-  overflow: hidden;
+    background-color: #ffffff00;
+    background-image: linear-gradient(to bottom, var(--co-ongreen), var(--co-onlightgreen));
+    overflow: hidden;
 }
 /* 2-1.타이틀 */
 .main .top-title {
-  height: 80px;
-  line-height: 120px;
+    height: 80px;
+    line-height: 120px;
 }
 .top-title h1 {
-  max-width: 1400px;
-  height: 100%;
-  margin: 0 auto;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #fff;
-  font-size: var(--fz-biger);
-  color: #fff;
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #fff;
+    font-size: var(--fz-biger);
+    text-indent: 2vw;
+    color: #fff;
 }
 .main .partbox {
-  max-width: 1400px;
-  min-height: 300px;
-  margin: 0 auto;
-  padding: 30px;
-  box-sizing: border-box;
+    max-width: 1400px;
+    min-height: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    box-sizing: border-box;
 }
 /* 2-1. 고객센터 타이틀 */
 /* 2-2. 자주묻는 질문 */
 .faq-box {
-  position: relative;
-  /* speech-icon부모용 */
-  min-height: 500px;
-  border-radius: 20px 20px 10px 10px;
-  font-size: var(--fz-top);
-  border: 1px solid #ccc;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+    position: relative;
+    /* speech-icon부모용 */
+    min-height: 500px;
+    border-radius: 20px 20px 10px 10px;
+    font-size: var(--fz-top);
+    border: 1px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
 }
 /* 2-2-1. 서브타이틀 */
 .main div .sub-title span {
-  display: block;
-  padding-left: 80px;
-  font-size: var(--fz-big);
-  height: 20%;
-  line-height: 80px;
-  border-bottom: 1px solid #ccc;
+    display: block;
+    padding-left: 80px;
+    font-size: var(--fz-big);
+    height: 20%;
+    line-height: 80px;
+    border-bottom: 1px solid #ccc;
 }
 /* 서브타이틀 아이콘 공통 */
 .sub-icon {
-  position: absolute;
-  /* 부모님은 faq-box */
-  top: 41px;
-  left: 43px;
-  width: 55px;
-  height: 48px;
-  background: url(../../01.자료수집/images/info.png) no-repeat;
-  background-position: 0px 0px;
-  background-size: 785px 534px;
+    position: absolute;
+    /* 부모님은 faq-box */
+    top: 41px;
+    left: 43px;
+    width: 55px;
+    height: 48px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: 0px 0px;
+    background-size: 785px 534px;
 }
 /* 말풍선 아이콘 */
 .speech-icon {
-  background-position: -128px -62px;
+    background-position: -128px -62px;
 }
 /* 말풍선 아이콘 말하는효과 */
 .speech-talk {
-  position: absolute;
-  top: 14px;
-  left: 15px;
-  width: 23px;
-  height: 16px;
-  background: url(../../01.자료수집/images/info.png) no-repeat;
-  background-position: -15px -72px;
-  background-size: 785px 534px;
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    width: 23px;
+    height: 16px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: -15px -72px;
+    background-size: 785px 534px;
 
-  /* 트랜지션 */
-  transition: 0.2s ease-in;
-  /* 애니메이션 */
-  animation: talk-ani 0.7s ease-in-out infinite alternate;
+    /* 트랜지션 */
+    transition: 0.2s ease-in;
+    /* 애니메이션 */
+    animation: talk-ani 0.7s ease-in-out infinite alternate;
 }
 /* 말하는 효과 */
 @keyframes talk-ani {
-  to {
-    width: 8px;
-  }
+    to {
+        width: 8px;
+    }
 }
 /* 2-2-2. 카테고리 */
 .faq-sub-cate ol {
-  display: flex;
-  justify-content: flex-start;
-  height: 100px;
-  align-items: center;
-  gap: 0px 3vw;
-  padding-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+    height: 100px;
+    align-items: center;
+    gap: 0px 3vw;
+    padding-left: 20px;
 }
 /* 카테고리 세부 공통 */
 .faq-sub-cate li {
-  position: relative;
-  /* 아이콘용 부모자격 */
-  width: 140px;
-  height: 50px;
-  border: 1px solid #000;
-  border-radius: 20px;
-  line-height: 56px;
-  text-align: right;
-  padding-right: 30px;
+    position: relative;
+    /* 아이콘용 부모자격 */
+    width: 140px;
+    height: 50px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    line-height: 56px;
+    text-align: right;
+    padding-right: 30px;
 }
 /* 전체 박스공통 */
 .faq-sub-cate li:nth-child(1) {
-  width: 110px;
+    width: 110px;
 }
 /* 두번째 글자요소 위치 */
 .faq-sub-cate li:nth-child(2) {
-  padding-left: 15px;
+    padding-left: 15px;
 }
 /* 카테고리 세부 아이콘 */
 .faq-sub-cate li::before {
-  content: "";
-  position: absolute;
-  /* 부모는 li */
-  left: 17px;
-  line-height: 50px;
-  font-size: 32px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+    content: "";
+    position: absolute;
+    /* 부모는 li */
+    left: 17px;
+    line-height: 50px;
+    font-size: 32px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 /* 아이콘 개별 */
 .faq-sub-cate li:nth-child(1)::before {
-  content: "\f07b";
-  font-weight: 400;
+    content: "\f07b";
+    font-weight: 400;
 }
 .faq-sub-cate li:nth-child(2)::before {
-  content: "\f274";
-  font-weight: 400;
+    content: "\f274";
+    font-weight: 400;
 }
 .faq-sub-cate li:nth-child(3)::before {
-  content: "\f09d";
-  font-weight: 900;
+    content: "\f09d";
+    font-weight: 900;
 }
 .faq-sub-cate li:nth-child(4)::before {
-  content: "\f06b";
-  font-weight: 900;
+    content: "\f06b";
+    font-weight: 900;
 }
 .faq-sub-cate li:nth-child(5)::before {
-  content: "\f5e4";
-  font-weight: 900;
+    content: "\f5e4";
+    font-weight: 900;
 }
 /* 마우스를 올리거나 클릭 시
 /* 마우스 클릭 시 on클래스 주기 */
 .faq-sub-cate li:hover,
 .faq-sub-cate li.on {
-  /* text-shadow: 1px 0px 0px; */
-  border-radius: 20px 20px 0px 20px;
-  /* box-shadow: 0px 0px 5px 1px #6d6d6d; */
-  background-color: var(--co-onlightgreen);
-  color: white;
+    /* text-shadow: 1px 0px 0px; */
+    border-radius: 20px 20px 0px 20px;
+    /* box-shadow: 0px 0px 5px 1px #6d6d6d; */
+    background-color: var(--co-onlightgreen);
+    color: white;
 }
 /* 2-2-3. 카테고리 서브 내용 */
 /* 카테고리별 질문 ul*/
 .faq-content ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
-  padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    padding: 0 20px;
 }
 /* 질문 li박스 */
 .faq-content > ul > li {
-  position: relative;
-  /* 가상요소아이콘 부모자격 */
-  height: 60px;
-  border-radius: 3px;
-  line-height: 62px;
-  font-size: var(--fz-nav);
+    position: relative;
+    /* 가상요소아이콘 부모자격 */
+    height: 60px;
+    border-radius: 3px;
+    line-height: 62px;
+    font-size: var(--fz-nav);
 }
 /* 질문 div박스 */
 .faq-content .quest-box {
-  background-color: rgb(233, 233, 233);
-  width: 100%;
-  /* 트랜지션 */
-  transition: width 1s ease-out;
+    background-color: rgb(233, 233, 233);
+    width: 100%;
+    /* 트랜지션 */
+    transition: width 1s ease-out;
 }
 /* 질문 div박스 화살표 아이콘*/
 .faq-content .quest-box::after {
-  content: "\f101";
-  position: absolute;
-  right: 20px;
-  top: 0;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+    content: "\f101";
+    position: absolute;
+    right: 20px;
+    top: 0;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
 }
 /* 질문박스 li에 오버시 */
 .faq-content li:hover {
-  color: var(--co-ondarkgreen);
+    color: var(--co-ondarkgreen);
 }
 .faq-content li:hover .quest-box {
-  background-color: rgb(220, 220, 220);
+    background-color: rgb(220, 220, 220);
 }
 .faq-content li:hover .quest-box::after {
-  color: var(--co-ongreen);
-  animation: arrow-leri-swing-ani 0.3s linear alternate infinite;
+    color: var(--co-ongreen);
+    animation: arrow-leri-swing-ani 0.3s linear alternate infinite;
 }
 
 /* 질문 div박스 밑에 span */
 .quest-box span {
-  display: block;
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  text-indent: 20px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-indent: 20px;
 }
 
 @keyframes arrow-leri-swing-ani {
-  to {
-    right: 25px;
-  }
+    to {
+        right: 25px;
+    }
 }
 /* 카테고리 질문 클릭 시 grid바꾸기 */
 .faq-content > ul > li.open {
-  grid-column: 1/3;
-  border-radius: 3px 3px 0 0;
+    grid-column: 1/3;
+    border-radius: 3px 3px 0 0;
 }
 
 /* 질문 오버 시 quest-box늘어나기 */
 .faq-content > ul > li.open .quest-box {
-  width: 100%;
+    width: 100%;
 }
 /* 카테고리 질문li 클릭 시 가상요소 바뀌기 */
 .faq-content li.open .quest-box::after {
-  /* 트랜지션 */
-  transition: 1s;
-  transform: rotate(90deg);
-  line-height: 2.7;
-  right: 12px;
+    /* 트랜지션 */
+    transition: 1s;
+    transform: rotate(90deg);
+    line-height: 2.7;
+    right: 12px;
 }
 /* 카테고리 질문li 클릭 시 화살표 애니 */
 .faq-content li.open:hover .quest-box::after {
-  /* 애니메이션 */
-  animation: arrow-updo-swing-ani 0.3s linear alternate infinite;
+    /* 애니메이션 */
+    animation: arrow-updo-swing-ani 0.3s linear alternate infinite;
 }
 /* 상위 카테고리 질문 클릭 시 답변박스 열림 */
 .faq-content > ul > li.open .asked-box {
-  height: 63px;
-  /* 트랜지션 */
-  transition: height 0.5s ease-out 1s;
+    height: 63px;
+    /* 트랜지션 */
+    transition: height 0.5s ease-out 1s;
 }
 @keyframes arrow-updo-swing-ani {
-  to {
-    transform: rotate(90deg) translateY(10px);
-  }
+    to {
+        transform: rotate(90deg) translateY(10px);
+    }
 }
 /* 카데고리 질문 열린 상태에서 마우스 오버 시 아이콘 */
 /* .faq-content > ul > li.open:hover::before {
@@ -271,197 +272,249 @@
 } */
 /* 카테고리 질문 답변박스 */
 .asked-box {
-  height: 0;
-  width: 100%;
-  overflow: hidden;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
 }
 .asked-box span {
-  display: block;
-  height: 100%;
-  padding-left: 40px;
-  border-radius: 0 0 3px 3px;
-  border-top: 1px solid #4d4d4d;
-  font-size: var(--fz-sign);
+    display: block;
+    height: 100%;
+    padding-left: 40px;
+    border-radius: 0 0 3px 3px;
+    border-top: 1px solid #4d4d4d;
+    font-size: var(--fz-sign);
 }
 /* 2-3. 더 궁금하신 사항 */
 .qna-link {
-  position: relative;
-  /* question-icon부모용 */
-  border-radius: 20px 20px 10px 10px;
-  font-size: var(--fz-top);
-  border: 1px solid #ccc;
-  padding: 30px;
-  background: #fff;
-  box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
+    position: relative;
+    /* question-icon부모용 */
+    border-radius: 20px 20px 10px 10px;
+    font-size: var(--fz-top);
+    border: 1px solid #ccc;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 2px 8px 16px 0 rgb(11 58 22 / 19%);
 }
 /* 더 궁금하신 사항 서브아이콘 */
 .question-icon {
-  background-position: -5px -119px;
+    background-position: -5px -119px;
 }
 .qna-link-two ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-row-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 20px;
 }
 .qna-link-two > ul > li {
-  position: relative;
-  /* 가상요소아이콘 부모자격 */
-  height: 60px;
-  border-radius: 3px;
-  line-height: 62px;
-  text-align: center;
+    position: relative;
+    /* 가상요소아이콘 부모자격 */
+    height: 60px;
+    border-radius: 3px;
+    line-height: 62px;
+    text-align: center;
 }
 /* 카카오톡 채널 아이콘 */
 .qna-link-two > ul > li:first-child::after {
-  content: "";
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  margin-right: 20px;
-  background: url(../../01.자료수집/images/sns_icon.png) no-repeat;
-  background-position: -458px -227px;
-  background-size: 530px 395px;
-  transition: 0.2s ease-in;
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    background: url(../../01.자료수집/images/sns_icon.png) no-repeat;
+    background-position: -458px -227px;
+    background-size: 530px 395px;
+    transition: 0.2s ease-in;
 }
 /* 전화문의 아이콘 */
 .qna-link-two > ul > li:last-child::after {
-  content: "";
-  position: absolute;
-  width: 45px;
-  height: 45px;
-  margin-right: 20px;
-  background: url(../../01.자료수집/images/info.png) no-repeat;
-  background-position: -200px -42px;
-  background-size: 750px 400px;
-  transition: 0.2s ease-in;
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    margin-right: 20px;
+    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background-position: -200px -42px;
+    background-size: 750px 400px;
+    transition: 0.2s ease-in;
 }
 /* li에 마우스오버 시 */
 .qna-link-two > ul > li:hover {
-  color: var(--co-ongreen);
+    color: var(--co-ongreen);
 }
 .qna-link-two > ul > li:hover::after {
-  transform: rotateY(20deg);
+    transform: rotateY(20deg);
 }
 
 /*****************미디어쿼리*****************/
 /* 1450px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1450px) {
-  /* 메인박스 */
-  .main.inbox {
-    padding-left: 2vw;
-  }
-  /* fap 카테고리 목록 */
-  .faq-sub-cate ol {
-    gap: 0px 1.5vw;
-  }
+    /* 메인박스 */
+    .main.inbox {
+        padding-left: 2vw;
+    }
+    /* fap 카테고리 목록 */
+    .faq-sub-cate ol {
+        gap: 0px 1.5vw;
+    }
 } /* 1450px이하 미디어쿼리 종료 */
 /* 1050px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1050px) {
-  /* 질문 겉박스 */
-  .faq-box {
-    padding: 20px;
-  }
-  /* 타이틀 아이콘 */
-  .sub-icon {
-    top: 22px;
-    left: 34px;
-  }
-  /* 서브타이틀 span */
-  .main div .sub-title span {
-    line-height: 60px;
-  }
-  /* 카테고리 ol */
-  .faq-sub-cate ol {
-    flex-wrap: wrap;
-    gap: 1.5vw 1.5vw;
-    display: flex;
-    justify-content: flex-start;
-    height: auto;
-    padding: 10px 0px;
-    box-sizing: border-box;
-    align-items: center;
-    gap: 10px 2vw;
-  }
-  /* faq내용 ul(grid배열) */
-  .faq-content ul {
-    padding: 0;
-    grid-template-columns: repeat(1, 1fr);
-  }
-  /* faq질문 */
-  .faq-content > ul > li {
-    height: 50px;
-    line-height: 52px;
-  }
-  /* faq질문박스 열렸을 때 */
-  .faq-content > ul > li.open {
-    grid-column: 1/2;
-    border-radius: 3px 3px 0 0;
-  }
-  /* faq답변 */
-  .faq-content > ul > li.open .asked-box {
-    height: 50px;
-    line-height: 52px;
-  }
-  /* faq답변박스 span */
-  .asked-box span {
-    padding-left: 20px;
-  }
-  /* qna 링크박스 */
-  .qna-link {
-    padding: 20px;
-  }
-  /* qna 링크*/
-  .qna-link-two > ul > li {
-    text-align-last: left;
-    text-indent: 20px;
-  }
+    /* 메인 파트박스 공통 */
+    .main .partbox {
+        margin: 2vw auto;
+    }
+    /* 질문 겉박스 */
+    .faq-box {
+        padding: 20px;
+    }
+    /* 타이틀 아이콘 */
+    .sub-icon {
+        top: 22px;
+        left: 34px;
+    }
+    /* 서브타이틀 span */
+    .main div .sub-title span {
+        line-height: 60px;
+    }
+    /* 카테고리 ol */
+    .faq-sub-cate ol {
+        flex-wrap: wrap;
+        gap: 1.5vw 1.5vw;
+        display: flex;
+        justify-content: flex-start;
+        height: auto;
+        padding: 10px 0px;
+        box-sizing: border-box;
+        align-items: center;
+        gap: 10px 2vw;
+    }
+    /* faq내용 ul(grid배열) */
+    .faq-content ul {
+        padding: 0;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    /* faq질문 */
+    .faq-content > ul > li {
+        height: 50px;
+        line-height: 52px;
+    }
+    /* faq질문박스 열렸을 때 */
+    .faq-content > ul > li.open {
+        grid-column: 1/2;
+        border-radius: 3px 3px 0 0;
+    }
+    /* faq답변 */
+    .faq-content > ul > li.open .asked-box {
+        height: 50px;
+        line-height: 52px;
+    }
+    /* faq답변박스 span */
+    .asked-box span {
+        padding-left: 20px;
+    }
+    /* qna 링크박스 */
+    .qna-link {
+        padding: 20px;
+    }
+    /* qna 링크*/
+    .qna-link-two > ul > li {
+        text-align-last: left;
+        text-indent: 20px;
+    }
 } /* 1050px이하 미디어쿼리 종료 */
 /* 750px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 750px) {
-  .top-title h1 {
-    font-size: var(--fz-tit);
-  }
-  /* 카테고리 li */
-  .faq-sub-cate li {
-    width: 120px;
-    padding-right: 10px;
-    height: 45px;
-    line-height: 48px;
-  }
-  /* 카테고리 개별 1번 */
-  .faq-sub-cate li:nth-child(1) {
-    /* text-align: center; */
-    width: 87px;
-  }
-  /* 카테고리 li 아이콘 */
-  .faq-sub-cate li::before {
-    content: "";
-    position: absolute;
-    left: 12px;
-    line-height: 45px;
-    font-size: 29px;
-  }
-  /* qna 서브아이콘 */
-  .qna-link-two ul {
-    grid-template-columns: repeat(1, 1fr);
-    grid-row-gap: 0px;
-  }
-  /* qna 링크*/
-  .qna-link-two > ul > li {
-    text-align-last: center;
-  }
+    /* 메인박스 */
+    .main.inbox {
+        padding-left: 0;
+    }
+    .main .partbox {
+        padding: 2vw;
+    }
+    .main div .sub-title span {
+        padding-left: 63px;
+    }
+    /* 서브타이틀 아이콘 공통 */
+    .sub-icon {
+        transform: scale(0.9);
+        top: 12px;
+        left: 11px;
+    }
+    /* 질문 겉박스 */
+    .faq-box {
+        padding: 10px;
+    }
+    .top-title h1 {
+        font-size: var(--fz-tit);
+    }
+    /* 카테고리 li */
+    .faq-sub-cate li {
+        width: 110px;
+        padding-left: 0px;
+        padding-right: 10px;
+        height: 45px;
+        line-height: 48px;
+    }
+    /* 카테고리 개별 1번 */
+    .faq-sub-cate li:nth-child(1) {
+        /* text-align: center; */
+        width: 87px;
+    }
+    /* 카테고리 li 아이콘 */
+    .faq-sub-cate li::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        line-height: 45px;
+        font-size: 29px;
+    }
+    /* qna 서브아이콘 */
+    .qna-link-two ul {
+        grid-template-columns: repeat(1, 1fr);
+        grid-row-gap: 0px;
+    }
+    /* qna 링크*/
+    .qna-link-two > ul > li {
+        text-align-last: center;
+    }
+    
 } /* 750px이하 미디어쿼리 종료 */
 /* 500px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
-  /* 메인박스 */
-  .main.inbox {
-    padding-left: 1.5vw;
-  }
-
+  .main .top-title {
+    height: auto;
+  }  
   .top-title h1 {
-    line-height: 1.2;
-    max-width: auto;
-    padding-top: 15px;
-    padding-right: 20vw;
+        line-height: 1.2;
+        max-width: auto;
+        padding-top: 15px;
+        padding-right: 20vw;
+    }
+    /* 아이콘 공통 */
+    .faq-sub-cate li::before {
+      display: none;
+    }
+    /* 서브카테고리 공통 */
+    .faq-sub-cate li {
+    width: auto;
+    padding: 0 10px;
+    text-align: center;
+    }
+    .faq-sub-cate li:nth-child(2) {
+      padding-left: 1.2vw;
   }
+    .faq-sub-cate li:nth-child(1) {
+      width: auto;
+    }
+    /* 질문/응답박스 li */
+    .faq-content > ul > li {
+    font-size: max(4.1vw,12px);
+    }
+    /* 더궁금 박스 */
+    .qna-link {
+      padding: 9px;
+  }
+    /* 더궁금 박스내용 */
+    .qna-link-two > ul > li {
+    text-align-last: left;
+    }
 } /* 500px이하 미디어쿼리 종료 */

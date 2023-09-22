@@ -34,7 +34,7 @@
   margin: 10px auto 0;
   display: flex;
   justify-content: space-between;
-  /* gap: 0 100px; */
+  gap: 0 10px;
   align-items: flex-start;
 }
 /* 폼구역 박스공통 */
@@ -50,9 +50,8 @@
 /* 신청서 박스 개별 */
 .form-area .form-box {
   transform: translateY(100px);
-  overflow: scrollY;
-  height: 600px;
-  padding: 30px 50px;
+  overflow-y: scroll;
+  padding: 3vw 2vw;
 }
 /* 신청서 박스 스크롤 */
 .form-box::-webkit-scrollbar {
@@ -93,6 +92,7 @@
 }
 /*********** 2-4. 주문진행 *************/
 .proceed-box {
+  max-width: 500px;
   min-height: 860px;
   flex-basis: 30%;
   border-left: 1px solid #ccc;
@@ -100,7 +100,8 @@
 }
 /* 진행절차 */
 .proceed-nav {
-  width: 450px;
+  max-width: 550px;
+  box-sizing: border-box;
   height: 90px;
   color: #555;
   margin: 20px;
@@ -110,30 +111,26 @@
 .proceed-nav ol {
   position: relative;
   /* point-box부모 */
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   height: 100%;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-content: space-between;
 }
 /* 진행절차 li */
 .proceed-nav li {
   position: relative;
   /* on 가상요소 부모 */
-  flex-shrink: 0;
-  width: 120px;
   height: 40px;
   line-height: 42px;
 }
-.proceed-nav span{
-    position: relative;
+.proceed-nav span {
+  position: relative;
 }
 .proceed-nav li.on {
   color: #000;
 }
-.proceed-nav li.on::before{
-content: '';
-position: absolute;
+.proceed-nav li.on::before {
+  content: "";
+  position: absolute;
   /* 부모는 proceed-nav li */
   left: -12px;
   top: 0;
@@ -157,26 +154,26 @@ position: absolute;
 }
 /* 절차내용 겉박스: 단계별 절차 */
 .proceed-content {
-  width: 500px;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
 /* 절차내용 ol: 전 단계*/
 .proceed-content ol {
   display: flex;
-  width: 2500px;
+  width: 600%;
   transform: translateX(0%);
 }
 /* 절차내용 ol>li: 단계별 절차*/
 .proceed-list {
-  width: 550px;
+  width: 16.67%;
   height: 100%;
-  border-right: 1px dashed red;
+  /* border-right: 1px dashed red; */
 }
 /* 절차 내용 ul*/
 .proceed-content ul {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   padding: 10px 30px;
   box-sizing: border-box;
@@ -331,6 +328,10 @@ td.check {
   background-color: #555;
   color: #fff;
 }
+/* 팝업창 이전다음 버튼 */
+.proceed-btn-box.pop-btn {
+  width: 100%;
+}
 /* 팝업박스 개별 */
 .popup-box.timer {
   height: 450px;
@@ -465,15 +466,16 @@ td.check {
 /***** 서브메뉴 선택시 ****/
 .sub-menu span.open {
   color: #000;
-  background-color: #fff;
-  background-image: radial-gradient(var(--co-onbeige) 40%, white);
+  width: 98%;
+  /* background-color: #fff; */
+  background-image: radial-gradient(var(--co-onbeige) 40%, #f6f7f6);
 }
 /* 신청서 줄어들기*/
 .form-box.view {
   height: 250px;
   overflow-y: scroll;
-  margin: 30px 0;
-  padding: 30px 100px;
+  padding: 30px 50px;
+  margin: 0;
 }
 /* 신청서 타이틀 */
 .form-box.view .form-title {
@@ -502,7 +504,7 @@ td.check {
   height: 100%;
   box-sizing: border-box;
   margin-bottom: 50px;
-  padding: 30px 100px;
+  padding: 30px 10px;
   display: flex;
   flex-direction: column;
   min-height: 400px;
@@ -552,7 +554,7 @@ td.check {
 /* 리스트박스 ol */
 .list-type ol {
   display: flex;
-  gap: 0px 20px;
+  gap: 0px 0.5vw;
   height: 100%;
 }
 /* 리스트박스 li */
@@ -572,7 +574,7 @@ td.check {
 /* 이미지 바깥쪽 박스 */
 .img-box {
   width: 280px;
-  height: 280px;
+  aspect-ratio: 1/1;
 }
 /* 이미지 */
 .img-box img {
@@ -607,7 +609,7 @@ td.check {
   position: absolute;
   /* 박스위에 덮기 */
   bottom: 0;
-  width: 1048px;
+  width: 45.8vw;
   /* height: 750px; */
   /* 초기박스 높이값 0 */
   overflow: hidden;
@@ -626,9 +628,9 @@ td.check {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
-  padding: 30px 50px;
+  padding: 0.5vw 0.5vw;
   margin-bottom: 50px;
-  gap: 0 100px;
+  gap: 0 2.5vw;
 }
 /* 왼쪽파트 */
 .option-basic {
@@ -771,11 +773,12 @@ td.check {
   display: flex;
   width: 100%;
   height: 100px;
-  padding-left: 30px;
+  padding: 1vw;
   gap: 50px;
   margin-top: 20px;
   align-items: center;
   box-sizing: border-box;
+  justify-content: center;
 }
 /* 버튼 공통 클래스 */
 .btn {
@@ -834,43 +837,260 @@ td.check {
 /*****************미디어쿼리*****************/
 /* 1450px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1450px) {
-    /* 메인영역 partbox */
-    main .partbox {
-        padding: 0 10px;
-    }
-    /* 주문하기 겉박스 */
-    .order-box {
-        gap: 0 10px;
-    }
-    /* 주문절차 박스 */
-    .proceed-box {
-        min-height: 860px;
-        width: 35vw;
-    }
-    /* 주문절차 안쪽박스 */
-    .proceed-nav {
-        width: auto;
-        margin: 17px;
-    }
-    /* 주문절차 li */
-    .proceed-nav li {
+  /* 메인영역 partbox */
+  main .partbox {
+    padding: 0 10px;
+  }
+
+  /* 주문하기 겉박스 */
+  .order-box {
+    gap: 0 10px;
+  }
+  /* 신청서 타이틀 */
+  .form-title {
+    margin: 15px 0;
+  }
+  /* 주문절차 박스 */
+  .proceed-box {
+    min-height: 70vw;
+    width: 35vw;
+  }
+  /* 주문절차 안쪽박스 */
+  .proceed-nav {
+    width: auto;
+    margin: 17px;
+  }
+  /* 주문절차 li */
+  .proceed-nav li {
     width: 10.3vw;
-    }
-    .proceed-title h2 {
-        font-size: var(--fz-big);
-        padding: 1vw 1.5vw;
-    }
-    .proceed-content ul {
-        gap: 1.5vw;
-        padding: 10px 10px;
-    }
+  }
+  /* 주문절차 서브타이틀 */
+  .proceed-title h2 {
+    font-size: var(--fz-big);
+    padding: 1vw 1.5vw;
+  }
+
+  /* 주문절차 ul */
+  .proceed-content ul {
+    gap: 1.5vw;
+    padding: 1vw 1.5vw;
+  }
+  .proceed-content ul > li {
+    width: 100%;
+    height: 70px;
+  }
+  /* 절차내용 ol: 전 단계*/
+  .proceed-content ol {
+    width: 600%;
+  }
+  /* 절차내용 ol>li: 단계별 절차*/
+  .proceed-list {
+    width: 16.67%;
+  }
+  /* 주문절차 2 찾아가실 시간 */
+  .proceed-list .day-time {
+    width: 72%;
+  }
+  /* 주문절차 1. input박스 */
+  .pick-up input {
+    width: 83%;
+    margin: 1vw 1.5vw;
+  }
+  /* 주문신청서 dt */
+  .form-content dt {
+    width: 20%;
+    font-size: var(--fz-nav);
+  }
+  /* 주문신청서 dd*/
+  .form-content dd {
+    width: 80%;
+    font-size: var(--fz-nav);
+  }
 } /* 1450px이하 미디어쿼리 종료 */
 /* 1050px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1050px) {
+  /* 진행절차 배경 */
+  .proceed-nav li.on::before {
+    width: max(12vw, 75px);
+  }
+  /* 진행절차 박스 */
+  .proceed-box {
+    min-width: 380px;
+  }
+  /* 주문신청서 박스 */
+  .form-area .form-box {
+    padding: 2vw;
+  }
+  /* 신청서 타이틀 */
+  .form-title {
+    font-size: var(--fz-big);
+    margin: 10px 0;
+  }
+  /* 절차 버튼 박스 */
+  .proceed-btn-box {
+    gap: 4vw;
+  }
 } /* 1050px이하 미디어쿼리 종료 */
 /* 750px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 750px) {
+  .order-box {
+    flex-direction: column;
+    gap: 20px 10px;
+  }
+  .form-area .form-box {
+    transform: translateY(18px);
+    overflow-y: scroll;
+  }
+  .proceed-box {
+    max-width: none;
+    width: auto;
+  }
+  .proceed-nav {
+    max-width: none;
+  }
+  .proceed-nav li.on::before {
+    width: 110px;
+  }
+  .proceed-btn-box {
+    margin-top: 0px;
+    justify-content: space-around;
+  }
+  .prod-box.view {
+    width: 95vw;
+  }
+  .list-type > .partbox:first-of-type {
+    margin: 10px;
+  }
+  /* 상품 리스트박스 */
+  .list-type .list {
+    height: auto;
+    margin: 0 auto;
+  }
+  /* 리스트박스 ol */
+  .list-type ol {
+    display: flex;
+    gap: 1.5vw;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: center;
+  }
+  /* 리스트박스 li */
+  .list-type ol > li {
+    width: 49%;
+  }
+  /* 리스트 박스 li 오버 시 */
+  .list-type ol > li:hover {
+    opacity: 0.85;
+  }
+  /* 리스트 박스 li안쪽 박스 */
+  .list-type .partbox {
+    padding: 0px;
+    width: 100%;
+  }
+  /* 이미지 바깥쪽 박스 */
+  .img-box {
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+  }
+  /* 정보박스 */
+  .txt-box {
+    padding: 10px 0 0 10px;
+  }
+  /* 팝업 시간박스 */
+  .popup-box.timer {
+    height: auto;
+  }
 } /* 750px이하 미디어쿼리 종료 */
 /* 500px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
+  .proceed-box {
+    min-width: 220px;
+  }
+  .proceed-nav li {
+    width: auto;
+  }
+  /* 절차 단계 nav ol */
+  .proceed-nav ol {
+    width: 16.7%;
+  }
+  /* 절차 단계 내용ol */
+  .proceed-content ol {
+    width: 586vw;
+  }
+  /* 절차 버튼들 */
+  .proceed-btn-box {
+    width: 16.7%;
+  }
+  /* 찾는 날짜 시간 */
+  .proceed-list .day-time {
+    padding: 1vw 1.5vw;
+  }
+  /* 상품 서브 */
+  .sub-menu span {
+    width: auto;
+  }
+  /* 달력 */
+  .popup-box {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  /* 절차내용 li*/
+  .proceed-content ul > li {
+    width: 96%;
+    height: 15vw;
+    line-height: 2.7;
+  }
+  /* 픽업 입력칸 */
+  .pick-up input {
+    width: 90%;
+    margin: 1.5vw;
+    height: 34px;
+  }
+  /* 절차버튼 공통박스 */
+  .proceed-btn-box {
+    gap: 6vw;
+    width: 16.4%;
+  }
+  /* 절차버튼들 */
+  .btn {
+    width: 125px;
+    height: 40px;
+    letter-spacing: 3px;
+  }
+  /* 시간선택 박스 */
+  .proceed-list .day-time {
+    height: 11vw;
+    margin-left: auto;
+    width: 90%;
+    margin: 1.5vw;
+  }
+  /* 선택박스 */
+  .select-box {
+    height: 23px;
+  }
+  /* 제품리스트 */
+  .list-type {
+    padding: 10px;
+  }
+  /* 제품리스트 파트박스 */
+  .list-type .partbox {
+    position: relative;
+  }
+  /* 제품리스트 상품 설명박스*/
+  .txt-box {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background-color: #00000080;
+    color: #fff;
+  }
+  /* 제품리스트 상품설명창li */
+  .txt-box li {
+    margin-bottom: 1px;
+  }
+  /* 제품리스트 상품 li에 오버시 */
+  .list-type ol > li:focus .txt-box,
+  .list-type ol > li:hover .txt-box {
+    display: block;
+  }
 } /* 500px이하 미디어쿼리 종료 */
