@@ -111,7 +111,7 @@
     /* 아이콘용 부모자격 */
     width: 140px;
     height: 50px;
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     border-radius: 20px;
     line-height: 56px;
     text-align: right;
@@ -254,7 +254,7 @@
 .faq-content > ul > li.open .asked-box {
     height: 63px;
     /* 트랜지션 */
-    transition: height 0.5s ease-out 1s;
+    transition: height 0.3s ease-out .5s;
 }
 @keyframes arrow-updo-swing-ani {
     to {

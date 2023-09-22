@@ -489,22 +489,28 @@ basic.innerHTML = hCode;
 // 함수 만들기
 // 1.서서브 코드구성 함수
 function depth2(list){
+    // 서서브 코드 변수
+    let radioNum = 0;
     let depCode = '';
     for(let x in list){
         // console.log(list[x].name);
         depCode += `
         <div class="details ${list[x].img?'flavor':'size-box'}">
-            <div class="${list[x].img?'img-box':'container'}">
-                ${list[x].img?`<img src="${list[x].img}" alt="${list[x].alt}">`:`<div class="container"><div class="cylinder"></div></div>`}
-            </div>
-            <div class="txt-box">
-                <span>${list[x].name}</span>
-                <span>+${list[x].price}</span>
-            </div>
+        <label for="${list[x].img?'flavor':'size'}${radioNum}">
+        <input type="radio" name="${list[x].img?'flavor':'size'}" id="${list[x].img?'flavor':'size'}${radioNum}" value="${list[x].name}">
+                <div class="${list[x].img?'img-box':'container'}">
+                    ${list[x].img?`<img src="${list[x].img}" alt="${list[x].alt}">`:`<div class="container"><div class="cylinder"></div></div>`}
+                </div>
+                <div class="txt-box">
+                    <span>${list[x].name}</span>
+                    <span>+${list[x].price}</span>
+                </div>
+        </label>
         </div>
         `;
+        radioNum++;
     } ////////for in문///////////
-    // console.log('depCode',depCode);
+    console.log('depCode',depCode);
     return depCode;
 } //////depth2함수////////////////
 

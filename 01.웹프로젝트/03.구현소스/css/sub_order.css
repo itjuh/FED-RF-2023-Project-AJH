@@ -629,7 +629,7 @@ td.check {
   height: 100%;
   box-sizing: border-box;
   padding: 0.5vw 0.5vw;
-  margin-bottom: 50px;
+  margin: 14px auto;
   gap: 0 2.5vw;
 }
 /* 왼쪽파트 */
@@ -677,15 +677,18 @@ td.check {
 }
 /* 옵션 dd */
 .option-select dd {
-  display: flex;
   margin: 10px 0;
-  gap: 0 10px;
+  cursor: pointer;
 }
 .option-select dd > div {
   flex: 1;
 }
 /* 맛선택 박스 */
-/* 맛선택 이미지 */
+.details{
+  position: relative;
+  /* select박스 부모 */
+}
+/* 맛선택 이미지 겉박스 */
 .details .img-box {
   width: 100px;
   height: 100px;
@@ -693,6 +696,17 @@ td.check {
   border-radius: 50%;
   box-shadow: 0px 0px 6px #00000080;
 }
+/* 맛선택 옵션 */
+input[type=radio] {
+  display: none;
+}
+.option-select dd {
+  display: flex;
+  gap: 0 10px;
+  cursor: pointer;
+  justify-content: space-between;
+}
+/* 이미지 */
 .details .img-box img {
   width: 100%;
   aspect-ratio: 1/1;
@@ -702,6 +716,17 @@ td.check {
 /* 이미지 마우스오버 시 */
 .details .img-box:hover img {
   opacity: 1;
+}
+/* 선택사항 선택 가상요소이미지 */
+.option-select [type="radio"]:checked + label .details::after{
+  content: '\f00c';
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  width: 50px;
+  height: 50px;
+  right: 0;
+  top: 0;
 }
 /* 글자 */
 .details .txt-box {
