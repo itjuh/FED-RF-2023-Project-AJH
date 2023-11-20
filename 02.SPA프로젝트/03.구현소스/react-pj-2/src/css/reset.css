@@ -1,0 +1,67 @@
+/* 레오폴드 PJ : 리셋 CSS - reset.css */
+/* 초기화 */
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+dl,
+dt,
+dd,
+p,
+figure,
+figcaption,
+button,
+mark {
+    margin: 0;
+    padding: 0;
+}
+/* a요소 리셋 */
+a {
+    color: #222;
+    text-decoration: none;
+}
+/* ul,ol 순번,불릿 */
+ul,ol,mark{
+    list-style: none;
+}
+/* heading 요소 글자크기 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+mark,
+em {
+    font-size: 100%;
+    /* 박스 디자인 시 글자크기로 인한
+    영향을 없애기 위한 초기화 */
+}
+/* button요소 리셋 */
+button {
+    border: none;
+}
+img {
+    /* 이미지 링크시 서버에서 볼때 파란색 자동보더 없애기 */
+    border: none;
+    /* 박스 이미지 하단공백 제거 */
+    vertical-align: bottom;
+}
+/* em, i요소 글자 이탤릭 제거 */
+em,i {
+    font-style: normal;
+}
+/* input focus제거 */
+input {
+    outline: none;
+}
+/* 테이블요소 간격 */
+table {
+    border-collapse : collapse;
+}

@@ -1,0 +1,98 @@
+/* 레오폴드 서브페이지용 css - subboard.css */
+
+/* 타이틀 h2 */
+.top-title h2 {
+  height: 70%;
+}
+/* 타이틀 서브 */
+.top-title small {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  font-family: KOFIHDrLEEJWTTF-L;
+}
+
+/************** 2. 메인영역  ****************/
+/* 네비게이션 구역 */
+.nav-area {
+  position: relative;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.nav-area ul {
+  gap: 1vw;
+  height: 90%;
+  align-items: flex-end;
+}
+.nav-area ul li {
+  width: 10vw;
+}
+.nav-area ul li:nth-child(1) {
+  width: 20%;
+}
+.nav-area ul li:nth-child(2) {
+  width: 15%;
+}
+.nav-area ul li:nth-child(3) {
+  width: 10%;
+}
+.nav-area ul li:nth-child(4) {
+  width: 15%;
+}
+.nav-area ul li:nth-child(5) {
+  width: 20%;
+}
+/* 타이틀 */
+.nav-tit {
+  font-size: 1.2rem;
+  font-family: KOFIHDrLEEJWTTF-L;
+}
+/* 컨텐츠 */
+.nav-cont {
+  height: 5px;
+  border-radius: 10px;
+  border: 1px solid coral;
+}
+/* 각 제품 구역 */
+.prod-area {
+  position: relative;
+  /* 위시버튼 부모 */
+}
+/* 제품정보 겉박스 */
+.prod-info {
+  position: relative;
+  width: 100%;
+  outline: 1px solid #eee;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+/* 움직일 이미지 박스 - 속박스 */
+.info-img {
+  position: relative;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+.info-img img {
+  position: relative;
+  width: 100%;
+  object-fit: fill;
+}
+/* 위시리스트 버튼 */
+.wish-sub {
+  right: auto;
+  bottom: 70px;
+  left: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+/* 구매하기 버튼 */
+.buy-btn {
+  left: 210px;
+  outline-color: cornflowerblue;
+}
+/* 구매하기 오버 시 */
+.buy-btn:hover {
+  background-color: cornflowerblue;
+}
