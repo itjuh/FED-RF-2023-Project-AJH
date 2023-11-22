@@ -4,9 +4,9 @@ import { useLocation } from "react-router-dom";
 import "../../css/subboard.css";
 // 서브페이지용 데이터
 import { detailData } from "../data/detailData";
-import { useEffect, useLayoutEffect } from "react";
+import { useLayoutEffect } from "react";
 // 제이쿼리
-import $ from "jquery";
+import $, { cssNumber } from "jquery";
 import { moveImgInfo } from "../func/info_scroll";
 import { useContext } from "react";
 import { LeoCon } from "../modules/LeopoldContext";
@@ -39,22 +39,31 @@ export function SubBoard() {
   useLayoutEffect(() => {
     // 이미지 길이로 네비게이션바 길이 조정
     // 이미지 길이 배열 imgWd / 이미지 전체 길이 all
-    const imgWd = [];
-    let all = 0;
-    const setNav = () => {
-      $(".info-img img").each((i, v) => (all += v.height));
-      $(".info-img img").each((i, v) => {
-        imgWd[i] = Math.floor((v.height / all) * 100);
-      });
-      // console.log(imgWd, all);
-      // 네비게이션 길이 적용
-      $(".nav-area li").each((i, v) => $(v).css({ width: imgWd[i] + "%" }));
-      // 휠 이벤트
-      moveImgInfo($(".list-page"));
-    }; /////// nav세팅 함수 /////////////
-    if(!selData) return;
-    else setNav();
+    loadFn();
+
   });
+
+  const loadFn = () => {
+
+      console.log(3333);
+  
+      const imgWd = [];
+      let all = 0;
+      const setNav = () => {
+        $(".info-img img").each((i, v) => (all += v.height));
+        $(".info-img img").each((i, v) => {
+          imgWd[i] = Math.floor((v.height / all) * 100);
+        });
+        console.log(imgWd, all);
+        // 네비게이션 길이 적용
+        $(".nav-area li").each((i, v) => $(v).css({ width: imgWd[i] + "%" }));
+        // 휠 이벤트
+        moveImgInfo($(".detail-page"));
+      }; /////// nav세팅 함수 /////////////
+      if(!selData) return;
+      else setNav();
+  
+  }
 
   // 네비게이션
   const makeProgress = (data) => {
@@ -92,9 +101,9 @@ export function SubBoard() {
   // 리턴구역 ///////////////////
   return (
     <>
-      <main className="main in-box row-12 list-page">
+      <main className="main in-box row-12 detail-page">
         {/* 네비게이션 구역 */}
-        {selData ? makeProgress(selData["img"]) : <h2>세부이미지가 없습니다.</h2>}
+        {selData ? makeProgress(selData["img"]) : <h2></h2>}
         {/* 제품 설명 구역 */}
         <div className="part-box col-16 row-11 prod-area">
           {/* 제품이미지 */}

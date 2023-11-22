@@ -7,11 +7,12 @@ import { useLayoutEffect } from "react";
 // 제이쿼리 가져오기
 import $ from "jquery";
 import { Link } from "react-router-dom";
+import { memo } from 'react';
 window.jQuery = $;
 require("jquery-ui-dist/jquery-ui");
 require("jquery-ui-touch-punch/jquery.ui.touch-punch");
 
-export function BoardList() {
+export const BoardList = memo(()=>{
 
   // 랜더링되기 전 이미지 넣기
   useLayoutEffect(()=>{
@@ -53,4 +54,4 @@ export function BoardList() {
         {makeList(0).map(v=>v)}
     </ol>
   );
-} /////////// BoardList 컴포넌트 ////////////
+}) /////////// BoardList 컴포넌트 ////////////

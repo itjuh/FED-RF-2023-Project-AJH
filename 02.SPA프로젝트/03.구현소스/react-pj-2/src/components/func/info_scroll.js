@@ -114,6 +114,7 @@ export function moveImgInfo(tg) {
     if (x >= 0 && delta > 0) x = 0;
     else if (x >= -pos[0][0]) x = horizonScroll(pos[0], delta);
     else if (x >= -pos[1][0]) x = horizonScroll(pos[1], delta);
+    else if (x >= 0 && delta <= 0) x = 0;
     // else if (x >= -pos[2][0]) x = horizonScroll(pos[2], delta);
     if (x <= -pos[1][0] && delta < 0) x = -pos[1][0];
     // 휠 이벤트 시 네비설정

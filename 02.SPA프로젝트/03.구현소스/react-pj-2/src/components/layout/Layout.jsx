@@ -5,11 +5,16 @@ import { FooterArea } from "./FooterArea";
 import { useState } from "react";
 import { LeoCon } from "../modules/LeopoldContext";
 import { useNavigate } from "react-router-dom";
+// 링크데이터
+import { link } from "../data/link";
 
 // 레이아웃 구성 컴포넌트
 export function Layout() {
+  // 링크 데이터
+  let selData;
+  
   // 페이지 이동용
-  // const goNav = useNavigate();
+  const goNav = useNavigate();
   // 필터용 후크변수 설정
   const [selNum, setSelNum] = useState(0);
   // 토글용 후크변수
@@ -20,7 +25,13 @@ export function Layout() {
   const chgSel = (num) => setSelNum(num);
   // 토글 업데이트 함수
   const chgTog = (txt) => {
-    setToggleVal(txt)
+    setToggleVal(txt);
+    link.forEach((ele, idx) => {
+      if (ele.txt == txt) selData = link[idx];
+    });
+    // console.log('토글바뀜 ->',txt,'selData임->',selData);
+    goNav(selData.link);
+    setTitVal(selData.tit);
   };
   // 상단 타이틀 함수
   const chgTit = (txt) => setTitVal(txt);

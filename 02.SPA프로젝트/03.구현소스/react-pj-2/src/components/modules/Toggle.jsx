@@ -12,9 +12,8 @@ export function Toggle() {
   const myCon = useContext(LeoCon);
 
   useLayoutEffect(()=>{
-    const cir = $(".tg-cir");
-    // 원 초기설정
-    cir.css({
+    // 토글박스 원 초기설정
+    $(".tg-cir").css({
       left:'4px',
     })
   },[]);
@@ -36,13 +35,13 @@ export function Toggle() {
           .css({
             color: "rgb(128, 128, 128)",
           });
-        // 드롭 시 위치 조정
-        let dropArea = $(this).text();
-        if(dropArea == 'switch') {
+        // 드롭 시 위치 조정 + 토글변경
+        let txt = $(this).text();
+        if(txt == 'switch') {
           cir.css({
                 left:'99px',
             })
-            myCon.chgTog('switch');
+            myCon.chgTog(txt);
             myCon.chgTit('Switch List');
         }else {
           cir.css({

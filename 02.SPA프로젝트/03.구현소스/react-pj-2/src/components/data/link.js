@@ -21,7 +21,7 @@ export const link = [
     {
         txt:"main",
         tit:"KeyBoard List",
-        link:"/board",
+        link:"/",
     },
     {
         txt:"switch",
