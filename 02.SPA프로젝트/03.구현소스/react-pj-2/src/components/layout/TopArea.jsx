@@ -36,7 +36,7 @@ export function TopArea() {
           {/* 1-1. 로고영역 */}
           <Logo />
           {/* 1-2. 타이틀영역 */}
-          <TopTitle tit='Keyboard List'/>
+          <TopTitle />
           {/* 1-3. GNB메뉴 */}
           <div className="part-box col-3 flex-box gnb-area">
             {makeGnb()}

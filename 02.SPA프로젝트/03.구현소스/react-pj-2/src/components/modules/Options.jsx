@@ -3,6 +3,8 @@ import { CheckCon } from "../modules/Icons";
 // 옵션데이터 불러오기
 import { optionData } from "../data/optionData";
 import { Fragment, useEffect } from "react";
+import { useContext } from "react";
+import { LeoCon } from "../modules/LeopoldContext";
 // 제이쿼리 가져오기
 import $ from "jquery";
 window.jQuery = $;
@@ -22,12 +24,16 @@ optionData 구조
     ]
   },
 */
-export function Options(props) {
-  // props.selNum - 하위리스트 display순번
+export function Options() {
+  // selNum 필요
+  // 컨텍스트 API 사용하기
+  const myCon = useContext(LeoCon);
+  const selNum = myCon.selNum;
+
   useEffect(()=>{
     // console.log($('.progress-sub-area').eq(props.selNum));
-    $('.progress-sub-area').eq(props.selNum).css({display:'flex'}).siblings().css({display:'none'});
-  },[props.selNum]);
+    $('.progress-sub-area').eq(selNum).css({display:'flex'}).siblings().css({display:'none'});
+  },[selNum]);
   // 배열 옵션 리스트 함수
   const makeList = (data) => {
     return (

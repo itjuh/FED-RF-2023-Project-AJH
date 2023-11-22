@@ -1,11 +1,16 @@
 // LEOPOLD 로고 넣기 컴포넌트
+import { useContext } from 'react';
 import {useNavigate} from 'react-router-dom';
+import { LeoCon } from './LeopoldContext';
 
 export function Logo() {
   // 라우터 네비게이션
   const nav = useNavigate();
+  // 컨텍스트
+  const myCon = useContext(LeoCon);
   // 메인 라우터 연결
   function goMain(){
+    myCon.chgTit('Keyboard List');
     nav('/');
   };
   return (

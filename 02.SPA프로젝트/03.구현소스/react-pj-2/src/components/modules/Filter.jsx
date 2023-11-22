@@ -1,14 +1,19 @@
 // LEOPOLD 메인페이지 keyboard Filter 컴포넌트
 
 import { optionData } from "../data/optionData";
+import { useContext } from "react";
+import { LeoCon } from "../modules/LeopoldContext";
 // 제이쿼리 가져오기
 import $ from "jquery";
 window.jQuery = $;
 require("jquery-ui-dist/jquery-ui");
 require("jquery-ui-touch-punch/jquery.ui.touch-punch");
 
-export function Filter(props){
-    // props.chgFn(n) 세부 필터 값 업데이트 함수
+export function Filter(){
+    // 필터 업데이트 함수chgFn 필요함
+    // 컨텍스트 API 사용하기
+    const myCon = useContext(LeoCon);
+
     // 클릭한 필터 값 이동하기
     const addOn = function(e){
       const prog = $('.progress-area li');
@@ -26,7 +31,7 @@ export function Filter(props){
       $('.progress-bar').css({
         width: wid+'%'
       });
-      props.chgFn(idx);
+      myCon.chgSel(idx);
     }
 
     return(

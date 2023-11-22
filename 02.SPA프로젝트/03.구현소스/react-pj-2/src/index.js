@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
 import { Main } from "./components/pages/Main";
 import { SubBoard } from './components/pages/SubBoard';
+import { Switch } from './components/pages/Switch';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           {/* 하위 라우터 세팅 */}
           <Route index element={<Main />} />
           <Route path='subboard' element={<SubBoard />} />
+          <Route path='switch' element={<Switch />} />
         </Route>
       </Routes>
     </BrowserRouter>

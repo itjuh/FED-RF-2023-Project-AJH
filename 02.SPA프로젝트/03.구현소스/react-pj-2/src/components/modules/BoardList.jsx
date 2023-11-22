@@ -3,6 +3,7 @@
 // import { boardData } from "../data/boardData";
 import { boardData } from '../data/boardData';
 import { useLayoutEffect } from "react";
+
 // 제이쿼리 가져오기
 import $ from "jquery";
 import { Link } from "react-router-dom";
@@ -24,15 +25,16 @@ export function BoardList() {
   },[]); /////////// useEffect ///////
 
   // 대상 출력하기
-  const makeList = () => {
+  const makeList = (num) => {
     const hcode = [];
     // 10개의 데이터 넣기
-    for(let i=0; i < 10; i++){
-      hcode[i] = <li>
-      <Link to='subboard'>
+    for(let i=num; i < num+10; i++){
+      let seq = i+1;
+      hcode[i] = <li key={i}>
+      <Link to='/subboard' state={{name:'keyboard'+seq}}>
       <div
         className="prod-item"
-        data-seq={i+1}
+        data-seq={seq}
       >
         {/* 더보기 */}
         <div className="prod-detail-view">view</div>
@@ -48,7 +50,7 @@ export function BoardList() {
   };
   return (
     <ol>
-        {makeList().map(v=>v)}
+        {makeList(0).map(v=>v)}
     </ol>
   );
 } /////////// BoardList 컴포넌트 ////////////
