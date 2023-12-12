@@ -186,23 +186,23 @@ input[type="checkbox"]:checked + .color-rd {
 }
 /* 스위치 개별 이미지 */
 .switch-br {
-  background-image: url(../../public/images/switch_prod/png/click_brown.png);
+  background-image: url(../../public/images/switch_prod/nonclick_brown/01.png);
 }
 .switch-bu {
-  background-image: url(../../public/images/switch_prod/png/click_blue.png);
+  background-image: url(../../public/images/switch_prod/click_blue/01.png);
 }
 .switch-sl {
-  background-image: url(../../public/images/switch_prod/png/silent_silver.png);
+  background-image: url(../../public/images/switch_prod/silent_silver/01.png);
 }
 .switch-sr {
-  background-image: url(../../public/images/switch_prod/png/silent_red.png);
+  background-image: url(../../public/images/switch_prod/silent_red/01.png);
 }
 .switch-lr {
-  background-image: url(../../public/images/switch_prod/png/linear_red.png);
+  background-image: url(../../public/images/switch_prod/linear_red/01.png);
 }
 .switch-bk {
-  background-image: url(../../public/images/switch_prod/png/linear_black.png);
+  background-image: url(../../public/images/switch_prod/linear_black/01.png);
 }
 .switch-cl {
-  background-image: url(../../public/images/switch_prod/png/nonclick_clear.png);
+  background-image: url(../../public/images/switch_prod/nonclick_clear/01.png);
 }

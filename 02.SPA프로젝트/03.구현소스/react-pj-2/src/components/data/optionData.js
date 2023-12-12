@@ -18,8 +18,8 @@ export const optionData = [
         labelClass:'check-array',
       },
       {
-        val:'etc',
-        id:'array-etc',
+        val:'980',
+        id:'array-980',
         labelClass:'check-array',
       },
     ]

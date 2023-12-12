@@ -20,7 +20,7 @@ export const link = [
     */
     {
         txt:"main",
-        tit:"KeyBoard List",
+        tit:"Keyboard List",
         link:"/",
     },
     {

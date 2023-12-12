@@ -1,15 +1,24 @@
 // 제품 서브페이지용 데이터
 /*
-상세설명 데이터
+상세설명 데이터 구조
 
-'imageName' : {
-    code : '',
-    sub : '',
-    type : '',
-    img : ['경로','경로','경로','경로','경로','경로',],
-    desc : '',
-    audio : '',
-    gif : '',
+'이미지폴더명' : {
+    code : '제품코드',
+    sub : '서브타이틀(한글명)',
+    type : '키보드||스위치',
+    img : [
+      { isrc: "이미지경로", ialt: "이미지종류" },
+      { // 스위치의 경우
+        isrc: "",
+        ialt: "내용종류", //네비게이션용
+        iinfo: [
+          "특징종류:특징내용",
+          "특징종류:특징내용",
+          "특징종류:특징내용",
+        ],
+        desc: "상세설명",
+      },
+    ],
 },
 
 -> 이미지 경로는 6개까지, 이미지경로는 제품코드명 폴더에
@@ -26,9 +35,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard1/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard2: {
     code: "FC750RBTPD",
@@ -41,9 +47,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard1/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard3: {
     code: "FC900RBTPD",
@@ -56,9 +59,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard3/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard4: {
     code: "FC750RBTPD",
@@ -71,9 +71,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard3/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard5: {
     code: "FC900RBTPD",
@@ -86,9 +83,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard4/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard6: {
     code: "FC750RBTPD",
@@ -101,9 +95,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard4/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard7: {
     code: "FC900RBTPD",
@@ -116,9 +107,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard4/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard8: {
     code: "FC750RBTPD",
@@ -131,9 +119,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard4/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard9: {
     code: "FC900RBTPD",
@@ -146,9 +131,6 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard4/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
   },
   keyboard10: {
     code: "FC750RBTPD",
@@ -161,8 +143,173 @@ export const detailData = {
       { isrc: "./images/keyboard1/04.jpg", ialt: "must-read" },
       { isrc: "./images/keyboard4/05.jpg", ialt: "info1" },
     ],
-    desc: "",
-    audio: "",
-    gif: "",
+  },
+  "linear-red": {
+    code: "linear-red",
+    sub: "리니어 적축",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/linear_red/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/linear_red/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:부드럽고 직접적",
+          "특성:선형 스위칭 특성",
+          "키압:45cN 작동력",
+          "이동:2.0mm 사전 이동",
+          "범위:총 이동거리 4.0mm",
+          "소음:Slient",
+          "용도:사무/게이밍",
+        ],
+        desc: "설명:낮은 스프링 저항과 결합된 선형 스위칭 특성이 직접적으로 트리거됩니다. CHERRY MX Red는 기계식 키보드 세계의 초보자를 위한 첫 번째 선택입니다. 원활하게 작동하는 CHERRY MX 기술은 글쓰기와 게임 세션의 균형을 유지합니다.",
+      },
+      { isrc: "./images/switch_prod/linear_red/03.gif", ialt: "motion" },
+    ],
+  },
+  "silent-silver": {
+    code: "silent-silver",
+    sub: "저소음 은축",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/silent_silver/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/silent_silver/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:빠르고 직접적",
+          "특성:선형 스위칭 특성",
+          "키압:45cN 작동력",
+          "이동:1.2mm 사전 이동",
+          "범위:총 이동거리 3.4mm",
+          "소음:Slient",
+          "용도:사무/게이밍",
+        ],
+        desc: "설명:CHERRY MX Speed ​​Silver는 전체 높이에서 CHERRY MX 스위치 제품군 중 가장 빠른 모델입니다. 낮은 스프링 저항과 결합된 선형 스위칭 특성으로 인해 실버 스위치가 직접 트리거됩니다. 밀리초 단위로 승패를 결정할 때 CHERRY MX Speed ​​Silver는 성공적인 게임 세션을 보장합니다.",
+      },
+      { isrc: "./images/switch_prod/silent_silver/03.gif", ialt: "motion" },
+    ],
+  },
+  "linear-black": {
+    code: "linear-black",
+    sub: "리니어 흑축",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/linear_black/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/linear_black/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:강력하고 직접적",
+          "특성:선형 스위칭 특성",
+          "키압:60cN 작동력",
+          "이동:2.0mm 사전 이동",
+          "범위:총 이동거리 4.0mm",
+          "소음:Slient",
+          "용도:게이밍",
+        ],
+        desc: "설명:증가된 스프링 힘과 결합된 선형 스위칭 특성이 직접적으로 트리거됩니다. 더 강력한 나선형 스프링 덕분에 검증된 진정한 CHERRY MX Black은 키를 시작 위치로 부드럽게 이동하고 장시간 글쓰기 및 게임 세션에 필요한 지속력을 제공합니다.",
+      },
+      { isrc: "./images/switch_prod/linear_black/03.gif", ialt: "motion" },
+    ],
+  },
+  "nonclick-brown": {
+    code: "nonclick-brown",
+    sub: "클릭 브라운",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/nonclick_brown/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/nonclick_brown/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:집중적이고 구분감 있음",
+          "특성:촉각 스위칭 특성",
+          "키압:55cN 작동력",
+          "이동:2.0mm 사전 이동",
+          "범위:총 이동거리 4.0mm",
+          "소음:Medium",
+          "용도:사무/타이핑",
+        ],
+        desc: "설명:눈에 띄는 피드백이 있다는 것입니다. CHERRY MX Brown의 소음 없는 안내는 확실한 본능을 훈련시켜 전술적, 전략적으로 행동할 수 있도록 도와줍니다.",
+      },
+      { isrc: "./images/switch_prod/nonclick_brown/03.gif", ialt: "motion" },
+    ],
+  },
+  "click-blue": {
+    code: "click-blue",
+    sub: "클릭 블루",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/click_blue/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/click_blue/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:클릭감이 좋고 경쾌함",
+          "특성:촉각 및 가청 스위칭 특성",
+          "키압:60cN 작동력",
+          "이동:2.2mm 사전 이동",
+          "범위:총 이동거리 4.0mm",
+          "소음:High",
+          "용도:입문자/타이핑",
+        ],
+        desc: "설명:강한 촉각 및 청각 피드백이 특징입니다. 눈에 띄는 '클릭음' 덕분에 CHERRY MX Blue는 눈에 띄는 피드백뿐만 아니라 음향 피드백도 제공합니다. 따라서 CHERRY MX 클릭 기술이 적용된 스위치는 용기 있는 선택으로 자리 잡았습니다.",
+      },
+      { isrc: "./images/switch_prod/click_blue/03.gif", ialt: "motion" },
+    ],
+  },
+  "silent-red": {
+    code: "silent-red",
+    sub: "저소음 적축",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/silent_red/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/silent_red/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:부드럽고 조용함",
+          "특성:선형 스위칭 특성",
+          "키압:45cN 작동력",
+          "이동:1.9mm 사전 이동",
+          "범위:총 이동거리 3.7mm",
+          "소음:Silent",
+          "용도:사무/타이핑",
+        ],
+        desc: "설명:CHERRY MX Red와 마찬가지로 CHERRY MX SILENT Red도 선형 스위칭 특성이 특징입니다. 특허받은 댐핑 기술로 작동 소음이 확실하게 최소화됩니다. 조용한 CHERRY MX 기술이 적용된 스위치는 낮은 스프링 힘과 부드러운 작동 측면에서 현명한 선택으로 자리 잡았습니다.",
+      },
+      { isrc: "./images/switch_prod/silent_red/03.gif", ialt: "motion" },
+    ],
+  },
+  "nonclick-clear": {
+    code: "nonclick-clear",
+    sub: "넌클릭 백축",
+    type: "switch",
+    img: [
+      { isrc: "./images/switch_prod/nonclick_clear/01.png", ialt: "white-image" },
+      { isrc: "./images/switch_prod/nonclick_clear/02.png", ialt: "black-image" },
+      {
+        isrc: "",
+        ialt: "infomation",
+        iinfo: [
+          "성향:묵직하고 뚜렷한 타건감",
+          "특성:촉각 스위칭 특성",
+          "키압:65cN 작동력",
+          "이동:2.0mm 사전 이동",
+          "범위:총 이동거리 4.0mm",
+          "소음:Medium",
+          "용도:사무/게이밍",
+        ],
+        desc: "설명:클릭이 필요 없는 촉각 스위치인 CHERRY MX Clear는 CHERRY MX Brown 및 CHERRY MX Grey의 자매 모델입니다. 작동으로 인해 갈색과 회색에 해당하는 완벽한 중심 장식입니다. 견고한 엑조틱 스위치는 매니아들에게 인기 있는 스위치입니다.",
+      },
+      { isrc: "./images/switch_prod/nonclick_clear/03.gif", ialt: "motion" },
+    ],
   },
 };

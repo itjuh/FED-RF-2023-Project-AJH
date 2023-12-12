@@ -3,6 +3,7 @@
 import { Outlet } from "react-router-dom";
 
 export function MainArea() {
+
   // 리턴함수
   return (
     <>

@@ -1,0 +1,95 @@
+/* 레오폴드 메뉴 css - menu.css */
+
+/* 2. 메인영역 */
+/* gnb메뉴 */
+.gnb-menu-area {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  margin: 0 auto;
+  outline: 1px solid #eee;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 3rem;
+  line-height: 1.6;
+  letter-spacing: 0.1rem;
+  background-color: white;
+  z-index: 999;
+  transition: all 0.5s ease-in;
+  /* 처음에 안보임 */
+  height: 0;
+  overflow: hidden;
+}
+.gnb-menu-area.on {
+  height: auto;
+}
+/* gnb 메뉴 속박스 ul */
+.gnb-menu-box {
+  box-sizing: border-box;
+  padding: 10rem 8rem;
+}
+.gnb-menu-box li {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  height: 80px;
+  width: 30%;
+}
+/* gnb 배경글자 */
+.gnb-menu-box span {
+  position: absolute;
+  left: 0;
+  color: #ebebeb;
+}
+/* gnb 상위글자 */
+.gnb-menu-box b {
+  position: relative;
+  overflow: hidden;
+  left: 0;
+  color: #111111;
+}
+/* 텍스트 커서 */
+.text-cursor {
+  /* display: inline-block; */
+  height: 2rem;
+  width: 0.05rem;
+  background-color: #777;
+  display: none;
+
+  /* 애니메이션 */
+  animation: txt-cursor-ani 1s infinite steps(2);
+}
+/* 텍스트 커서 애니 */
+@keyframes txt-cursor-ani {
+  from {
+    opacity: 0;
+  }
+}
+
+/* 마우스 오버 시 커서 보이기 */
+.gnb-menu-box li:hover .text-cursor {
+  display: inline-block;
+}
+/* 닫기버튼 */
+.close-btn {
+  position: absolute;
+  height: 40px;
+  aspect-ratio: 1/1;
+  text-align: center;
+  line-height: 1;
+  top: 10%;
+  right: 10%;
+  cursor: pointer;
+  color: #ebebeb;
+  /* 트랜지션 */
+  transition: transform 0.3s;
+}
+.close-btn:hover {
+  color: #111111;
+  transform: rotate(-90deg);
+}
+/* 키보드 구역 */
+.keyboard-menu {
+  position: relative;
+  top: 70%;
+}

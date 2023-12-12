@@ -3,14 +3,17 @@ import $ from "jquery";
 
 export function moveImgInfo(tg) {
   // 이동 대상
-  const infoBox = $(tg).find(".info-img");
+  const infoBox = $(tg).find(".info-box");
   // 한계값을 위한 겉박스 크기
   const limitW = $(tg).find(".prod-info").width();
   const limitH = $(tg).find(".prod-info").height();
+  // 이동거리 측정 대상
+  const infoImg = infoBox.find("img");
 
   let psts = 0; /// 광스크롤막기(0-허용,1-막기)
   // 위치변수
-  let x = 0;
+  let x = $(tg).find(".info-box").position().left;
+
   let y = 0;
   const MOVE = 150;
   // 초기 이미지값 변수
@@ -25,10 +28,8 @@ export function moveImgInfo(tg) {
   let pos = [];
   // 전체 이동거리
   let all = 0;
-  // 이동거리 측정 대상
-  const infoImg = infoBox.find("img");
 
-  console.log(infoBox, limitH, limitW, infoImg);
+  // console.log(infoBox, limitH, limitW, infoImg);
   // 이미지 세로크기 저장 함수
   const sizeCheck = (ele) => {
     imgWidSize.length = 0;
@@ -45,7 +46,7 @@ export function moveImgInfo(tg) {
       // 이미지 별 이동값 저장(네비용)
       imgWidSize[i] = xpos - limitW <= 0 ? 0 : xpos - limitW;
 
-      if (v.height !== v.width) {
+      if (v.height > v.width) {
         // 가로영역 이동한계값, 세로 한계값, 움직일 요소
         pos[seq] = [xpos - limitW, v.height - limitH, infoImg.eq(i)];
         seq++;
@@ -53,7 +54,7 @@ export function moveImgInfo(tg) {
     });
     // 전체 이동거리 업데이트
     all = xpos - limitW;
-    console.log("imgWidSize", imgWidSize, "pos", pos, all);
+    // console.log("imgWidSize", imgWidSize, "pos", pos, all);
     // 위치이동 포인트 설정(이미지 가로세로가 다르면 세로스크롤)
   }; //////// 사이즈 저장 함수 ///////////
 
@@ -94,7 +95,7 @@ export function moveImgInfo(tg) {
         verticalScroll(target, dir);
       }
     }
-    console.log(x, target[2].position().top);
+    // console.log(x, target[2].position().top);
     return x;
   } ////////// 가로스크롤 함수 //////////////
 
@@ -110,27 +111,28 @@ export function moveImgInfo(tg) {
 
   // 기능 : 가로세로 스크롤을 조합하여 박스를 이동시킨다.
   // 파라미터 (이미지 전체박스)
-  function infoScroll(delta) {
-    if (x >= 0 && delta > 0) x = 0;
-    else if (x >= -pos[0][0]) x = horizonScroll(pos[0], delta);
-    else if (x >= -pos[1][0]) x = horizonScroll(pos[1], delta);
-    else if (x >= 0 && delta <= 0) x = 0;
-    // else if (x >= -pos[2][0]) x = horizonScroll(pos[2], delta);
-    if (x <= -pos[1][0] && delta < 0) x = -pos[1][0];
+  const infoScroll = (delta,x)=>{
+    console.log(x,delta);
     // 휠 이벤트 시 네비설정
     for(let i=0; i < imgWidSize.length; i++){
       if(x <= -imgWidSize[i]){
         addOnNav(i)
       }
     }
+    if (x >= 0 && delta > 0) x = 0;
+    else if (x >= -pos[0][0]) x = horizonScroll(pos[0], delta);
+    else if (x >= -pos[1][0]) x = horizonScroll(pos[1], delta);
+    else if (x >= 0 && delta <= 0) x = 0;
+    // else if (x >= -pos[2][0]) x = horizonScroll(pos[2], delta);
+    if (x <= -pos[1][0] && delta < 0) x = -pos[1][0];
     infoBox.css("left", x + "px");
-  } //////// infoScroll 함수 ///////////////
+  }; //////// infoScroll 함수 ///////////////
 
   // 네비게이션 바 클릭이벤트 주기
   let nav = document.querySelectorAll(".nav-area>ul>li");
   // console.log(nav);
   nav.forEach((ele, idx) => ele.addEventListener("click", () => {clickNav(idx)}));
-  // 네비게이션 동작
+  // 네비게이션 클릭 동작 함수
   function clickNav(idx) {
     // 누른대상 순번 - idx
     // 누른대상 앞쪽 on 뒤쪽 remove
@@ -142,20 +144,23 @@ export function moveImgInfo(tg) {
     // y값은 초기로
     y = 0;
     infoImg.css("top", y + "px");
-  }
+  } /////////// clickNav ////////////
 
   // 휠 이벤트 주기
   document.querySelector(".prod-info").addEventListener("wheel", (event) => {
-    let delta = event.wheelDelta;
-    console.log("휠중", delta);
-    delta = delta > 0 ? 1 : -1;
-    /////// 광스크롤 막기 //////////////////
     if (psts === 1) return true; //돌아가!
     psts = 1; //잠금!
     setTimeout(function () {
       psts = 0; //해제
-    }, 20); //0.02초후 해제///////////
+    }, 100); //0.02초후 해제///////////
+    // console.log(event);
+    let delta = event.wheelDelta;
+    x = $(tg).find(".info-box").position().left;
+    // console.log(x,delta);
+    // console.log("휠중", delta);
+    delta = delta > 0 ? 1 : -1;
+    /////// 광스크롤 막기 //////////////////
     //// 마우스 휠 방향에 따라 가로스크롤 이동 증감! /////
-    infoScroll(delta);
+    infoScroll(delta,x);
   });
 }

@@ -1,0 +1,98 @@
+/* 레오폴드 서브페이지용 css - subswitch.css */
+
+/* 레오폴드 서브페이지용 css - subboard.css */
+
+/************** 2. 메인영역  ****************/
+
+/* 각 제품 구역 */
+.prod-area-sw {
+  position: relative;
+  /* 위시버튼 부모 */
+}
+/* 제품정보 겉박스 */
+.prod-info-sw {
+  position: relative;
+  width: 100%;
+  outline: 1px solid #eee;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+/* 움직일 이미지 박스 - 속박스 */
+.info-box-sw {
+  position: relative;
+  height: 100%;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+}
+/* 개별 박스 */
+.info-inbox {
+  position: relative;
+  height: 100%;
+  flex-shrink: 0;
+  padding: 0 1vw;
+}
+/* 글자정보 테이블 */
+.info-txt {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 850px;
+}
+/* 정보테이블 css, 상세정보 */
+.info-table,
+.info-desc {
+  display: block;
+  margin: 5vh 2vw;
+  font-family: KOFIHDrLEEJWTTF-L;
+  font-size: 1.3rem;
+  width: 400px;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+}
+/* 테이블 타이틀 */
+.info-table caption,
+.info-desc h2:nth-child(1) {
+  padding: 1.5vw 0;
+  font-family: KOFIHDrLEEJWTTF-B;
+  text-align-last: left;
+  text-indent: 1rem;
+  font-size: 1.6rem;
+}
+/* 테이블 tr,td */
+.info-table tr,
+.info-table td {
+  padding: 1vw;
+}
+/* 테이블 마지막 tr */
+.info-table tr:last-child td {
+  font-family: KOFIHDrLEEJWTTF-L;
+  color: orangered;
+}
+/* 상세정보 h2 */
+.info-desc h2:nth-child(2) {
+  padding: 0 1vw;
+  line-height: 2;
+  letter-spacing: 0.15rem;
+}
+/* 스위치 이미지 */
+.sw-img {
+  height: 60%;
+  position: relative;
+  top: 20%;
+}
+/* 위시리스트 버튼 */
+.wish-sub {
+  right: auto;
+  bottom: 70px;
+  left: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+/* 구매하기 버튼 */
+.buy-btn {
+  left: 210px;
+  outline-color: cornflowerblue;
+}
+/* 구매하기 오버 시 */
+.buy-btn:hover {
+  background-color: cornflowerblue;
+}
