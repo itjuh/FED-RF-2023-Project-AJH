@@ -26,6 +26,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           {/* 하위 라우터 세팅 */}
           <Route index element={<Main />} />
+          <Route path='main'  element={<Main />} />
           {/* 키보드 상세페이지 */}
           <Route path='subboard' element={<SubBoard />} />
           {/* 스위치 페이지 */}

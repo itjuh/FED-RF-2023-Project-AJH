@@ -1,5 +1,9 @@
 // 메인페이지 Main KeyboardList page - Main.jsx
 
+import { LeoCon } from "../modules/LeopoldContext";
+import { useContext } from "react";
+
+
 // 메인페이지 css
 import "../../css/main.css";
 import { BoardList } from "../modules/BoardList";
@@ -11,18 +15,31 @@ import { optionData } from "../data/optionData";
 // 제이쿼리 가져오기
 import $ from "jquery";
 import { CheckCon } from "../modules/Icons";
+import { useLocation } from "react-router-dom";
 
 window.jQuery = $;
 require("jquery-ui-dist/jquery-ui");
 require("jquery-ui-touch-punch/jquery.ui.touch-punch");
-let idxData = [];
-// filterBoardData idx값만 가져오기
-filterBoardData.map((v, i) => {
-  idxData[i] = v.idx;
-});
-let prodList = JSON.parse(JSON.stringify(idxData));
+
+
 let num = 0;
 export function Main() {
+
+  // 컨텍스트
+  const myCon = useContext(LeoCon);
+
+  let idxData = [];
+  // filterBoardData idx값만 가져오기
+  filterBoardData.map((v, i) => {
+    idxData[i] = v.idx;
+  });
+
+  let prodList = JSON.parse(JSON.stringify(idxData));
+  
+  // localStorage.setItem('pList',JSON.stringify(prodList));
+
+
+
   // 대분류 변경에 따른 리스트 변수
   num++;
   console.log(prodList, "prodList", idxData, "idxData",num);
@@ -40,6 +57,9 @@ export function Main() {
   // 데이터 변수 -> 리스트가 바뀌어도 상단 리랜더링 금지
   const dataIdx = useRef(prodList);
   // const [dataIdx, setDataIdx] = useState(idxData);
+
+  
+  
 
   // 선택 옵션에 대한 idx 배열 리턴함수
   const otherOptionList = (opt, arr) => {
@@ -180,6 +200,16 @@ export function Main() {
       // setForce(Math.random());
     }
   });
+
+  
+  const myNav = useLocation();
+  console.log('파라:',myNav.state)
+  if(myNav.state) {
+    dataIdx.current = prodList;
+    filterReset();
+    myNav.state = null;
+  }
+  
   // 배열 옵션 리스트 함수
   const makeOptionList = (data) => {
     return (

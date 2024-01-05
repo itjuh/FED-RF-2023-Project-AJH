@@ -24,7 +24,10 @@ export function Layout() {
   const [toggleVal, setToggleVal] = useState("main");
   const [sub, setSub] = useState(null);
   const [loginSts, setLoginSts] = useState(sessionStorage.getItem("loginMem"));
-  const [wishCnt, setWishCnt] = useState(JSON.parse(localStorage.getItem('wish')).length);
+  let datacnt=JSON.parse(localStorage.getItem('wish'));
+  if(datacnt == null) datacnt = 0;
+  // const [wishCnt, setWishCnt] = useState(JSON.parse(localStorage.getItem('wish')).length);
+  const [wishCnt, setWishCnt] = useState(datacnt.length);
   // 장바구니 수량 업데이트
   const wishUpdate = useCallback(()=>{
     setWishCnt(JSON.parse(localStorage.getItem('wish')).length);

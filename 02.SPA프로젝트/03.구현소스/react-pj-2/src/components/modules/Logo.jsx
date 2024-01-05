@@ -16,7 +16,7 @@ export function Logo() {
       myCon.chgTog("main");
       initToggle();
     } 
-    myCon.goPage('main','')
+    goNav('main',{state:{val:"11"}});
   } ////// 메인이동함수 //////////
   return (
     <>
