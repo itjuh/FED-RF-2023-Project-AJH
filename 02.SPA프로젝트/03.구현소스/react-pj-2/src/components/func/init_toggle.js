@@ -21,6 +21,7 @@ function initToggle() {
   return res;
 } /////////// initToggle 함수 ///////////
 function swToggle() {
+  
   // 토글박스 원 설정
   $(".tg-cir").css({
     left: "99px",

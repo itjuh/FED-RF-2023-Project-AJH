@@ -8,18 +8,32 @@ import { MakeProgress } from "../modules/MakeProgress";
 // 제이쿼리
 import $ from "jquery";
 import { moveBoxInfo } from "../func/info_scroll_sw";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LeoCon } from "../modules/LeopoldContext";
 
 export function SubSwtich() {
   // 본페이지에서 데이터 받아오기
   const location = useLocation();
-  let name = location.state.name; //switchname
-  // 선택 데이터
-  let selData = detailData[name] ? detailData[name] : false;
   // 컨텍스트
   const myCon = useContext(LeoCon);
+  let name;
+  // 선택 데이터
+  let selData;
+  if(!location.state){//데이터 없으면
+    name = myCon.sub;
+  }else{ // 데이터 받아오면
+    name = location.state.name;
+  }
+  console.log('name',name,'myCon.sub',myCon.sub);
+  selData = detailData[name] ? detailData[name] : false;
 
+  // useEffect 구역
+  useEffect(()=>{
+    if(location.state){//데이터 없으면
+      myCon.chgSub(name);
+    }
+  },[]);
+  // 로드구역
   const loadFn = () => {
     const imgWd = [];
     let all = 0;
@@ -33,10 +47,6 @@ export function SubSwtich() {
       // 휠 이벤트
       moveBoxInfo($(".detail-page-sw"));
     }; /////// nav세팅 함수 /////////////
-
-    // 타이틀 세팅
-    let txt = selData.code + "^" + selData.sub;
-    myCon.chgTit(txt);
 
     // imgMap(selData['img'][1]);
     if (!selData) return;

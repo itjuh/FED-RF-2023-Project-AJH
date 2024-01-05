@@ -2,14 +2,64 @@
 @import url(./options.css);
 
 /************** 2. 메인영역  ****************/
-
+/* 옵션 선택 안내박스 */
+.desc-box{
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  width: 150px;
+  height: 40px;
+  background-color:#00000080;
+  color: white;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 55% 70%, 50% 100%, 45% 70%, 0% 70%);
+  padding-top: 3px;
+  padding-left: 10px;
+  transform: translateX(-50%);
+  animation: desc-ani .3s linear alternate infinite , desc-hide .3s ease-in 4.2s forwards;
+}
+@keyframes desc-ani {
+to{
+  top:10.5%;
+  }
+}
+@keyframes desc-hide {
+to{
+  opacity: 0;
+  }
+}
+/* 필터 리셋 버튼 */
+.reset-filter-btn{
+  position: absolute;
+  width: 150px;
+  color: lightseagreen;
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 1.2rem;
+  text-align: center;
+  outline: 1px solid lightseagreen;
+  padding: 3px 0;
+  border-radius: 5px;
+  -webkit-user-select: none;
+  user-select: none;
+  top: 17%;
+  right:20%;
+}
+.reset-filter-btn:hover{
+  background-color: #ccc;
+  outline: none;
+  color: #fff;
+}
+/* 전체 제품 구역 */
+.prod-area-board{
+  max-width: 1400px;
+  margin: 0 auto;
+  outline: 1px solid #eee;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+}
 /* 각 제품 구역 */
 .prod-area ol {
   position: relative;
   width: 100%;
   height: 100%;
-  outline: 1px solid #eee;
-  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
 }
 .prod-area li {
   position: absolute;
@@ -20,9 +70,8 @@
   width: 300px;
   aspect-ratio: 400/130;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  /* background-image: url(../../public/images/image_prod2/keyboard2.png); */
 }
 /* 각 제품 li 오버시 */
 .prod-area li:hover {
@@ -35,7 +84,7 @@
 /* 메인 검색 상품1 */
 .prod-area li:nth-child(1) {
   top: 38%;
-  left: 20%;
+  left: 25%;
   z-index: 1;
 }
 /* 메인 검색 상품2 */
@@ -62,11 +111,11 @@
 }
 .prod-area li:nth-child(6) {
   top: 40%;
-  left: -5%;
+  left: 0%;
 }
 .prod-area li:nth-child(7) {
   top: 40%;
-  left: 85%;
+  left: 83%;
 }
 .prod-area li:nth-child(8) {
   top: 75%;
@@ -89,34 +138,18 @@ h3.prod-item-title {
   font-family: "KOFIHDrLEEJWTTF-L";
   font-size: 1rem;
   text-indent: 5px;
+  background-color: #fff;
+  text-align: left;
 }
 h3.prod-item-title + h3.prod-item-title {
   text-indent: 15px;
   font-size: 0.8rem;
 }
-/* 위시리스트 버튼 */
-/* .add-wish {
-  position: absolute;
-  bottom: 10px;
-  right: 0;
-  font-family: "KOFIHDrLEEJWTTF-L";
-  font-size: 0.7rem;
-  border-radius: 5px;
-  padding: 2px;
-  outline: 1px solid #ccc;
-  background-color: #e0e0e0;
-  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
-  text-indent: 2px;
-} */
-/* 위시리스트 버튼 오버시 */
-/* .add-wish:hover {
-  background-color: #ccc;
-} */
+
 /* 위시리스트 버튼 오버 시 더보기 비활성화*/
 .add-wish:hover .prod-detail-view {
   transform: rotateX(90deg);
 }
-
 /* 더보기 버튼 */
 .prod-detail-view {
   position: absolute;
@@ -140,3 +173,85 @@ h3.prod-item-title + h3.prod-item-title {
   transform: rotateX(0deg);
   transition: 0.2s ease-in;
 }
+/************** 최대사이즈 750px 이하 시작 **************/
+@media screen and (max-width: 750px) {
+  
+/* 각 제품 구역 */
+.prod-area ol {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap:10px 10px;
+}
+/* 각 제품 구역 */
+.prod-area li {
+  position: relative;
+  width: 220px;
+}
+  .prod-item {
+    width: 220px;
+  }
+  /* 제품 개별 */
+  /* 메인 검색 상품1 */
+  .prod-area li:nth-child(1) {
+    top: 0%;
+    left: 0%;
+    z-index: auto;
+  }
+  /* 메인 검색 상품2 */
+  .prod-area li:nth-child(2) {
+    top: 0%;
+    left: 0%;
+    z-index: auto;
+  }
+  .prod-area li:nth-child(3) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(4) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(5) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(6) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(7) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(8) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(9) {
+    top: 0%;
+    left: 0%;
+  }
+  .prod-area li:nth-child(10) {
+    top: 0%;
+    left: 0%;
+  }
+}
+/************** 최대사이즈 750px 이하 끝**************/
+/************** 최대사이즈 500px 이하 시작 **************/
+@media screen and (max-width: 500px) {
+  /* 각 제품 구역 */
+.prod-area li {
+  position: relative;
+  width: 45vw;
+}
+  .prod-item {
+    /* width: 60vw; */
+    width: 45vw;
+  }
+  /* 메인 제외 상품 3번째부터 */
+.prod-area li:nth-child(2) ~ li .prod-item {
+  width: 45vw;
+}
+}
+/************** 최대사이즈 500px 이하 끝**************/

@@ -65,3 +65,7 @@ input {
 table {
     border-collapse : collapse;
 }
+/* 글자 드래그 금지 */
+html>*{
+    user-select: none;
+}

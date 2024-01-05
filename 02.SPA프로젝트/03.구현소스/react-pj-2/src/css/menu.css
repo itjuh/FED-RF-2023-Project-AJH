@@ -15,13 +15,19 @@
   letter-spacing: 0.1rem;
   background-color: white;
   z-index: 999;
-  transition: all 0.5s ease-in;
-  /* 처음에 안보임 */
-  height: 0;
   overflow: hidden;
+  /* 처음에 안보임 */
+  transform: translateY(150%);
+  /* height: 0; */
+  transition: 0.3s linear;
+  will-change: transform;
 }
 .gnb-menu-area.on {
-  height: auto;
+  transform: translateY(0);
+  /* height: 100vh; */
+}
+.gnb-menu-area.on .keyboard-menu{
+  opacity: 1;
 }
 /* gnb 메뉴 속박스 ul */
 .gnb-menu-box {
@@ -90,6 +96,34 @@
 }
 /* 키보드 구역 */
 .keyboard-menu {
-  position: relative;
-  top: 70%;
+  will-change: opacity;
+  position: fixed;
+  opacity: 0;
+  left: 20%;
+  top: 93%;
+  transition: .3s ease-out .5s;
 }
+/************** 최대사이즈 750px 이하 시작 **************/
+@media screen and (max-width: 750px) {
+  /* gnb 메뉴 속박스 ul */
+  .gnb-menu-box {
+    padding: 2rem 0.5rem;
+    margin-top: 20px;
+  }
+  /* 키보드 구역 */
+  .keyboard-menu {
+    display: none;
+  }
+  /* gnb 메뉴 속박스 li */
+  .gnb-menu-box li:hover {
+    color: #000;
+  }
+  /* gnb메뉴 */
+  .gnb-menu-area {
+    top: 20%;
+  }
+  .gnb-menu-area.on {
+    height: auto;
+  }
+}
+/************** 최대사이즈 750px 이하 끝**************/

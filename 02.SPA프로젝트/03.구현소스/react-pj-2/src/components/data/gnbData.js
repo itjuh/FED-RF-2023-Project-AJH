@@ -1,10 +1,12 @@
 import { CartCon, GlassCon, UserCon } from "../modules/Icons";
 
 export const gnbData = [
-    {txt : '검색',
+    {txt : 'SEARCH',
         com:<GlassCon />},
-    {txt : '로그인',
+    {txt : 'LOGIN',
         com:<UserCon />},
-    {txt : '장바구니',
+    {txt : 'LOGOUT',
+        com:<UserCon />},
+    {txt : 'WISHLIST',
         com:<CartCon />},
 ]

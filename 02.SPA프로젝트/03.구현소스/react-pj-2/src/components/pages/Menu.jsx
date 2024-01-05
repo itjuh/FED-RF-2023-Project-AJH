@@ -1,28 +1,45 @@
 import "../../css/menu.css";
-import { insertText, typingKey } from "../func/typing";
+import { insertText, resetAutoI } from "../func/typing";
 import $ from "jquery";
-// 데이터 가져오기
+// 키보드 데이터
+import { keyData } from "../data/keyData.js";
 import { menuData } from "../data/menuData";
 import { MakeKey } from "../modules/MakeKey";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { LeoCon } from "../modules/LeopoldContext";
+import { link } from "../data/link";
 
 export function Menu(props) {
   // props.chgFn(useRef 변경 함수)
   // props.sts 메뉴상태
+
+  // 링크 데이터
+  let linkData = link;
+  // 타이틀 변경용
+  const myCon = useContext(LeoCon);
+  // 페이지 이동용
+  const nav = useNavigate();
+  const goNav = (num) => {
+    linkData = link[num];
+    // 페이지 이동
+    nav(linkData.link);
+    // 메뉴닫기
+    props.chgFn(0);
+  };
+
   const keyinput = (e) => {
-    // $(".cover").show();
+    resetAutoI();
+    // 해당 타이핑 영역
     let target = $(e.currentTarget).find(".typing-area");
-    let seq = $(e.currentTarget).attr("data-seq");
-    // 타임아웃 함수
-    setTimeout(() => {
-      // 글자입력 함수
-      insertText(menuData[seq], target);
-    }, 40);
-    // 키보드 타이핑 함수 호출
-    typingKey(menuData[seq]);
+    let txt = $(e.currentTarget).text();
+    insertText(txt,target);
   };
   const clear = (e) => {
+    resetAutoI();
+    // 전체박스 타이핑영역 초기화
+    $(".typing-area").text("");
     $(e.currentTarget).find(".typing-area").text("");
-    // console.log($(e.currentTarget));
   };
 
   ////// 리턴구역 ////////////////////
@@ -32,7 +49,9 @@ export function Menu(props) {
         {/* 2-1. 메뉴영역 */}
         <ul className="gnb-menu-box">
           {menuData.map((v, i) => (
-            <li key={i} onMouseEnter={keyinput} onMouseLeave={clear} data-seq={i}>
+            <li key={i}  data-seq={i}
+            onMouseEnter={keyinput} onMouseLeave={clear}
+            onClick={()=>goNav(i)}>
               {/* <a href="#"> */}
               <span>{v}</span>
               <b className="typing-area"></b>
@@ -41,15 +60,17 @@ export function Menu(props) {
             </li>
           ))}
         </ul>
-        <div className="close-btn" onClick={()=>props.chgFn(0)}>×</div>
+        <div className="close-btn" onClick={() => props.chgFn(0)}>
+          ×
+        </div>
       </div>
       {/* 2-2. 키보드 메뉴 영역 */}
-      <div className="part-box col-16 row-4 menu-footer">
+      <div className="part-box col-16 row-4 menu-footer row-s-0 col-s-0">
         <div className="keyboard-menu">
           {/* 키보드 구역 */}
           <div className="wrap">
             <div className="key-box">
-              <MakeKey />
+              <MakeKey keyData={keyData}/>
             </div>
           </div>
         </div>

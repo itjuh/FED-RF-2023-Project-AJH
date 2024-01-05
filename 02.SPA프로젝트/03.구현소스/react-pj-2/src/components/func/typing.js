@@ -3,68 +3,52 @@ import $ from "jquery";
 
 // 타이핑 시간
 const TYPING_TIME = 50;
-// 타이핑 글자배열 변수
-let typingArr;
 // 인터발 함수 autoI
 let autoI;
-// 잠금설정
-let psts = 0; // 1잠금 0해제
 
-// .25초마다 글자를 입력하는 인터발 함수
-function insertText(data, area) {
-  if (psts === 1) return true; //돌아가!
-  psts = 1; //잠금!
-  setTimeout(function () {
-    psts = 0; //해제
-  }, 300); //0.3초후 해제///////////
+// let psts = 0; // 1잠금 0해제
+const keylist = {
+  KEYBOARD:[['K', 'E', 'Y', 'B', 'O', 'A', 'R', 'D'],[36, 17, 20, 46, 23, 29, 18, 31]],
+  SWITCH:[['S', 'W', 'I', 'T', 'C', 'H'],[30, 16, 22, 19, 44, 34]],
+  LOGIN:[['L', 'O', 'G', 'I', 'N'],[37, 23, 33, 22, 47]],
+  REGISTER:[['R', 'E', 'G', 'I', 'S', 'T', 'E', 'R'],[18, 17, 33, 22, 30, 19, 17, 18]],
+  WISHLIST:[['W', 'I', 'S', 'H', 'L', 'I', 'S', 'T'],[16, 22, 30, 34, 37, 22, 30, 19]],
+  CONTACT:[['C', 'O', 'N', 'T', 'A', 'C', 'T'],[44, 23, 47, 19, 29, 44, 19]],
+};
+// 초마다 글자를 입력하는 인터발 함수
+function insertText(txt, area) {
   // 데이터 초기화
-  area.text("");
-  typingArr = data.split("");
-  let txt = "";
   let count = 0;
+  let inTxt = keylist[txt][0];
+  let tglist = [];
+  keylist[txt][1].forEach((ele,idx) => {
+    tglist[idx] = $('.key').filter(`:eq(${ele})`);
+  });
+  clearInterval(autoI);
   // 인터발 함수
   autoI = setInterval(() => {
-    txt += typingArr[count];
-    $(area).text(txt);
+    $(area).append(inTxt[count]);
+    tglist[count].addClass('push');
     count++;
+    reset(tglist[count-1]);
     // 글자데이터 길이보다 길어지면 멈춤
-    if (count >= typingArr.length) {
+    if (count >= inTxt.length) {
       clearInterval(autoI);
     }
   }, TYPING_TIME);
 } ////////////insertText함수/////////////
 
-// 타이핑 텍스트 키 매칭함수
-function typingKey(txt) {
-  // 타이핑 텍스트 나누기
-  let eachTxt = txt.toUpperCase().split("");
-  // console.log(eachTxt);
-  // 타이핑 효과 줄 키 저장 변수
-  let sameKeyList = [];
-  for (let i = 0; i < eachTxt.length; i++) {
-    $(".key-top aside").each((idx, ele) => {
-      if ($(ele).text() == eachTxt[i]) {
-        //조부모찾아서 담기(스타일 대상)
-        sameKeyList[i] = $(ele).parent();
-      } /////// if 일치하면 담기//////////
-    }); /////////// key-top forEach /////////////
-  } ///////// for ////////////////
-
-  // 스타일 적용
-  sameKeyList.forEach((ele, idx) => {
-    setTimeout(() => {
-      ele.css({ transform: "translateY(10px)", backgroundColor: "cornflowerblue" });
-      // 일정시간 후 타이핑 초기화
-      typingShow(ele);
-    }, 30 + idx * TYPING_TIME);
-  });
-} ////////// typingKey 함수 //////////
-
 // 스타일 초기화 함수
-function typingShow(ele) {
+function reset(ele) {
+  // 리셋 setTime함수 호출
   setTimeout(() => {
-    ele.css({ transform: "translateY(0px)", backgroundColor: "#fff" });
-  }, 100);
-} ////////// typingShow 함수 //////////
+    ele.removeClass("push");
+  }, 200);
+} ////////// reset 함수 //////////
 
-export { insertText, typingKey };
+function resetAutoI() {
+  clearInterval(autoI);
+}
+export { insertText, resetAutoI };
+
+// 텍스트 매칭 키 찾기

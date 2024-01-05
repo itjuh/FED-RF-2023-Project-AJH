@@ -2,54 +2,74 @@ import { TopArea } from "./TopArea";
 import { MainArea } from "./MainArea";
 import { FooterArea } from "./FooterArea";
 // 컨텍스트
-import { memo, useCallback, useRef, useState } from "react";
+import { useCallback, useState } from "react";
 import { LeoCon } from "../modules/LeopoldContext";
 import { useNavigate } from "react-router-dom";
 // 링크데이터
 import { link } from "../data/link";
 
 // 레이아웃 구성 컴포넌트
-export const Layout = memo(()=>{
+export function Layout() {
+  console.log('레이아웃페이지');
   // 링크 데이터
-  let selData = link;
-  
-  // 페이지 이동용
+  let linkData = link;
+  // 라우터 이동함수
   const goNav = useNavigate();
-  // 필터용 후크변수 설정
-  const [selNum, setSelNum] = useState(0);
-  // 토글용 후크변수
+  /**
+   * 토글용 : toggleVal
+   * 서브페이지용 : sub
+   * 로그인용 : loginSts
+   * 장바구니 수량 : wishCnt
+   */
   const [toggleVal, setToggleVal] = useState("main");
-  // 상단 타이틀용 후크변수
-  const [titVal, setTitVal] = useState("Keyboard List");
-  // 하단 메뉴용 useRef 변수   1-메뉴열림 0-닫힘
-  const sts = useRef(0);
-  // 1-메뉴열림 0-닫힘
-  
-  // 상단 타이틀 함수
-  const chgTit = useCallback((txt) => setTitVal(txt),[]);
-  // 필터 업데이트 함수
-  const chgSel = (num) => setSelNum(num);
-  // 토글 업데이트 함수
-  const chgTog = useCallback((txt) => {
-    setToggleVal(txt);
-    if(txt == 'main') selData = link[0];
-    else selData = link[1];
-    // 페이지 이동
-    goNav(selData.link);
-    // 타이틀 변경
-    chgTit(selData.tit);
+  const [sub, setSub] = useState(null);
+  const [loginSts, setLoginSts] = useState(sessionStorage.getItem("loginMem"));
+  const [wishCnt, setWishCnt] = useState(JSON.parse(localStorage.getItem('wish')).length);
+  // 장바구니 수량 업데이트
+  const wishUpdate = useCallback(()=>{
+    setWishCnt(JSON.parse(localStorage.getItem('wish')).length);
   },[]);
-  // useRef 변경 함수
-  const chgsts = (num) => sts.current=num;
-  // 클릭한 필터를 옵션 세부옵션에 적용하기
-  // 세부 옵션을 제품리스트에 적용하기
-  // -> selNum으로 세팅
+  // 로그인 업데이트
+  const logOutFn = useCallback(()=>{
+    sessionStorage.removeItem("loginMem");
+    setLoginSts(null);
+  },[]);
+  // 페이지 이동
+  const goPage = useCallback((txt,param)=>{
+    linkData = link.find((v) => {
+      if (v["txt"] == txt) return true;
+    });
+    console.log('gopage',linkData.link, param);
+    goNav(linkData.link,param);
+  },[]);
+  // 필터 업데이트 함수
+  // const chgSel = (num) => setSelNum(num);
+  // 토글 업데이트 함수
+  const chgTog = useCallback((val) => {
+    // 토글 후크 업데이트
+    setToggleVal(val);
+    // 페이지 이동
+    goPage(val,'');
+  }, []);
+  // 서브페이지 변경함수
+  const chgSub = (txt) => setSub(txt);
+  // console.log(toggleVal, "토글상태 변수.. 새로고침하면 왜 바뀔까...", sts, "하단메뉴용 이것도 바뀌나...");
 
+  /********************************** 
+   [컨텍스트 API 공유값 설정]
+   1. toggleVal - 토글 값
+   2. chgTog - 토글 변경
+   3. sub - 서브페이지용 데이터
+   4. chgSub - 서브페이지용 데이터 업데이트
+   5. goPage - 페이지 이동 useNavigate
+   6. setLoginSts - 로그인 설정용(로그인페이지에서 세팅)
+   7. wishUpdate - 장바구니 설정용(장바구니페이지에서 세팅)
+   **********************************/
   return (
-    <LeoCon.Provider value={{ selNum, chgSel, toggleVal, chgTog, titVal, chgTit }}>
-      <TopArea tit={titVal} sts={sts}/>
-      <MainArea chgTitFn={chgTit}/>
-      <FooterArea tit={titVal} chgsts={chgsts} sts={sts}/>
+    <LeoCon.Provider value={{ toggleVal, chgTog, sub, chgSub, goPage, setLoginSts, wishUpdate}}>
+      <TopArea loginSts={loginSts} logOutFn={logOutFn} goPage={goPage} wishCnt={wishCnt}/>
+      <MainArea />
+      <FooterArea />
     </LeoCon.Provider>
   );
-}) ////////// Layout 컴포넌트 ////////////
+}; ////////// Layout 컴포넌트 ////////////

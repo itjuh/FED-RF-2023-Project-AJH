@@ -26,70 +26,105 @@
   background-repeat: no-repeat;
   background-position: center 65%;
   /* 트랜지션 */
-  transition: background-position .3s ease-out;
+  transition: background-position 0.3s ease-out;
 }
 /* 스위치 이미지 타이틀 */
-.sw-tit{
-    position: absolute;
-    top:0;
-    width: 100%;
-    padding-top: 1.5vh;
-    height: 8.5vh;
-    /* background-image: linear-gradient(to top, rgb(0, 0, 0, 0.45), rgb(0, 0, 0, 0.05)); */
-    /* color: #fff; */
-    text-align: center;
-    font-family: "KOFIHDrLEEJWTTF-B";
-    font-size: 2rem;
-    color: #222222;
-    /* 트랜지션 */
-    transition: background-image .4s ease-in;
+.sw-tit {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  padding-top: 1.5vh;
+  height: 8.5vh;
+  /* background-image: linear-gradient(to top, rgb(0, 0, 0, 0.45), rgb(0, 0, 0, 0.05)); */
+  /* color: #fff; */
+  text-align: center;
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 2rem;
+  color: #222222;
+  /* 트랜지션 */
+  transition: background-image 0.4s ease-in;
 }
 /* 더보기 버튼 */
-figure .prod-detail-view{
-    top: 80%;
-    width: 60px;
-    height: auto;
-    line-height: 1.2;
-    transition: transform .2s ease-out;
+figure .prod-detail-view {
+  top: 80%;
+  width: 60px;
+  height: auto;
+  line-height: 1.2;
+  transition: transform 0.2s ease-out;
 }
 /* 스위치 이미지 설명:ir처리 */
 
 /* 스위치 설명 */
-.sw-desc{
-    position: absolute;
-    width: 80%;
-    left: 50%;
-    top: 25%;
-    height: 9vh;
-    font-size: 1.5rem;
-    font-family: "KOFIHDrLEEJWTTF-L";
-    transform: translateX(-50%);
-    opacity: 0;
+.sw-desc {
+  position: absolute;
+  width: 80%;
+  left: 50%;
+  top: 25%;
+  height: 9vh;
+  font-size: 1.5rem;
+  font-family: "KOFIHDrLEEJWTTF-L";
+  transform: translateX(-50%);
+  opacity: 0;
 }
 
 /* 스위치 마우스 오버 ************/
 /* 개별 박스 */
 .switch-box:hover {
-    outline: 1px solid #ddd;
-    box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
-    flex: 2;
+  outline: 1px solid #ddd;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+  flex: 2;
 }
 /* 스위치 이미지 공통 */
 .switch-box:hover .sw-img figure {
-    background-position: center 55%;
+  background-position: center 55%;
 }
 /* 개별 타이틀 */
-.switch-box:hover .sw-tit{
-    background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.45), rgb(0, 0, 0, 0.05));
-    color: #fff;
+.switch-box:hover .sw-tit {
+  background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.45), rgb(0, 0, 0, 0.05));
+  color: #fff;
 }
 /* 더보기 버튼 */
-.switch-box:hover figure .prod-detail-view{
-    transform: scale(1.5) rotate(0deg);
+.switch-box:hover figure .prod-detail-view {
+  transform: scale(1.5) rotate(0deg);
 }
 /* 스위치 설명 */
-.switch-box:hover .sw-desc{
-    opacity: 1;
-    /* 트랜지션 */
-    transition: opacity .5s ease-in .2s;
+.switch-box:hover .sw-desc {
+  opacity: 1;
+  /* 트랜지션 */
+  transition: opacity 0.5s ease-in 0.2s;
 }
+/************** 최대사이즈 750px 이하 시작 **************/
+@media screen and (max-width: 750px) {
+  /* 스위치 겉박스 */
+  .switch-info {
+    flex-direction: column;
+  }
+  /* 개별 스위치 박스 */
+  .switch-box {
+    flex: 0;
+  }
+  /* 개별 박스 */
+.switch-box:hover {
+  flex: 0;
+}
+  /* 스위치 이미지 공통 */
+  .sw-img figure {
+    height: 10vh;
+    background-size: 80px;
+    background-position: 35% -45%;
+  }
+  /* 스위치 이미지 타이틀 */
+  .sw-tit {
+    width: 30%;
+    font-size: 1.6rem;
+  }
+  /* 스위치 설명 */
+    .sw-desc {
+    left: 73%;
+    width: 40%;
+    font-size: 1.2rem;
+    opacity: 1;
+    height: 5.7vh;
+  }
+}
+/************** 최대사이즈 750px 이하 끝**************/

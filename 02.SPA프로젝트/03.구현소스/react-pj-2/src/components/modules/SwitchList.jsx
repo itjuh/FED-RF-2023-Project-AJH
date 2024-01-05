@@ -7,11 +7,11 @@ export function SwitchList() {
   // 스위치 페이지 링크연결
   const nav = useNavigate();
   function goNav(txt){
-    nav('/subswitch',{state:{name:txt}})
+    nav('/subswitch',{state:{name:txt}});
   }
   return (
     
-      <dl key={'swlist'} className="switch-info flex-box row-10">
+      <dl key={'swlist'} className="switch-info flex-box row-10 row-s-12">
         {
         switchData.map((v, i) => (
           <div key={i} className="switch-box" onClick={()=>goNav(v.swname)}>

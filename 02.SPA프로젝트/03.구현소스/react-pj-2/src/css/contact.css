@@ -1,0 +1,67 @@
+/* 레오폴드 PJ : 회사정보 CSS - login.css */
+/************** 2. 메인영역  ****************/
+/* 전체 회사정보 박스 */
+.contact-area {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  max-width: 1024px;
+  min-height: 600px;
+  outline: 1px solid #eee;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+  font-family: "KOFIHDrLEEJWTTF-L";
+  color: rgb(70, 70, 70);
+}
+/* 타이틀 영역 */
+.contact-area h2 {
+    box-sizing: border-box;
+    font-family: "KOFIHDrLEEJWTTF-B";
+    text-align: center;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    padding: 1vw;
+    padding-top: 40px;
+    box-sizing: border-box;
+    /* 줄바꿈 방지 */
+    white-space: nowrap;
+    user-select: none;
+}
+/* 회사정보 속박스 */
+.contact-area ul {
+  padding: 0 60px 30px 60px;
+  user-select: none;
+}
+/* 회사정보 li */
+.contact-area ul>li{
+  padding: 15px 0;
+}
+/* 개별정보 */
+/* 타이틀 */
+.tit-corp{
+    font-family: "KOFIHDrLEEJWTTF-B";
+    text-indent: .5rem;
+    font-size: 1.5rem;
+}
+/* 세부 */
+.txt-corp{
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+/* 세부서브 */
+.txtsub-corp{
+    color: #888;
+}
+
+/************ 미디어쿼리구역 **************/
+/* 750px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 750px) {
+  /* 타이틀 영역 */
+.contact-area h2 {
+  padding-top: 20px;
+}
+  /* 회사정보 속박스 */
+  .contact-area ul {
+  padding: 0 20px 10px 20px;
+  }
+} /* 750px 이하 미디어쿼리 종료*/

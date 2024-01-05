@@ -11,6 +11,8 @@ import $ from "jquery";
 import { moveImgInfo } from "../func/info_scroll";
 import { useContext, useEffect } from "react";
 import { LeoCon } from "../modules/LeopoldContext";
+// import { useLayoutEffect } from "react";
+// import axios from "axios";
 
 /*
   keyboard1: {
@@ -35,37 +37,15 @@ export function SubBoard() {
   let name;
   // 선택 데이터
   let selData;
-  name = location.state.name;
+  if (!location.state) {
+    //데이터 없으면
+    name = myCon.sub;
+  } else {
+    // 데이터 받아오면
+    name = location.state.name;
+  }
+  // console.log('name',name,'myCon.sub',myCon.sub);
   selData = detailData[name] ? detailData[name] : false;
-  // useEffect
-  useEffect(()=>{
-    // 데이터 있는 경우만 작동
-    if(name) {
-      let tit = selData.code +'^'+ selData.sub;
-      myCon.chgTit(tit);
-    }
-    // 휠 이벤트
-    moveImgInfo($(".detail-page"));
-  },[myCon,name,selData.code,selData.sub]);
-
-  const loadFn = () => {
-    const imgWd = [];
-    let all = 0;
-    const setNav = () => {
-      $(".info-box img").each((i, v) => (all += v.height));
-      $(".info-box img").each((i, v) => {
-        imgWd[i] = Math.floor((v.height / all) * 100);
-      });
-      // 네비게이션 길이 적용
-      $(".nav-area li").each((i, v) => $(v).css({ width: imgWd[i] + "%" }));
-    }; /////// nav세팅 함수 /////////////
-    if (!selData) return;
-    else {
-      // 네비게이션 세팅
-      setNav();
-    }
-  }; ///////////// loadFn 함수 //////////////
-
 
   // 이미지
   const makeImage = (data) => {
@@ -80,15 +60,65 @@ export function SubBoard() {
       </section>
     );
   };
+  const loadFn = () => {
+    $(() => {
+      const imgWd = [];
+      let all = 0;
+      const setNav = () => {
+        $(".info-box img").each((i, v) => (all += v.height));
+        $(".info-box img").each((i, v) => {
+          imgWd[i] = Math.floor((v.height / all) * 100);
+        });
+        // 네비게이션 길이 적용
+        $(".nav-area li").each((i, v) => $(v).css({ width: imgWd[i] + "%" }));
+      }; /////// nav세팅 함수 /////////////
+      if (!selData) return;
+      else {
+        // 네비게이션 세팅
+        setNav();
+      }
 
+      // 휠 이벤트
+      moveImgInfo($(".detail-page"));
+    });
+  }; ///////////// loadFn 함수 //////////////
+  // useLayoutEffect구역
+  // useLayoutEffect(() => {
+  //   // axios 라이브러리를 이용한 데이터 조회하기! //
+  //   /**
+  //    * 설치 : npm i axios
+  //    * axios는 데이터를 프라미스로 처리하여 원하는 결과를 보장하는
+  //    * 간편한 데이터 처리 라이브러리다
+  //    * 파일가져오기 메서드 get()
+  //    * 다음 실행 메서드 then()
+  //    */
+
+  //   axios
+  //     .get(selData) // file loading
+  //     .then((res) => {
+  //       // file auto parsing
+  //       console.log(res);
+  //       /**주의: data속성에 실제 데이터가 담김 : res.data해야 fetch()와 데이터가 동일 */
+  //       const imgWd = [];
+  //       let all = 0;
+  //       $(".info-box img").each((i, v) => (all += v.height));
+  //       $(".info-box img").each((i, v) => {
+  //         imgWd[i] = Math.floor((v.height / all) * 100);
+  //       });
+  //       // 네비게이션 길이 적용
+  //       $(".nav-area li").each((i, v) => $(v).css({ width: imgWd[i] + "%" }));
+  //     }) // then //
+  //     .catch((err) => {
+  //       console.log(err);
+  //     }); // error ////
+  //   /////////////// axios end ///////////
+  // });
   // 리턴구역 ///////////////////
   return (
     <>
       <main className="main in-box row-12 detail-page" onLoad={loadFn}>
         {/* 네비게이션 구역 */}
-         { selData &&
-          <MakeProgress data={selData["img"]}/>
-         }
+        {selData && <MakeProgress data={selData["img"]} />}
         {/* 제품 설명 구역 */}
         <div className="part-box col-16 row-11 prod-area">
           {/* 제품이미지 */}

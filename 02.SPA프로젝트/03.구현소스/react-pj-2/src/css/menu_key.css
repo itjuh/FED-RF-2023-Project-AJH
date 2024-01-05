@@ -40,7 +40,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   position: relative;
-  width: calc(var(--key-width) * 15 + 10px);
+  width: calc(56px * 15 + 10px);
   height: auto;
   top: 85%;
   left: 50%;
@@ -56,43 +56,66 @@
   position: relative;
   top: 0;
   left: 0;
-  width: var(--key-width);
-  height: var(--key-height);
+  width: 56px;
+  height: 56px;
   /* 3D 입체설정 */
   transform-style: preserve-3d;
+  transform: translateY(0px);
   /* 트랜지션 */
   transition: 0.1s ease-in-out;
+}
+/* 키 입력 */
+.key.push {
+  animation: push-key-ani .2s linear;
+}
+.key.push .key-top aside{
+  animation: push-key-ani2 .2s linear;
+}
+/* 키 입력 애니메이션 */
+@keyframes push-key-ani {
+  20%{
+    transform: translateY(10px);
+  }100%{
+    transform: translateY(0px);
+  }
+}
+@keyframes push-key-ani2 {
+  20%{
+    background-color: cornflowerblue;
+  }100%{
+    background-color: #fff;
+  }
 }
 /* 공백키 */
 .key.blank {
   position: relative;
-  top: calc(50% - var(--key-height) / 2);
-  left: calc(50% - var(--key-width) / 2);
-  width: calc(var(--key-width) / 2);
-  height: var(--key-height);
+  top: calc(50% - 56px / 2);
+  left: calc(50% - 56px / 2);
+  width: calc(56px / 2);
+  height: 56px;
 }
 /* 개별키 */
 /* 사이즈1 */
 .key.size0 {
-  width: var(--key-width0);
+  width: 116px;
 }
 .key.size1 {
-  width: var(--key-width1);
+  width: 86px;
 }
 .key.size2 {
-  width: var(--key-width2);
+  width: 100px;
 }
 .key.size3 {
-  width: var(--key-width3);
+  width: 128px;
 }
 .key.size4 {
-  width: var(--key-width4);
+  width: 156px;
 }
 .key.size5 {
-  width: var(--key-width5);
+  width: 70px;
 }
 .key.size6 {
-  width: var(--key-width6);
+  width: 354px;
 }
 
 /* 키 단면 공통 */
@@ -105,11 +128,11 @@
 .key span:nth-child(1) {
   background-color: #ccc;
   opacity: 0.9;
-  width: calc(100% - var(--key-top-gap) * 2);
-  height: calc(var(--key-height) - var(--key-top-gap) * 2);
-  top: var(--key-top-gap);
-  left: var(--key-top-gap);
-  /* left: calc((var(--key-height) - var(--key-height) * 0.735) / 2); */
+  width: calc(100% - 7.25px * 2);
+  height: calc(56px - 7.25px * 2);
+  top: 7.25px;
+  left: 7.25px;
+  /* left: calc((56px - 56px * 0.735) / 2); */
   border-radius: 1px;
 
   /* z축 밀기 */
@@ -119,20 +142,20 @@
 .key span:nth-child(2) {
   background-color: #ccc;
   opacity: 0.5;
-  width: var(--key-side);
-  right: calc(var(--key-side) / 2 * -1);
+  width: 37px;
+  right: calc(37px / 2 * -1);
   /* y축 회전 */
   transform-origin: top;
   transform: rotateY(78.3deg) translateX(-18.4px);
-  clip-path: polygon(100% 0%, 100% 100%, 0% calc(100% - var(--key-top-gap)), 0% var(--key-top-gap));
+  clip-path: polygon(100% 0%, 100% 100%, 0% calc(100% - 7.25px), 0% 7.25px);
 }
 /* 왼쪽면 */
 .key span:nth-child(3) {
   background-color: #ccc;
   opacity: 0.5;
-  width: var(--key-side);
-  left: calc(var(--key-side) / 2 * -1);
-  clip-path: polygon(100% var(--key-top-gap), 100% calc(100% - var(--key-top-gap)), 0% 100%, 0% 0%);
+  width: 37px;
+  left: calc(37px / 2 * -1);
+  clip-path: polygon(100% 7.25px, 100% calc(100% - 7.25px), 0% 100%, 0% 0%);
 
   /* y축 회전 */
   transform: rotateY(-78.3deg) translateX(18.4px);
@@ -142,9 +165,9 @@
 .key span:nth-child(4) {
   background-color: #ccc;
   opacity: 0.5;
-  height: var(--key-side);
-  top: calc(var(--key-side) / 2 * -1);
-  clip-path: polygon(100% 0%, calc(100% - var(--key-top-gap)) 100%, var(--key-top-gap) 100%, 0% 0%);
+  height: 37px;
+  top: calc(37px / 2 * -1);
+  clip-path: polygon(100% 0%, calc(100% - 7.25px) 100%, 7.25px 100%, 0% 0%);
 
   /* y축 회전 */
   transform: rotateX(78.3deg) translateY(18.4px);
@@ -154,9 +177,9 @@
 .key span:nth-child(5) {
   background-color: #ccc;
   opacity: 0.5;
-  height: var(--key-side);
-  bottom: calc(var(--key-side) / 2 * -1);
-  clip-path: polygon(calc(100% - var(--key-top-gap)) 0%, 100% 100%, 0% 100%, var(--key-top-gap) 0%);
+  height: 37px;
+  bottom: calc(37px / 2 * -1);
+  clip-path: polygon(calc(100% - 7.25px) 0%, 100% 100%, 0% 100%, 7.25px 0%);
   /* y축 회전 */
   transform: rotateX(-78.3deg) translateY(-18.4px);
 }
@@ -186,11 +209,11 @@
   width: 100%;
   height: 50%;
   /* 기본 문자열 두줄 */
-  /* outline: 1px solid red; */
   padding-left: 4%;
   box-sizing: border-box;
   font-size: 1rem;
   font-family: "KOFIHDrLEEJWTTF-L";
+  background-color: #fff;
 }
 /* 문자열 한줄 */
 aside.part1 {

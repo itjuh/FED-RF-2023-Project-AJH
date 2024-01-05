@@ -8,17 +8,17 @@ export const optionData = [
     label: "array",
     inputList : [
       {
-        val:'900',
+        val:'full',
         id:'array-900',
         labelClass:'check-array',
       },
       {
-        val:'750',
+        val:'tenkey less',
         id:'array-750',
         labelClass:'check-array',
       },
       {
-        val:'980',
+        val:'slim',
         id:'array-980',
         labelClass:'check-array',
       },

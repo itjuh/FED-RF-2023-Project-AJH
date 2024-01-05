@@ -1,0 +1,441 @@
+/* 레오폴드 PJ : 장바구니 CSS - wishlist.css */
+/************** 2. 메인영역  ****************/
+/* 전체 장바구니 박스 */
+.wish-area {
+  /* 중앙정렬 */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  /* 오른쪽에 붙임 */
+  /* margin-left: auto; */
+  margin: 0 auto;
+  max-width: 1024px;
+  min-height: 600px;
+  box-shadow: 0px 0px 3px rgb(0, 0, 0, 0.15);
+  font-family: "KOFIHDrLEEJWTTF-L";
+  color: rgb(70, 70, 70);
+}
+/* 타이틀 영역 */
+.wish-area h2 {
+  box-sizing: border-box;
+  font-family: "KOFIHDrLEEJWTTF-B";
+  text-indent: 2rem;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  padding: 1rem;
+  padding-top: 30px;
+  box-sizing: border-box;
+  /* 줄바꿈 방지 */
+  white-space: nowrap;
+  user-select: none;
+}
+/* 닫기버튼 */
+.close-btn {
+  position: absolute;
+  font-size: 3rem;
+  height: 40px;
+  aspect-ratio: 1/1;
+  text-align: center;
+  line-height: 1;
+  top: 5%;
+  right: 5%;
+  cursor: pointer;
+  color: #6e6e6e;
+  /* 트랜지션 */
+  transition: transform 0.3s;
+}
+/* 닫기 오버 */
+.close-btn:hover {
+  color: #111111;
+  transform: rotate(-90deg);
+}
+/* 장바구니 박스 */
+.wish-box {
+  padding: 0 60px 30px 60px;
+  user-select: none;
+}
+/* 장바구니 속박스 */
+.wish-in-box{
+  overflow-y: scroll;
+}
+.scbar::-webkit-scrollbar{
+  /* 전체 스크롤바 크기변경 */
+  width: 7px;
+}
+.scbar::-webkit-scrollbar-thumb{
+  /* 스크롤바 */
+  background-color: lightseagreen;
+  border-radius: 5px;
+}
+.scbar::-webkit-scrollbar-track{
+  /* 스크롤바 트랙 */
+  background-color: #ddd;
+  border-radius: 5px;
+}
+/* 장바구니 테이블 */
+.wish-table {
+  width: 100%;
+}
+/* 장바구니 공통 */
+.wish-table td,
+th {
+  box-sizing: border-box;
+  padding: 0.3vw;
+  text-align: center;
+}
+.wish-table tbody tr {
+  border-bottom: 1px solid lightseagreen;
+  min-height: 50px;
+}
+.wish-table tfoot tr {
+  border-bottom: 2px solid lightseagreen;
+}
+/* 장바구니 상단부 */
+.wish-table thead td {
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 1.3rem;
+  line-height: 2.5;
+  text-align: left;
+}
+/* 장바구니 분류 */
+.wish-table th {
+  background-color: #e2e2e2;
+  line-height: 2;
+}
+/* 2-1. 체크박스 영역 */
+.wish-table th:nth-child(1),
+td:nth-child(1) {
+  width: 5%;
+}
+/* 체크박스 라벨 */
+.wish-table .wish-chk {
+  display: block;
+  margin: 0 auto;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  line-height: 1.4;
+  box-shadow: 0px 0px 3px lightseagreen;
+  color: #ccc;
+}
+/* 체크시 */
+.wish-table input:checked + .wish-chk {
+  box-shadow: none;
+  background-color: lightseagreen;
+  color: #fff;
+}
+/* 상단 타이틀 전체체크 구역 */
+.wish-table thead .wish-chk {
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+/* 2-2. 이미지 */
+.wish-table th:nth-child(2),
+td:nth-child(2) {
+  width: 15%;
+}
+.wish-table img {
+  max-width: 100px;
+}
+/* 2-3. 제품명 */
+.wish-table th:nth-child(3),
+td:nth-child(3) {
+  width: 30%;
+}
+.wish-table td:nth-child(3) {
+  text-indent: 1rem;
+}
+.wish-table td:nth-child(3) {
+  text-align: left;
+}
+/* 2-4. 단가 */
+.wish-table th:nth-child(5),
+td:nth-child(5) {
+  width: 10%;
+}
+/* 2-5. 수량 */
+.wish-table th:nth-child(4),
+td:nth-child(4) {
+  width: 10%;
+}
+/* 수량조절 */
+.quant-box {
+  justify-content: center;
+  gap: 10px;
+}
+/* 수량 증감버튼 */
+.quant-btn {
+  border-radius: 3px;
+  outline: 1px solid #ccc;
+  cursor: pointer;
+}
+/* 숫자 자리 */
+.quant {
+  font-family: "KOFIHDrLEEJWTTF-B";
+  text-align: center;
+  border: none;
+  width: 25px;
+}
+/* 2-6. 합계 */
+.wish-table th:nth-child(6),
+td:nth-child(6) {
+  width: 10%;
+  text-align: center;
+}
+/* 2-7. 선택구역 */
+.wish-table th:nth-child(7),
+td:nth-child(7) {
+  width: 10%;
+  text-align: center;
+}
+/* 상단 체크박스 용 버튼 */
+.sel-chk-box {
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+.sel-chk-box button {
+  width: 160px;
+  height: 30px;
+  border-radius: 3px;
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+}
+/* order버튼 */
+.sel-chk-box button:nth-child(1) {
+  color: rgb(105, 190, 142);
+  outline: 2px solid rgb(105, 190, 142);
+}
+.sel-chk-box button:hover:nth-child(1) {
+  background-color: rgb(105, 190, 142);
+  color: #fff;
+}
+/* delete버튼 */
+.sel-chk-box button:nth-child(2) {
+  color: rgb(253, 170, 140);
+  outline: 2px solid rgb(253, 170, 140);
+}
+.sel-chk-box button:hover:nth-child(2) {
+  background-color: rgb(253, 170, 140);
+  color: #fff;
+}
+/* 개별 표 버튼 */
+.sel-box {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.sel-box button {
+  width: 60px;
+  height: 20px;
+  border-radius: 3px;
+  font-family: "KOFIHDrLEEJWTTF-L";
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #fff;
+}
+/* order버튼 */
+.sel-box button:nth-child(1) {
+  background-color: rgb(105, 190, 142);
+}
+/* delete버튼 */
+.sel-box button:nth-child(2) {
+  background-color: rgb(253, 170, 140);
+}
+/* 합계구역 */
+tfoot td {
+  font-family: "KOFIHDrLEEJWTTF-L";
+  line-height: 2;
+}
+/* 합계구역 합산금액 */
+tfoot i {
+  font-family: "KOFIHDrLEEJWTTF-B";
+  color: lightseagreen;
+}
+/* 확인 메세지 박스:상위 덮는 효과*/
+.message-box {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: #0000001a;
+  z-index: 9999;
+  font-family: "KOFIHDrLEEJWTTF-L";
+  /* 처음에 안보이기 */
+  display: none;
+}
+/* 메세지 겉박스 */
+.message-wrap {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffffea;
+  border-radius: 3px;
+  box-shadow: 0px 0px 5px #00000080;
+  user-select: none;
+}
+/* 메세지 박스 타이틀 */
+.message-tit {
+  font-family: "KOFIHDrLEEJWTTF-B";
+  box-sizing: border-box;
+  padding: 2px 4px 4px 4px;
+  background-color: #ddd;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #fff;
+}
+/* 닫기버튼 */
+.message-tit button {
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 1.4rem;
+  background-color: transparent;
+  line-height: 1.4;
+  float: right;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.message-tit button:hover {
+  color: #888;
+}
+/* 메세지 박스 내용 */
+.message-cont {
+  line-height: 5;
+  text-align: center;
+  font-size: 1.4rem;
+  height: 120px;
+}
+.message-btns {
+  display: flex;
+  justify-content: space-around;
+}
+/* 버튼공통 */
+.message-btns button {
+  width: 100px;
+  height: 30px;
+  border-radius: 3px;
+  font-family: "KOFIHDrLEEJWTTF-B";
+  font-size: 1.3rem;
+  background-color: transparent;
+  cursor: pointer;
+}
+/* yes버튼 */
+.message-btns button:nth-child(1) {
+  outline: 2px solid orange;
+  color: orangered;
+}
+.message-btns button:hover:nth-child(1) {
+  background-color: orange;
+  color: white;
+}
+
+/* no버튼 */
+.message-btns button:nth-child(2) {
+  outline: 2px solid seagreen;
+  color: green;
+}
+.message-btns button:hover:nth-child(2) {
+  background-color: seagreen;
+  color: white;
+}
+
+/************ 미디어쿼리구역 **************/
+/* 1000px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 1000px) {
+  /* 전체 장바구니 박스 */
+  .wish-area {
+    min-height: 500px;
+  }
+  /* 타이틀 영역 */
+  .wish-area h2 {
+    text-indent: 1.5rem;
+    font-size: 2rem;
+  }
+  /* 상단 체크박스 용 버튼 */
+  .sel-chk-box {
+    gap: 20px;
+  }
+  /* 상단 체크박스 용 버튼 */
+  .sel-chk-box button {
+    width: 120px;
+    font-size: 1rem;
+  }
+  /* 수량조절 */
+  .quant-box {
+    gap: 2px;
+  }
+  /* 수량 */
+  .quant {
+    width: 18px;
+  }
+} /* 1000px 이하 미디어쿼리 종료*/
+/* 750px 이하 미디어쿼리 시작 */
+@media screen and (max-width: 750px) {
+  /* 전체 장바구니 박스 */
+  .wish-area {
+    min-height: 350px;
+  }
+  /* 타이틀 영역 */
+  .wish-area h2 {
+    text-indent: 0.5rem;
+    font-size: 1.6rem;
+  }
+  /* 장바구니 상단부 */
+  .wish-table thead td {
+    font-size: 1rem;
+    line-height: 2;
+    padding: 15px 0;
+  }
+  /* 장바구니 공통 */
+  .wish-table td,
+  th {
+    font-size: 0.9rem;
+    padding: 10px 1px;
+  }
+  /* 타이틀 영역 */
+  .wich-area h2 {
+    padding-top: 20px;
+  }
+  /* 위시리스트 속박스 */
+  .wish-box {
+    padding: 0 10px;
+  }
+  /* 상단 체크박스 용 버튼 */
+  .sel-chk-box {
+    flex-direction: column;
+    gap:5px;
+  }
+  /* 상단 체크박스 용 버튼 */
+  .sel-chk-box button {
+    width: 120px;
+    height: 25px;
+    font-size: 1rem;
+    padding: 3px 0;
+  }
+  /* 2-2. 이미지 */
+  .wish-table img {
+    max-width: 70px;
+  }
+  /* 제품명 */
+  .wish-table td:nth-child(3) {
+    text-indent: .5rem;
+  }
+  /* 2-6. 합계 */
+  .wish-table th:nth-child(6),
+  td:nth-child(6) {
+    display: none;
+  }
+  /* 2-7. 선택구역 */
+  .wish-table th:nth-child(7),
+  td:nth-child(7) {
+    display: none;
+  }
+} /* 750px 이하 미디어쿼리 종료*/

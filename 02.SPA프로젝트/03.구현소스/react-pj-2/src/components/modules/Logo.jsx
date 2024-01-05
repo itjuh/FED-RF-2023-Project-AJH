@@ -15,21 +15,15 @@ export function Logo() {
     if (myCon.toggleVal !== "main") {
       myCon.chgTog("main");
       initToggle();
-    } else {
-      // 페이지 이동
-      goNav('/');
-      // 타이틀 변경
-      myCon.chgTit('Keyboard List');
-    }
+    } 
+    myCon.goPage('main','')
   } ////// 메인이동함수 //////////
   return (
     <>
-      <div className="part-box col-3 flex-box">
-        <h1 className="header__logo" onClick={(e) => goMain()}>
-          <img src="./images/logo_bk1.png" alt="레오폴드 로고" />
-          <span className="ir">레오폴드 로고</span>
-        </h1>
-      </div>
+      <h1 className="header__logo" onClick={() => goMain()}>
+        <img src="./images/logo_bk1.png" alt="레오폴드 로고" />
+        <span className="ir">레오폴드 로고</span>
+      </h1>
     </>
   );
 } ///////// Logo컴포넌트 ///////////////////

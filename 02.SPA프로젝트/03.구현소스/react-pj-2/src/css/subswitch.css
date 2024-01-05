@@ -23,6 +23,7 @@
   height: 100%;
   flex-wrap: nowrap;
   align-items: flex-start;
+  transition: 0.4s linear;
 }
 /* 개별 박스 */
 .info-inbox {
@@ -30,6 +31,7 @@
   height: 100%;
   flex-shrink: 0;
   padding: 0 1vw;
+  transition: 0.6s linear;
 }
 /* 글자정보 테이블 */
 .info-txt {
@@ -81,7 +83,7 @@
 /* 위시리스트 버튼 */
 .wish-sub {
   right: auto;
-  bottom: 70px;
+  bottom: 15px;
   left: 10px;
   font-size: 1.5rem;
   cursor: pointer;
