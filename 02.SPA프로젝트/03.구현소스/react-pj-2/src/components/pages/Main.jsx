@@ -45,7 +45,6 @@ export function Main() {
   console.log(prodList, "prodList", idxData, "idxData",num);
   console.log("Main불러옴");
   const [force, setForce] = useState(null);
-  const [init, setInit] = useState(true);
 
   // 대분류/세부분류
   const [optSel, setOptSel] = useState("array");

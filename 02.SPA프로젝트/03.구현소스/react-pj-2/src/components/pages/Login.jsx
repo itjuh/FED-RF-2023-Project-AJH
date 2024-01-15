@@ -7,7 +7,6 @@ import $ from "jquery";
 import { msgPopupData } from "../data/popupData";
 
 export function Login() {
-  console.log('Login');
   // validation check 0-fail 1-pass
   // 아이디 체크 변수
   const okId = useRef(0);
