@@ -66,7 +66,7 @@
     left: 43px;
     width: 55px;
     height: 48px;
-    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background: url(../images/images/info.png) no-repeat;
     background-position: 0px 0px;
     background-size: 785px 534px;
 }
@@ -81,7 +81,7 @@
     left: 15px;
     width: 23px;
     height: 16px;
-    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background: url(../images/images/info.png) no-repeat;
     background-position: -15px -72px;
     background-size: 785px 534px;
 
@@ -319,7 +319,7 @@
     width: 45px;
     height: 45px;
     margin-right: 20px;
-    background: url(../../01.자료수집/images/sns_icon.png) no-repeat;
+    background: url(../images/images/sns_icon.png) no-repeat;
     background-position: -458px -227px;
     background-size: 530px 395px;
     transition: 0.2s ease-in;
@@ -331,7 +331,7 @@
     width: 45px;
     height: 45px;
     margin-right: 20px;
-    background: url(../../01.자료수집/images/info.png) no-repeat;
+    background: url(../images/images/info.png) no-repeat;
     background-position: -200px -42px;
     background-size: 750px 400px;
     transition: 0.2s ease-in;

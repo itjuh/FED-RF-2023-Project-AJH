@@ -22,37 +22,37 @@ const company_info = {
 // 이벤트정보 
 // key이벤트명 src,소개,타이틀,내용으로 구성
 const event_info = {
-    "event01":{"src":"../01.자료수집/ongorong_prod/img_event01.jpeg","tit":"온고롱 2023 추석선물세트 출시","cont":"출시기념 이벤트로 9월 5일부터 9월 12일까지 주문예약 시 추석 선물세트를 5% 할인해드립니다."},
-    "event02":{"src":"../01.자료수집/ongorong_prod/img_event02.jpeg","tit":"선물세트 배송기간 안내","cont":"사전예약마감은 9월 12일 택배마감은 18일입니다. 택배발송은 20일과 21일에 진행되며 이후에는 픽업만 가능합니다."},
-    "event03":{"src":"../01.자료수집/ongorong_prod/img_event03.jpeg","tit":"앙금 모나카 8종 세트","cont":"앙금 모나카 8개입에 무료보자기포장까지! 모나카맛은 다채롭게 흑임자, 고구마, 쑥, 피넛, 팥, 앙버터, 유자, 딸기로 구성되어 있습니다."},
-    "event04":{"src":"../01.자료수집/ongorong_prod/img_event04.jpeg","tit":"모나카 견과칩 세트A","cont":"모나카 견과칩 24개를 한 번에 만나는 구성 A상품입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
-    "event05":{"src":"../01.자료수집/ongorong_prod/img_event05.jpeg","tit":"모나카 견과칩 세트B","cont":"모나카 견과칩 36개를 푸짐하게 만나는 구성 B상품입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
-    "event06":{"src":"../01.자료수집/ongorong_prod/img_event06.jpeg","tit":"모나카 종합 세트","cont":"앙금모나카와 모나카견과칩을 모두 드실 수 있는 구성입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
-    "event07":{"src":"../01.자료수집/ongorong_prod/img_event07.jpeg","tit":"곶감 단지 세트","cont":"더욱 고급스러운 선물을 위한 곶감 단지 세트입니다. 무료 보자기포장으로 소중한 분께 더 고급스럽게 선물하실 수 있습니다."},
-    "event08":{"src":"../01.자료수집/ongorong_prod/img_event08.jpeg","tit":"곶감 단지 종합 세트","cont":"곶감단지와 견과스틱 호두정과 등 건강에도 좋고 고급스러운 수제간식을 종합적으로 구성한 상품입니다."},
-    "event09":{"src":"../01.자료수집/ongorong_prod/img_event09.jpeg","tit":"쌀 오란다 세트","cont":"국내산 쌀로 만든 바삭한 오란다가 12개 있는 상품입니다. 맛은 검은깨, 무화과, 땅콩씨앗으로 구성되어 있습니다."},
+    "event01":{"src":"./images/ongorong_prod/img_event01.jpeg","tit":"온고롱 2023 추석선물세트 출시","cont":"출시기념 이벤트로 9월 5일부터 9월 12일까지 주문예약 시 추석 선물세트를 5% 할인해드립니다."},
+    "event02":{"src":"./images/ongorong_prod/img_event02.jpeg","tit":"선물세트 배송기간 안내","cont":"사전예약마감은 9월 12일 택배마감은 18일입니다. 택배발송은 20일과 21일에 진행되며 이후에는 픽업만 가능합니다."},
+    "event03":{"src":"./images/ongorong_prod/img_event03.jpeg","tit":"앙금 모나카 8종 세트","cont":"앙금 모나카 8개입에 무료보자기포장까지! 모나카맛은 다채롭게 흑임자, 고구마, 쑥, 피넛, 팥, 앙버터, 유자, 딸기로 구성되어 있습니다."},
+    "event04":{"src":"./images/ongorong_prod/img_event04.jpeg","tit":"모나카 견과칩 세트A","cont":"모나카 견과칩 24개를 한 번에 만나는 구성 A상품입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
+    "event05":{"src":"./images/ongorong_prod/img_event05.jpeg","tit":"모나카 견과칩 세트B","cont":"모나카 견과칩 36개를 푸짐하게 만나는 구성 B상품입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
+    "event06":{"src":"./images/ongorong_prod/img_event06.jpeg","tit":"모나카 종합 세트","cont":"앙금모나카와 모나카견과칩을 모두 드실 수 있는 구성입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
+    "event07":{"src":"./images/ongorong_prod/img_event07.jpeg","tit":"곶감 단지 세트","cont":"더욱 고급스러운 선물을 위한 곶감 단지 세트입니다. 무료 보자기포장으로 소중한 분께 더 고급스럽게 선물하실 수 있습니다."},
+    "event08":{"src":"./images/ongorong_prod/img_event08.jpeg","tit":"곶감 단지 종합 세트","cont":"곶감단지와 견과스틱 호두정과 등 건강에도 좋고 고급스러운 수제간식을 종합적으로 구성한 상품입니다."},
+    "event09":{"src":"./images/ongorong_prod/img_event09.jpeg","tit":"쌀 오란다 세트","cont":"국내산 쌀로 만든 바삭한 오란다가 12개 있는 상품입니다. 맛은 검은깨, 무화과, 땅콩씨앗으로 구성되어 있습니다."},
 };
 // 상품정보 
 // key상품번호 prod-name,가격,태그,src로 구성
 const prod_info = {
-    "prod01":{"prod_name":"미니4종생일케이크","prod_price":"50000","prod_tag":["@떡케이크","@1단케이크"],"src":"../01.자료수집/ongorong_prod/img_cake01.jpeg"},
-    "prod02":{"prod_name":"작약리스케이크","prod_price":"45000","prod_tag":["@떡케이크","@1단케이크"],"src":"../01.자료수집/ongorong_prod/img_cake02.jpeg"},
-    "prod03":{"prod_name":"하단리스케이크","prod_price":"50000","prod_tag":["@떡케이크","@1단케이크"],"src":"../01.자료수집/ongorong_prod/img_cake03.jpeg"},
-    "prod04":{"prod_name":"작약장미리스케이크","prod_price":"40000","prod_tag":["@떡케이크","@1단케이크"],"src":"../01.자료수집/ongorong_prod/img_cake04.jpeg"},
-    "prod05":{"prod_name":"칠순케이크(핑크)","prod_price":"60000","prod_tag":["@떡케이크","@숫자케이크"],"src":"../01.자료수집/ongorong_prod/img_cake47.jpeg"},
-    "prod06":{"prod_name":"5살생일케이크","prod_price":"55000","prod_tag":["@떡케이크","@숫자케이크"],"src":"../01.자료수집/ongorong_prod/img_cake46.jpeg"},
-    "prod07":{"prod_name":"환갑케이크(블루)","prod_price":"60000","prod_tag":["@떡케이크","@숫자케이크"],"src":"../01.자료수집/ongorong_prod/img_cake50.jpeg"},
-    "prod08":{"prod_name":"환갑케이크(핑크)","prod_price":"60000","prod_tag":["@떡케이크","@숫자케이크"],"src":"../01.자료수집/ongorong_prod/img_cake51.jpeg"},
-    "prod09":{"prod_name":"장미컵케이크2종","prod_price":"16000","prod_tag":["@떡케이크","@컵케이크"],"src":"../01.자료수집/ongorong_prod/img_cake70.jpeg"},
-    "prod010":{"prod_name":"카네이션컵케이크2종","prod_price":"16000","prod_tag":["@떡케이크","@컵케이크"],"src":"../01.자료수집/ongorong_prod/img_cake71.jpeg"},
-    "prod011":{"prod_name":"카네이션컵케이크6종","prod_price":"48000","prod_tag":["@떡케이크","@컵케이크"],"src":"../01.자료수집/ongorong_prod/img_cake72.jpeg"},
-    "prod012":{"prod_name":"종합컵케이크","prod_price":"32000","prod_tag":["@떡케이크","@컵케이크"],"src":"../01.자료수집/ongorong_prod/img_cake74.jpeg"},
-    "prod013":{"prod_name":"상차림떡 세트","prod_price":"100000","prod_tag":["@상차림떡"],"src":"../01.자료수집/ongorong_prod/img_dduk2.jpeg"},
-    "prod014":{"prod_name":"수수팥떡","prod_price":"45000","prod_tag":["@상차림떡","@쌀디저트"],"src":"../01.자료수집/ongorong_prod/img_dduk3.jpeg"},
-    "prod015":{"prod_name":"오색송편","prod_price":"43000","prod_tag":["@상차림떡"],"src":"../01.자료수집/ongorong_prod/img_dduk5.jpeg"},
-    "prod016":{"prod_name":"구움찰떡","prod_price":"20000","prod_tag":["@답례품","@쌀디저트"],"src":"../01.자료수집/ongorong_prod/img_prod4.jpeg"},
-    "prod017":{"prod_name":"호두정과","prod_price":"30000","prod_tag":["@답례품","@건강디저트"],"src":"../01.자료수집/ongorong_prod/img_prod1.jpeg"},
-    "prod018":{"prod_name":"종합견과바","prod_price":"35000","prod_tag":["@답례품","@쌀디저트"],"src":"../01.자료수집/ongorong_prod/img_prod5.jpeg"},
+    "prod01":{"prod_name":"미니4종생일케이크","prod_price":"50000","prod_tag":["@떡케이크","@1단케이크"],"src":"./images/ongorong_prod/img_cake01.jpeg"},
+    "prod02":{"prod_name":"작약리스케이크","prod_price":"45000","prod_tag":["@떡케이크","@1단케이크"],"src":"./images/ongorong_prod/img_cake02.jpeg"},
+    "prod03":{"prod_name":"하단리스케이크","prod_price":"50000","prod_tag":["@떡케이크","@1단케이크"],"src":"./images/ongorong_prod/img_cake03.jpeg"},
+    "prod04":{"prod_name":"작약장미리스케이크","prod_price":"40000","prod_tag":["@떡케이크","@1단케이크"],"src":"./images/ongorong_prod/img_cake04.jpeg"},
+    "prod05":{"prod_name":"칠순케이크(핑크)","prod_price":"60000","prod_tag":["@떡케이크","@숫자케이크"],"src":"./images/ongorong_prod/img_cake47.jpeg"},
+    "prod06":{"prod_name":"5살생일케이크","prod_price":"55000","prod_tag":["@떡케이크","@숫자케이크"],"src":"./images/ongorong_prod/img_cake46.jpeg"},
+    "prod07":{"prod_name":"환갑케이크(블루)","prod_price":"60000","prod_tag":["@떡케이크","@숫자케이크"],"src":"./images/ongorong_prod/img_cake50.jpeg"},
+    "prod08":{"prod_name":"환갑케이크(핑크)","prod_price":"60000","prod_tag":["@떡케이크","@숫자케이크"],"src":"./images/ongorong_prod/img_cake51.jpeg"},
+    "prod09":{"prod_name":"장미컵케이크2종","prod_price":"16000","prod_tag":["@떡케이크","@컵케이크"],"src":"./images/ongorong_prod/img_cake70.jpeg"},
+    "prod010":{"prod_name":"카네이션컵케이크2종","prod_price":"16000","prod_tag":["@떡케이크","@컵케이크"],"src":"./images/ongorong_prod/img_cake71.jpeg"},
+    "prod011":{"prod_name":"카네이션컵케이크6종","prod_price":"48000","prod_tag":["@떡케이크","@컵케이크"],"src":"./images/ongorong_prod/img_cake72.jpeg"},
+    "prod012":{"prod_name":"종합컵케이크","prod_price":"32000","prod_tag":["@떡케이크","@컵케이크"],"src":"./images/ongorong_prod/img_cake74.jpeg"},
+    "prod013":{"prod_name":"상차림떡 세트","prod_price":"100000","prod_tag":["@상차림떡"],"src":"./images/ongorong_prod/img_dduk2.jpeg"},
+    "prod014":{"prod_name":"수수팥떡","prod_price":"45000","prod_tag":["@상차림떡","@쌀디저트"],"src":"./images/ongorong_prod/img_dduk3.jpeg"},
+    "prod015":{"prod_name":"오색송편","prod_price":"43000","prod_tag":["@상차림떡"],"src":"./images/ongorong_prod/img_dduk5.jpeg"},
+    "prod016":{"prod_name":"구움찰떡","prod_price":"20000","prod_tag":["@답례품","@쌀디저트"],"src":"./images/ongorong_prod/img_prod4.jpeg"},
+    "prod017":{"prod_name":"호두정과","prod_price":"30000","prod_tag":["@답례품","@건강디저트"],"src":"./images/ongorong_prod/img_prod1.jpeg"},
+    "prod018":{"prod_name":"종합견과바","prod_price":"35000","prod_tag":["@답례품","@쌀디저트"],"src":"./images/ongorong_prod/img_prod5.jpeg"},
 };
 
 // 리뷰정보
@@ -61,62 +61,62 @@ const review_info = {
       "reviewer":"땡땡22",
       "review_txt":"상담도 친절하게 응대해주시고, 케익에 앙금이랑 떡두 너무너무 맛있었어여!!",
       "review_tag":"@상차림 떡 세트,@패턴 백설기",
-      "src":"../01.자료수집/review/땡땡22.jpeg"},
+      "src":"./images/review/땡땡22.jpeg"},
     "review02":{
       "reviewer":"따라딴따라",
       "review_txt":   "어머니 칠순 기념으로 떡 케이크 주문했어요 너무 친절하시고 케이크도 너무 이뻐서 어머니가 엄청 좋아하셨습니다. 다음에도 여기서 꼭 시킬 것 같아요 번창하세요!",
       "review_tag":"@생일케이크,@2단케이크",
-      "src":"../01.자료수집/review/따라딴따라.jpeg"},
+      "src":"./images/review/따라딴따라.jpeg"},
     "review03":{
       "reviewer":"별빛이반짝",
       "review_txt":   "막내도련님 상견례 자리에 보냈어요 ^^ 당사자들 뿐만 아니라 부모님들도 다 정성가득한 모양에 너무 좋아하셨다고 합니다 채팅으로 문의 드렸을때 정말 신속 친절 답변해 주세요♥ 감사합니다 사장님♥ 또 특별한 행사 있을때 주문할게요 ^^ 강력 추천합니다!!",
       "review_tag":"@1단케이크",
-      "src":"../01.자료수집/review/별빛이반짝.jpeg"},
+      "src":"./images/review/별빛이반짝.jpeg"},
     "review04":{
       "reviewer":"아들바보",
       "review_txt":   "아기간식으로 급하게 주문했어요 흔쾌히 주문받아주셨고 잘먹었어요 쌀로만들어 맛있고 이쁘고 감사합니다^^",
       "review_tag":"@휘낭시에",
-      "src":"../01.자료수집/review/아들바보.jpeg"},
+      "src":"./images/review/아들바보.jpeg"},
    "review05":{
       "reviewer":"안똑",
       "review_txt":   "엄마 환갑으로 주문했어요. 너무 만족해서 후기 남깁니다. 주문할 때 케이크 종류도 못 고르고 디자인도 못 골라서 진짜 많이 문의했는데, 넘 친절하게 응답해주셔서 감사해요 ㅠㅠ 진상손님 아닐까 할 정도로 아무것도 못 정했하고 요청한 것도 많은데 추천해주신 숫자도 크고 화려하고 단호박도 진짜 맛있네요ㅎㅎ. 가족들 인원이 많았는데 숫자케이크가 나눠먹기도 보관도 좋더라구요. 그리고 당일에 만들어서 그런지 떡이 진짜 촉촉해서 다들 이거 뭐냐고 하면서 맛있게 드셨어요. 5살짜리 조카도 잘먹어서 뿌듯했습니다. 많이 달지 않아서 아가들은 꽃앙금을 더 좋아하고 어른들은 떡을 더 좋아하셨어요. 환갑떡은 엄마가 백설기를 좋아하셔서 추가주문했는데 식탁위에 올리니 다들 사진하나씩 찍어가시고 ㅋㅋ 어머니 어깨 으쓱하고 효도 제대로 했습니다. 주말 아침픽업인데 시간 맞춰주셔서 감사해요!! 행사 또 있으면 꼭 시킬게용♡♡",
       "review_tag":"@생일케이크,@환갑,@1단케이크,@숫자케이크",
-      "src":"../01.자료수집/review/안똑.jpeg"},
+      "src":"./images/review/안똑.jpeg"},
    "review06":{
       "reviewer":"먹골역살아요",
       "review_txt":   "집근처로 찾아서 예약한건데 친절하시고, 운영 전 시간임에도 예약 해주셨어요. 앙금도 맛있고 떡도 맛있었는데 일단 모양이 너무 이뻤어요",
       "review_tag":"@떡케이크,@1단케이크,@숫자케이크",
-      "src":"../01.자료수집/review/먹골역살아요.jpeg"},
+      "src":"./images/review/먹골역살아요.jpeg"},
    "review07":{
       "reviewer":"평화로운하루",
       "review_txt":   "정말 너무예쁘고 맛도 맛나고 무엇보다 엄마가 넘좋아하셔서 기분좋아요 사장님 롱런하시고 번창하세요 ♡",
       "review_tag":"@떡케이크,@생일케이크,@1단케이크",
-      "src":"../01.자료수집/review/평화로운하루.jpeg"},   
+      "src":"./images/review/평화로운하루.jpeg"},   
    "review08":{
       "reviewer":"빗방울",
       "review_txt":   "꽃다발을 선물하려다가 당근 광고에 올라온 꽉찬 꽃송이 떡케이크 사진에 끌려서 급하게 구매신청하게 됐는데 친절하게 안내해 주셔서 감사드립니다. 실제로 더 이쁘고 너무 좋아서 감동받으신 엄마를 보고 선택에 뿌듯하네요. 엄마가 집에 가셔서 계속 사진찍어 올리고 계신중이네요^^",
       "review_tag":"@떡케이크,@생일케이크,@1단케이크",
-      "src":"../01.자료수집/review/빗방울.jpeg"},   
+      "src":"./images/review/빗방울.jpeg"},   
    "review09":{
       "reviewer":"사랑한다는말아끼지마세요",
       "review_txt":   "친정포함 2군데 보내드렸는데~ 잘 받았고 맛있었다고 하시네요 늦은 밤 당근들어왔다가 우연히 보고 급 반해서 혹시나하고 택배끝날까 바로 문의드렸는데 친절히 답변도 주시고 이상없이 3일~4일 두군데 모두 잘 받았다고 연락받았어요^^ 먹는 카네이션 너무 너무 예쁘네요~ 가격도 크게 비싸지않아서 부담없이 선물하기에 좋고~부모님께는 꽃을 대신 하기에 더욱이 좋다고 생각됩니당ㅎㅎ 예쁘게 보내주셔서 감사드려요 늘~행복하시고~또~뵙겠습니다",
       "review_tag":"@컵케이크,@디저트,@답례품",
-      "src":"../01.자료수집/review/사랑한다는말아끼지마세요.jpeg"},   
+      "src":"./images/review/사랑한다는말아끼지마세요.jpeg"},   
    "review10":{
       "reviewer":"기쁨엄마",
       "review_txt":   "너무 이쁘고 맛있었습니다.",
       "review_tag":"@컵케이크,@디저트,@답례품",
-      "src":"../01.자료수집/review/기쁨엄마.jpeg"},   
+      "src":"./images/review/기쁨엄마.jpeg"},   
    "review11":{
       "reviewer":"묭묭",
       "review_txt":   "다른분 후기 사진보고 반해서 급히 연락드렸었는데 너무 친절히 주문 받아주시고 실물도 너무 예쁘고 어른들도 좋아하셨어요 특히 호두정과가 너무 맛있어요!!! 꼭 섞어서 드셔보세용",
       "review_tag":"@컵케이크,@디저트,@답례품",
-      "src":"../01.자료수집/review/묭묭.jpeg"},   
+      "src":"./images/review/묭묭.jpeg"},   
    "review12":{
       "reviewer":"플래져",
       "review_txt":   "지난번 엄마생신 때 앙금플라워 떡케잌 주문했었는데 꽃 퀄리티가 너무 고급진데다 맛까지 좋아서 다들 좋아했어요.😊 단골가게 찜꽁 해놓고 구경하다가 휘낭시에가 눈에 들어와서 구매했는데 백화점에서 판매하는 휘낭시에보다 버터도 좋은거 쓰시는지 훨씬 고소하고 촉촉하고 너무 맛있더라구요 ~ 최고!!❤️ 한개씩 포장마다 제습제가 들어있어 서 더 신선한거 같아요. 다른곳에선 밀가루로 만드는데 온고롱은 쌀가루로 만들어서 그런지 더 단백하고 많이 안달아요. 고소한 버터향에 맛종류도 다양해서 한개먹고 또먹고 자꾸 손이 갑니다.ㅎㅎ 선물용으로 좋아서 친구들 주려고 4개입 두박스 따로 주문했어요^^",
       "review_tag":"@답례품,@휘낭시에,@디저트",
-      "src":"../01.자료수집/review/플래져.jpeg"},      
+      "src":"./images/review/플래져.jpeg"},      
 };
 
 // 고객센터 정보
@@ -152,12 +152,12 @@ const faq_cont = [
 // 원재료정보
 // 재료명, src, alt로 구성
 const grad_info = [
-   {"재료명":"국내산 쌀","src":"../01.자료수집/images/grad01.png","alt":"벼"},
-   {"재료명":"유기농 계란","src":"../01.자료수집/images/grad02.png","alt":"계란"},
-   {"재료명":"무염버터","src":"../01.자료수집/images/grad03.png","alt":"버터"},
-   {"재료명":"견과류","src":"../01.자료수집/images/grad04.png","alt":"혼합견과류"},
-   {"재료명":"국산호두","src":"../01.자료수집/images/grad05.png","alt":"호두"},
-   {"재료명":"검은깨","src":"../01.자료수집/images/grad06.png","alt":"검은깨"},
+   {"재료명":"국내산 쌀","src":"./images/images/grad01.png","alt":"벼"},
+   {"재료명":"유기농 계란","src":"./images/images/grad02.png","alt":"계란"},
+   {"재료명":"무염버터","src":"./images/images/grad03.png","alt":"버터"},
+   {"재료명":"견과류","src":"./images/images/grad04.png","alt":"혼합견과류"},
+   {"재료명":"국산호두","src":"./images/images/grad05.png","alt":"호두"},
+   {"재료명":"검은깨","src":"./images/images/grad06.png","alt":"검은깨"},
 ];
 
 // 주의사항
@@ -174,13 +174,13 @@ const caution_data = {
 // 메인스크롤 이미지
 
 const banner_img = [
-   {"alt":"꽃다발케이크","src":"../01.자료수집/ongorong_prod/banner0.png"},
-   {"alt":"파운드쌀빵","src":"../01.자료수집/ongorong_prod/banner1.png"},
-   {"alt":"컵케이크","src":"../01.자료수집/ongorong_prod/banner2.png"},
-   {"alt":"토끼설기","src":"../01.자료수집/ongorong_prod/banner3.png"},
-   {"alt":"백일떡","src":"../01.자료수집/ongorong_prod/banner4.png"},
-   {"alt":"앙금케이크","src":"../01.자료수집/ongorong_prod/banner5.png"},
-   {"alt":"휘낭시에","src":"../01.자료수집/ongorong_prod/banner6.png"},
+   {"alt":"꽃다발케이크","src":"./images/ongorong_prod/banner0.png"},
+   {"alt":"파운드쌀빵","src":"./images/ongorong_prod/banner1.png"},
+   {"alt":"컵케이크","src":"./images/ongorong_prod/banner2.png"},
+   {"alt":"토끼설기","src":"./images/ongorong_prod/banner3.png"},
+   {"alt":"백일떡","src":"./images/ongorong_prod/banner4.png"},
+   {"alt":"앙금케이크","src":"./images/ongorong_prod/banner5.png"},
+   {"alt":"휘낭시에","src":"./images/ongorong_prod/banner6.png"},
 ];
 
 // 주문하기 페이지 옵션
@@ -189,9 +189,9 @@ const option_list = {
    "기본구성품 안내":"케이크박스 | 케이크칼 | 기본초 | 리본장식",
    "보관 안내":"실온보관(10~25도)하고 5시간 내에 섭취하세요. 남은 케이크는 떡은 냉동보관, 앙금은 냉장보관 하세요. 드실 때는 떡은 다시 데워서 드세요.",
    "맛 선택":[
-      {"name":"꿀설기","price":0,"img":"../01.자료수집/images/fla1.png","alt":"기본 꿀설기"},
-      {"name":"단호박","price":5000,"img":"../01.자료수집/images/fla2.png","alt":"단호박 맛"},
-      {"name":"무화과","price":5000,"img":"../01.자료수집/images/fla4.png","alt":"무화과 맛"},
+      {"name":"꿀설기","price":0,"img":"./images/images/fla1.png","alt":"기본 꿀설기"},
+      {"name":"단호박","price":5000,"img":"./images/images/fla2.png","alt":"단호박 맛"},
+      {"name":"무화과","price":5000,"img":"./images/images/fla4.png","alt":"무화과 맛"},
    ],
    "사이즈":[
       {"name":"1호(15cm)","price":0},
@@ -209,5 +209,14 @@ const step_title = [
    "상품을 골라주세요",
    "옵션을 선택해주세요",
    "추가하실 상품이 있으신가요?",
-   "주문이 처리되었습니다.",
+   "주문신청서 작성이 완료 되었습니다.",
 ];
+
+// 추가옵션
+const add_option = {
+   "보자기":5000,
+   "토퍼":5000,
+   "투명박스":2000,
+   "숫자초":1500,
+   "메세지카드":1000,
+};

@@ -223,6 +223,22 @@ function loadFn(){
             outOn();
         }
     }
+    /////////////////////////////////////////////
+    ///////// 제품소개 중 클릭한 대상 /////////////
+    /////////////////////////////////////////////
+    // 1. 대상선정 //
+    const prod = domFn.qsa('.product');
+    // 2. 이벤트 설정
+    prod.forEach(ele=>{
+        domFn.addEvt(ele,'click',setPrev);
+    });
+    function setPrev(){
+        console.log('클릭한 대상',this);
+        prod.forEach(ele=>{
+            ele.classList.remove('prev');
+        });
+        this.classList.add('prev');
+    }
 
     ////////////////////////////////////////////
     /////////////스크롤 등장 액션////////////////

@@ -57,7 +57,6 @@
     aspect-ratio: 4/3;
     overflow: hidden;
     color: #fff;
-    box-shadow: 1px 1px 3px #000;
 }
 /* 배너설명박스 전체 ol */
 .banner-desc ol {
@@ -104,7 +103,7 @@
     width: 45px;
     height: 51px;
     top: calc(50% - 51px / 2);
-    background: url(../../01.자료수집/images/direc_icon.png) no-repeat;
+    background: url(../images/images/direc_icon.png) no-repeat;
 }
 /* 왼쪽 배너로 이동 .prev-btn*/
 .prev-btn {

@@ -1,247 +1,285 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>온고롱 서브_안내페이지</title>
-        <!-- 온고롱 서브_안내페이지 CSS -->
-        <link rel="stylesheet" href="./css/sub_info.css" />
-        <!-- 온고롱 데이터JS -->
-        <script src="./js/data.js"></script>
-        <!-- 온고롱 안내페이지JS -->
-        <script type="module" src="./js/info.js"></script>
-    </head>
-    <body>
-        <!-- 1. 상단영역 -->
-        <div id="header">
-            <header class="header inbox">
-                <!-- 0-1. 첫주문안내
-                <div class="partbox first_info"></div> -->
-                <!-- 0-2. 상하네비바 -->
-                <!-- <div class="partbox top_bottom">
-                    <button class="btn up"></button>
-                    <button class="btn down"></button>
-                </div> -->
-                <!--1-3. 로그인,회원가입 -->
-                <div class="side-group partbox">
-                    <nav class="gnb-sign">
-                        <ul>
-                            <li><a href="#">로그인</a></li>
-                            <li><a href="#">회원가입</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <!-- 상단 고정박스 -->
-                <div class="top-box">
-                    <!-- 1-1. 메뉴구성 -->
-                    <div class="partbox">
-                        <nav class="gnb-menu">
-                            <ul>
-                                <li><a href="./sub_order.html">주문하기</a></li>
-                                <li><a href="./sub_service.html">고객센터</a></li>
-                                <li><a href="./sub_map.html">오시는길</a></li>
-                                <li><a href="./sub_info.html">온고롱안내</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- 1-2. 상단로고 -->
-                    <div class="partbox">
-                        <h1 class="logo">
-                            <a href="./index.html">
-                                <span class="ir">온고롱 로고 이미지, 메인화면 바로가기</span>
-                            </a>
-                        </h1>
-                    </div>
-                    <!-- 1-4. 검색 -->
-                    <div class="partbox">
-                        <div class="search-box">
-                            <label for="search"></label>
-                            <i class="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" id="search" placeholder="제품을 검색하세요!" onkeypress="if(event.keyCode===13) search()"/>
-                        </div>
-                    </div>
-                </div>
-            </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>온고롱 서브_안내페이지</title>
+    <!-- 온고롱 서브_안내페이지 CSS -->
+    <link rel="stylesheet" href="./css/sub_info.css" />
+    <!-- 온고롱 데이터JS -->
+    <script src="./js/data.js"></script>
+    <!-- 온고롱 안내페이지JS -->
+    <script type="module" src="./js/info.js"></script>
+  </head>
+  <body>
+    <!-- 1. 상단영역 -->
+    <div id="header">
+      <header class="header inbox">
+        <!-- 0-1. 첫주문안내 -->
+        <!-- 0-2. 상하네비바 -->
+        <!--1-3. 로그인,회원가입 -->
+        <div class="side-group partbox">
+          <nav class="gnb-sign">
+            <ul>
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+            </ul>
+          </nav>
         </div>
-        <!-- 2. 메인영역 -->
-        <div id="main">
-            <main class="main inbox">
-                <!-- 2-1. 온고롱소개 -->
-                <div class="partbox intro-brand group-box">
-                    <div class="main-img"></div>
-                    <!-- 2-1-1. 브랜드소개타이틀 -->
-                    <section class="top-title revers-type">
-                        <div class="right-box">
-                            <div class="brand-span"><span>꼭 기억하고 싶은 순간</span></div>
-                            <div class="brand-span"><span>사랑하고 아끼는 누군가를 위한</span></div>
-                            <div class="brand-span"><span>특별한 선물</span></div>
-                            
-                            <div class="brand-span"><span>온고롱과 함께 하세요.</span></div>
-                        </div>
-                        <div class="left-box">
-                        <div class="brand-span"><span>온가족이 건강하게 먹길 바라며</span></div>
-                        <div class="brand-span"><span>더 좋은 재료를 사용합니다.</span></div>
-                        </div>
-                    </section>
-                    <!-- 2-1-2. 안내타이틀 -->
-                    <section class="top-title info-box">
-                        <!-- 안내타이틀 후방 배경용 박스 -->
-                        <div class="background-box"></div>
-                        <!-- 안내타이틀 사이드 -->
-                        <aside>
-                            <div class="sub-title">
-                                <h1>좋은 재료로 건강하게, 쌀로 만들어 속이 편안하게</h1>
-                                <p>쌀 가루부터 팥고물까지 <br> 
-                                국산 혹은 유기농 등 좋은 재료들만 사용하여 <br>
-                                모든 재료를 매장에서 직접 씻고,불리고,빻고,볶아 <br>
-                                정성을 담아 만들어드립니다.</p>
-                            </div>
-                        </aside>
-                        <!-- 2-1-3. 온고롱재료소개 -->
-                        <div class="grad-list">
-                            <ul class="intro-grad">
-                            </ul>
-                        </div>
-                    </section>
-                </div>
-                <!-- 2-2. 제품소개 -->
-                <div class="partbox intro-prod group-box">
-                    <!-- 2-2-1. 소개타이틀 -->
-                    <section class="top-title">온고롱의 다양한 제품을 만나보세요</section>
-                    <!-- 2-2-2. 제품소개 -->
-                    <section class="prod-info">
-                        <ol>
-                            <li class="product prev">
-                            </li>
-                            <li class="product">
-                            </li>
-                            <li class="product">
-                            </li>
-                        </ol>
-                    </section>
-                </div>
-                <!-- 2-3. 주문절차 -->
-                <div class="partbox intro-process .group-box">
-                    <!-- 2-3-1. 절차타이틀 -->
-                    <section class="top-title">주문절차를 안내해 드립니다</section>
-                    <!-- 2-3-2. 주문절차 -->
-                    <section class="process-info">
-                        <!-- 주문절차 불릿 배경 -->
-                        <div class="bullet-box">
-                            <ul>
-                                <li>
-                                    <em>일정선택</em>
-                                    <div class="circle"></div>
-                                </li>
-                                <li>
-                                    <em>상품선택</em>
-                                    <div class="circle"></div>
-                                </li>
-                                <li>
-                                    <em>옵션선택</em>
-                                    <div class="circle"></div>
-                                </li>
-                                <li>
-                                    <em>추가하기</em>
-                                    <div class="circle"></div>
-                                </li>
-                                <li>
-                                    <em>신청서확인</em>
-                                    <div class="circle"></div>
-                                </li>
-                                <li>
-                                    <em>주문하기</em>
-                                    <div class="circle"></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <ol>
-                            <li class="process">
-                            </li>
-                            <li class="process">
-                            </li>
-                            <li class="process">
-                            </li>
-                            <li class="process">
-                            </li>
-                            <li class="process">
-                            </li>
-                            <li class="process">
-                            </li>
-                        </ol>
-                    </section>
-                </div>
-                <!-- 2-4. 주의사항 -->
-                <div class="partbox intro-cautions group-box">
-                    <!-- 2-4-1. 주의사항타이틀 -->
-                    <section class="top-title">
-                        <h3>주문 전<br> &nbsp;&nbsp;꼭 확인해주세요.</h3>
-                    </section>
-                    <!-- 2-4-2. 주의사항 -->
-                    <section class="cautions-info">
-                        <ol>
-                        </ol>
-                    </section>
-                </div>
-                <!-- 2-5. 주문바로가기 -->
-                <div class="partbox go-order">
-                    <!-- 2-5-1. 바로가기타이틀 -->
-                    <section class="top-title"></section>
-                    <!-- 2-5-2. 바로가기 -->
-                    <section></section>
-                </div>
-            </main>
+        <!-- 상단 고정박스 -->
+        <div class="top-box">
+          <!-- 1-1. 메뉴구성 -->
+          <div class="partbox">
+            <nav class="gnb-menu">
+              <ul>
+                <li><a href="./sub_order.html">주문하기</a></li>
+                <li><a href="./sub_service.html">고객센터</a></li>
+                <li><a href="./sub_map.html">오시는길</a></li>
+                <li><a href="./sub_info.html">온고롱안내</a></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- 1-2. 상단로고 -->
+          <div class="partbox">
+            <h1 class="logo">
+              <a href="./index.html">
+                <span class="ir">온고롱 로고 이미지, 메인화면 바로가기</span>
+              </a>
+            </h1>
+          </div>
+          <!-- 1-4. 검색 -->
+          <div class="partbox">
+            <div class="search-box">
+              <label for="search"></label>
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input
+                type="text"
+                id="search"
+                placeholder="제품을 검색하세요!"
+                onkeypress="if(event.keyCode===13) search()"
+              />
+            </div>
+          </div>
         </div>
-        <!-- 3. 하단영역 -->
-        <div id="footer">
-            <footer class="footer inbox">
-                <div class="footer-company-desc">
-                    <!-- 3-1. 하단로고 -->
-                    <div class="partbox">
-                        <h1 class="logo">
-                            <a href="#">
-                                <span class="ir">온고롱 로고 이미지</span>
-                            </a>
-                        </h1>
-                    </div>
-                    <!-- 3-2. 회사소개 -->
-                    <div class="partbox">
-                        <ul>
-                            <li>상호 : 온고롱</li>
-                            <li>대표 : 김희진</li>
-                            <li>주소 : 서울 중랑구 동일로160길 8 1층 온고롱</li>
-                            <li>전화 : 0507-1358-0638</li>
-                            <li>메일 : ongorongcake@naver.com</li>
-                            <li>사업자번호 : 665-13-33017</li>
-                            <li>통신판매번호 : 신고면제 </li>
-                            <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
-                        </ul>
-                    </div>
+      </header>
+    </div>
+    <!-- 2. 메인영역 -->
+    <div id="main">
+      <main class="main inbox">
+        <!-- 2-1. 온고롱소개 -->
+        <div class="intro-brand group-box">
+          <div class="main-img"></div>
+          <div class="partbox">
+            <!-- 2-1-1. 브랜드소개타이틀 -->
+            <section class="top-title revers-type">
+              <div class="right-box">
+                <div class="brand-span"><span>꼭 기억하고 싶은 순간</span></div>
+                <div class="brand-span"><span>사랑하고 아끼는 누군가를 위한</span></div>
+                <div class="brand-span"><span>특별한 선물</span></div>
+
+                <div class="brand-span"><span>온고롱과 함께 하세요.</span></div>
+              </div>
+              <div class="left-box">
+                <div class="brand-span"><span>온가족이 건강하게 먹길 바라며</span></div>
+                <div class="brand-span"><span>더 좋은 재료를 사용합니다.</span></div>
+              </div>
+            </section>
+            <!-- 2-1-2. 안내타이틀 -->
+            <section class="top-title info-box">
+              <!-- 안내타이틀 후방 배경용 박스 -->
+              <div class="background-box"></div>
+              <!-- 안내타이틀 사이드 -->
+              <aside>
+                <div class="sub-title">
+                  <h1>좋은 재료로 건강하게, 쌀로 만들어 속이 편안하게</h1>
+                  <p>
+                    쌀 가루부터 팥고물까지 <br />
+                    국산 혹은 유기농 등 좋은 재료들만 사용하여 <br />
+                    모든 재료를 매장에서 직접 씻고,불리고,빻고,볶아 <br />
+                    정성을 담아 만들어드립니다.
+                  </p>
                 </div>
-                <!-- 3-3. SNS링크 -->
-                <div class="footer-sns">
-                    <div class="partbox">
-                        <ol>
-                            <li>
-                                <div class="sns-img kakao"></div>
-                                <span>카카오채널</span>
-                            </li>
-                            <li>
-                                <div class="sns-img insta"></div>
-                                <span>인스타그램</span>
-                            </li>
-                            <li>
-                                <div class="sns-img naver"></div>
-                                <span>네이버블로그</span>
-                            </li>
-                            <li>
-                                <div class="sns-img dang"></div>
-                                <span>당근마켓</span>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </footer>
+              </aside>
+              <!-- 2-1-3. 온고롱재료소개 -->
+              <div class="grad-list">
+                <ul class="intro-grad"></ul>
+              </div>
+            </section>
+          </div>
         </div>
-    </body>
+        <!-- 2-2. 제품소개 -->
+        <div class="partbox intro-prod group-box">
+          <!-- 2-2-1. 소개타이틀 -->
+          <section class="top-title">온고롱의 다양한 제품을 만나보세요</section>
+          <!-- 2-2-2. 제품소개 -->
+          <section class="prod-info">
+            <ol>
+              <li class="product prev">
+                <figure>
+                  <img src="./images/ongorong_prod/banner5.png" alt="온고롱 케이크">
+                </figure>
+                <figcaption>
+                  <span>
+                    원하는 디자인을 선택하여 나만의 케이크를 주문해보세요.
+                    케이크 시트는 백설기, 단호박설기, 흑임자 설기가 준비되어 있습니다.
+                  </span>
+                </figcaption>
+              </li>
+              <li class="product">
+                <figure>
+                  <img src="./images/ongorong_prod/banner4.png" alt="온고롱 답례품">
+                </figure>
+                <figcaption>
+                  <span>
+                    특별한 날 소중한 분께 감사의 의미로 전달해보세요.
+                    견과바, 호두정과 등 정성스럽게 준비합니다.
+                  </span>
+                </figcaption>
+              </li>
+              <li class="product">
+                <figure>
+                  <img src="./images/ongorong_prod/banner6.png" alt="온고롱 디저트">
+                </figure>
+                <figcaption>
+                  <span>
+                    달콤한 디저트로 행복한 시간을 즐기세요.
+                    모든 디저트는 쌀로 만들어서 속이 편안합니다.
+                  </span>
+                </figcaption>
+              </li>
+            </ol>
+          </section>
+        </div>
+        <!-- 2-3. 주문절차 -->
+        <div class="partbox intro-process group-box">
+          <!-- 2-3-1. 절차타이틀 -->
+          <section class="top-title">주문절차를 안내해 드립니다</section>
+          <!-- 2-3-2. 주문절차 -->
+          <section class="process-info">
+            <!-- 주문절차 불릿 배경 -->
+            <div class="bullet-box">
+              <ul>
+                <li>
+                  <em>목적선택</em>
+                  <div class="circle"></div>
+                </li>
+                <li>
+                  <em>일정선택</em>
+                  <div class="circle"></div>
+                </li>
+                <li>
+                  <em>상품선택</em>
+                  <div class="circle"></div>
+                </li>
+                <li>
+                  <em>옵션선택</em>
+                  <div class="circle"></div>
+                </li>
+                <li>
+                  <em>추가하기</em>
+                  <div class="circle"></div>
+                </li>
+                <li>
+                  <em>주문하기</em>
+                  <div class="circle"></div>
+                </li>
+              </ul>
+            </div>
+            <ol>
+              <li class="process">
+                <img src="./images/preceed/1step.png" alt="절차 1단계"/>
+              </li>
+              <li class="process">
+                <img src="./images/preceed/2step.png" alt="절차 2단계"/>
+              </li>
+              <li class="process">
+                <img src="./images/preceed/3step.png" alt="절차 3단계"/>
+              </li>
+              <li class="process">
+                <img src="./images/preceed/4step.png" alt="절차 4단계"/>
+              </li>
+              <li class="process">
+                <img src="./images/preceed/5step.png" alt="절차 5단계"/>
+              </li>
+              <li class="process">
+                <img src="./images/preceed/6step.png" alt="절차 6단계"/>
+              </li>
+            </ol>
+          </section>
+        </div>
+        <!-- 2-4. 주의사항 -->
+        <div class="partbox intro-cautions group-box">
+          <!-- 2-4-1. 주의사항타이틀 -->
+          <section class="top-title">
+            <h3>
+              주문 전<br />
+              &nbsp;&nbsp;꼭 확인해주세요.
+            </h3>
+          </section>
+          <!-- 2-4-2. 주의사항 -->
+          <section class="cautions-info">
+            <ol></ol>
+          </section>
+        </div>
+        <!-- 2-5. 주문바로가기 -->
+        <div class="partbox go-order">
+          <!-- 2-5-1. 바로가기타이틀 -->
+          <section class="top-title"></section>
+          <!-- 2-5-2. 바로가기 -->
+          <section></section>
+        </div>
+      </main>
+    </div>
+    <!-- 3. 하단영역 -->
+    <div id="footer">
+      <footer class="footer inbox">
+        <div class="footer-company-desc">
+          <!-- 3-1. 하단로고 -->
+          <div class="partbox">
+            <h1 class="logo">
+              <a href="#">
+                <span class="ir">온고롱 로고 이미지</span>
+              </a>
+            </h1>
+          </div>
+          <!-- 3-2. 회사소개 -->
+          <div class="partbox">
+            <ul>
+              <li>상호 : 온고롱</li>
+              <li>대표 : 김희진</li>
+              <li>주소 : 서울 중랑구 동일로160길 8 1층 온고롱</li>
+              <li>전화 : 0507-1358-0638</li>
+              <li>메일 : ongorongcake@naver.com</li>
+              <li>사업자번호 : 665-13-33017</li>
+              <li>통신판매번호 : 신고면제</li>
+              <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+            </ul>
+          </div>
+        </div>
+        <!-- 3-3. SNS링크 -->
+        <div class="footer-sns">
+          <div class="partbox">
+            <ol>
+              <li>
+                <div class="sns-img kakao"></div>
+                <span>카카오채널</span>
+              </li>
+              <li>
+                <div class="sns-img insta"></div>
+                <span>인스타그램</span>
+              </li>
+              <li>
+                <div class="sns-img naver"></div>
+                <span>네이버블로그</span>
+              </li>
+              <li>
+                <div class="sns-img dang"></div>
+                <span>당근마켓</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
 </html>

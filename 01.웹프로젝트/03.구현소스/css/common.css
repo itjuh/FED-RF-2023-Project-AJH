@@ -193,6 +193,10 @@
     margin: 0 auto;
     margin-top: 100px;
 }
+/* 메인영역 이미지 오버 클래스 */
+.img-hover{
+    transform:scale(1.2);
+}
 /* .main.inbox h2{
     position: absolute;
 } */
@@ -308,7 +312,7 @@
     width: 45px;
     height: 45px;
     border-radius: 45px;
-    background: var(--co-onbeige) url(../../01.자료수집/images/sns_icon.png) no-repeat;
+    background: var(--co-onbeige) url(../images/images/sns_icon.png) no-repeat;
 }
 /* 이미지 별도 위치조정*/
 .kakao{
@@ -384,6 +388,9 @@
         display: inline-block;
         height: 100%;
         width: auto;
+    }
+    .header .partbox>.logo a {
+        width: 100%;
     }
     /* 검색창 input박스 */
     #search {
