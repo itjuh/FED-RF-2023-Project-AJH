@@ -21,7 +21,7 @@ function footerFn(){
 // 함수만들기
 function openSns(){
     let txtCnt = domFn.qsEl(this,'span').innerText.length;
-    this.style.width = `${txtCnt*20 + 60}px`;
+    this.style.width = `${txtCnt*20 + 50}px`;
 } //////// sns열기함수//////////////
 function closeSns(){
     this.style.width = '45px';

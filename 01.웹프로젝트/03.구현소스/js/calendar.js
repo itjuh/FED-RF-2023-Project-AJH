@@ -60,17 +60,17 @@ function makeDallyeok(selEl) {
       // currMonth+1, : 현재 달
       0
     );
-    dFn.cg("1. 전달 마지막 날짜 : " + dFn.fm(prevLastDate));
+    // dFn.cg("1. 전달 마지막 날짜 : " + dFn.fm(prevLastDate));
 
     // 2. 현재달 첫 날짜 (옵션:1->전달로 세팅)
     // -> 달력 전달 세팅을 위한 요일을 구하기 위해서
     // -> 일요일 시작이면 전달을 찍을 필요없음
     const thisFirstDate = new Date(currYear, currMonth, 1);
-    dFn.cg("2. 현재달 첫 날짜 : " + dFn.fm(thisFirstDate));
+    // dFn.cg("2. 현재달 첫 날짜 : " + dFn.fm(thisFirstDate));
 
     // 3. 현재달 마지막 날짜
     const thisLastDate = new Date(currYear, currMonth + 1, 0);
-    dFn.cg("3. 현재달 마지막 날짜 : " + dFn.fm(thisLastDate));
+    // dFn.cg("3. 현재달 마지막 날짜 : " + dFn.fm(thisLastDate));
 
     // 4. 년도 표시하기
     yearTit.innerHTML = currYear + "년";
@@ -81,7 +81,7 @@ function makeDallyeok(selEl) {
     // 조건 : 현재달 첫 날짜 요일이 0이 아니면 내용 있음!
     // -> 일요일 시작인 월은 전달을 출력 할 필요가 없음
     let fDay = thisFirstDate.getDay();
-    dFn.cg("이번달 첫 날 요일:" + fDay);
+    // dFn.cg("이번달 첫 날 요일:" + fDay);
     if (fDay != 0) {
       for (let i = 0; i < fDay; i++) {
         // 마지막 날로부터 반복 횟수만큼 배열을 앞으로 추가
@@ -110,7 +110,7 @@ function makeDallyeok(selEl) {
         </span>
         `);
     } ///////////////////for////////////////
-    dFn.cg(dateSet);
+    // dFn.cg(dateSet);
 
     // 7. 날짜배열로 날짜태그 구성하여 출력하기
     // 7 일 * 6주 출력 = 42개 출력
@@ -139,7 +139,7 @@ function makeDallyeok(selEl) {
     // (1)대상 : .dates
     // 위에서 새로 세팅 된 대상을 읽어와야함
     let newDate = dFn.qsa(selEl+' .date');
-    console.log(newDate);
+    // dFn.cg(newDate);
     // (2) 각 날짜 .date요소에 링크 설정하기
     newDate.forEach(ele=>{
       dFn.addEvt(ele,'click',()=>{
@@ -180,6 +180,7 @@ function makeDallyeok(selEl) {
         // (4) 요일셋팅하기
         let setDay = new Date(setDate).getDay();
         console.log(setDate+`(${week[setDay]})`);
+        document.querySelector(".selected-date").value = setDate+`(${week[setDay]})`;
         // 2. 날짜 체크하기
         // 기존 check클래스 삭제
         newDate.forEach(ele=>ele.classList.remove('check'));
@@ -241,6 +242,7 @@ function insertCalendarCode() {
       <div class="dates">
       </div>
     </section>
+    <input class="selected-date" type="text" style="display:none;"></input>
   </div>
   <!-- 취소/다음버튼 -->
   <div class="pop-footer">

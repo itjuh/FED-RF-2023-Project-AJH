@@ -4,9 +4,7 @@
 /* 공통 셋팅을 위한 클래스 + 웹폰트 */
 
 /* 웹폰트 CDN */
-@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic&family=Single+Day&family=ZCOOL+KuaiLe&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Noto+Sans+KR&display=swap');
-
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
 
 @font-face {
     font-family: 'GangwonEdu_OTFBoldA';
@@ -14,12 +12,6 @@
     font-weight: normal;
     font-style: normal;
 }
-/* 
-    font-family: 'Gugi', cursive;
-    font-family: 'Single Day', cursive;
-    font-family: 'ZCOOL KuaiLe', cursive;
-    font-family: 'Nanum Gothic', sans-serif;
-*/
 /* 전체 글자 크기 적용 */
 html{
     font-size: 10px;
@@ -27,38 +19,29 @@ html{
 }
 /* 전체 공통 글자체 세팅 */
 body{
-    font-family: 'GangwonEdu_OTFBoldA';
+    font-family: 'pretendard';
 }
 /* 공통 레이아웃 클래스 */
 /* body *{
     outline: 1px solid coral;
 } */
-/* 상단영역 폰트공통 */
-/* #header{
-    font-family: 'GangwonEdu_OTFBoldA';
-} */
-/* 파트박스 */
-
-/* 메인박스
-.inbox {
-    outline: 1px dashed red;
-}  */
 
 /* 기본값 설정 */
 :root{
-    --fz-tit : 3.5rem;
-    --fz-biger : 4rem;
-    --fz-big : 3rem;
-    --fz-top : 2.4rem;
+    --fz-tit : 3rem;
+    --fz-biger : 2.8rem;
+    --fz-big : 2.4rem;
+    --fz-top : 2.2rem;
     --fz-sub : 1.6rem;
-    --fz-nav : 2.2rem;
-    --fz-sign : 2rem;
+    --fz-nav : 2rem;
+    --fz-sign : 1.8rem;
     --co-ondgop:rgb(17 46 24 / 50%);
     --co-ondarkgreen: rgb(17, 46, 24);
     --co-ondarkblue: rgb(11, 33, 46);
     --co-ongreen : rgb(87, 98, 82);
     --co-onlightgreen: rgb(126, 136, 121);
     --co-onbeige : rgb(252, 232, 206);
+    --co-ongray: #b3b3b3;
     --sat-color: #eafc86;/*토요일 배경색*/
     --sun-color: #d6eaff;/*일요일 배경색*/
 }
@@ -81,7 +64,7 @@ body{
 .sub-title{
     font-size: var(--fz-big);
 }
-/* 더보기 버튼 */
+/* 더보기/주문하기 버튼 */
 .move-view-btn{
     display: block;
     position: absolute;
@@ -90,26 +73,27 @@ body{
     /* 중앙정렬 */
     transform: translateX(-50%) scale(1.2);
     /* 버튼디자인 */
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
+    letter-spacing: 2px;
     border-radius: 20px;
     background-color: #fff;
     padding-top: 3px;
     padding-right: 10px;
-    font-size: var(--fz-sub);
+    font-size: var(--fz-sign);
     font-family: 'GangwonEdu_OTFBoldA';
     text-align: center;
     box-shadow: 1px 1px 3px #00000080;
+    cursor: pointer;
 }
 .move-view-btn:hover{
-    text-shadow: 1px 0px 0px #00000080;
     box-shadow: 1px 1px 8px #00000080;
 }   
 .move-view-btn::after{
     content: '';
     position: absolute;
-    top: 5px;
-    right: 13px;
+    top: 9px;
+    right: 19px;
     width: 19px;
     height: 19px;
     background: url(../images/images/direc_icon.png) no-repeat;

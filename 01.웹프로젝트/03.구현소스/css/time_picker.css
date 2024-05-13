@@ -1,0 +1,163 @@
+@charset "uft-8";
+
+.time-picker-area {
+    position: relative;
+    width: 357px;
+    box-sizing: border-box;
+    padding: 0px 15px;
+    padding-bottom: 10px;
+  }
+  .time-picker-header {
+    text-align: center;
+    height: 80px;
+  }
+  .time-picker-title {
+    font-weight: bold;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .time-picker-view {
+    font-size: 20px;
+  }
+  .time-picker-body {
+    position: relative;
+    display: flex;
+  }
+  .time-picker-body .time-slider {
+    flex: 1;
+    user-select: none;
+    max-height: 175px;
+  }
+  .time-slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  .time-slider-wraper {
+    width: 80%;
+    text-align: center;
+    overflow: hidden;
+    flex: 1;
+  }
+  .time-pick-box::before {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to bottom, #fff, #ffffff80);
+    width: 100%;
+    height: 53px;
+    bottom: 35px;
+  }
+  .time-pick-box::after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to top, #fff, #ffffff80);
+    width: 100%;
+    height: 53px;
+    top: 35px;
+  }
+  .time-pick-box {
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 357px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: transparent;
+  }
+  .blue-back {
+    background-color: #cfdfff;
+  }
+  .blue-back span {
+    display: block;
+    padding-top: 2px;
+    padding-left: 234px;
+  }
+  .time-slider-wraper li {
+    height: 27px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #b7b7b7;
+    transition: none;
+  }
+  .time-slider-wraper li[data-pick="0"] {
+    color: #000;
+  }
+  /* 오전/오후 */
+  .am-pm-slider ol {
+    height: 100%;
+    position: relative;
+    top: 0;
+    transition: none;
+  }
+  /* 시간 */
+  .hour-slider ol {
+    position: relative;
+    top: 0;
+    transition: none;
+  }
+  /* 분 */
+  .minute-slider ol {
+    position: relative;
+    top: 0;
+    transition: none;
+  }
+  .arrow-button {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .arrow-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 0;
+    height: 0;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+  }
+  .up-arrow::before {
+    border-top: none;
+    border-bottom: 7px solid #b7b7b7;
+  }
+  .down-arrow::before {
+    border-top: 7px solid #b7b7b7;
+    border-bottom: none;
+  }
+  .notify-box {
+    display: flex;
+    margin: 10px;
+    height: 50px;
+    box-sizing: border-box;
+    background-color: #ddd;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  }
+  .button-box {
+    display: flex;
+    gap: 10px;
+    padding: 0 10px;
+  }
+  .button-box button {
+    flex: 1;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #75a5ff;
+    cursor: pointer;
+  }
+  .button-box .confirm-button {
+    background-color: #9fc0ff;
+    color: #fff;
+  }

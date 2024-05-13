@@ -10,8 +10,7 @@
 
 /* 메인페이지 배경 */
 #main {
-    background-color: #ffffff00;
-    background-image: linear-gradient(to bottom, var(--co-ongreen), var(--co-onlightgreen));
+    background-color: #eeeeee;
     overflow: hidden;
 }
 /* 2-1.타이틀 */
@@ -24,10 +23,9 @@
     height: 100%;
     margin: 0 auto;
     padding-bottom: 10px;
-    border-bottom: 1px solid #fff;
     font-size: var(--fz-biger);
     text-indent: 2vw;
-    color: #fff;
+    color: #1a1a1a;
 }
 .main .partbox {
     max-width: 1400px;
@@ -116,6 +114,7 @@
     line-height: 56px;
     text-align: right;
     padding-right: 30px;
+    cursor: pointer;
 }
 /* 전체 박스공통 */
 .faq-sub-cate li:nth-child(1) {
@@ -161,9 +160,7 @@
 /* 마우스 클릭 시 on클래스 주기 */
 .faq-sub-cate li:hover,
 .faq-sub-cate li.on {
-    /* text-shadow: 1px 0px 0px; */
     border-radius: 20px 20px 0px 20px;
-    /* box-shadow: 0px 0px 5px 1px #6d6d6d; */
     background-color: var(--co-onlightgreen);
     color: white;
 }
@@ -254,7 +251,7 @@
 .faq-content > ul > li.open .asked-box {
     height: 63px;
     /* 트랜지션 */
-    transition: height 0.3s ease-out .5s;
+    transition: height 0.3s ease-out 0.5s;
 }
 @keyframes arrow-updo-swing-ani {
     to {
@@ -311,6 +308,7 @@
     border-radius: 3px;
     line-height: 62px;
     text-align: center;
+    cursor: pointer;
 }
 /* 카카오톡 채널 아이콘 */
 .qna-link-two > ul > li:first-child::after {
@@ -341,7 +339,7 @@
     color: var(--co-ongreen);
 }
 .qna-link-two > ul > li:hover::after {
-    transform: rotateY(20deg);
+    transform: rotate(-10deg);
 }
 
 /*****************미디어쿼리*****************/
@@ -476,45 +474,45 @@
     .qna-link-two > ul > li {
         text-align-last: center;
     }
-    
 } /* 750px이하 미디어쿼리 종료 */
 /* 500px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
-  .main .top-title {
-    height: auto;
-  }  
-  .top-title h1 {
+    .main .top-title {
+        height: auto;
+    }
+    .top-title h1 {
         line-height: 1.2;
         max-width: auto;
         padding-top: 15px;
-        padding-right: 20vw;
+        padding-right: 20px;
+        padding-left: 20px;
     }
     /* 아이콘 공통 */
     .faq-sub-cate li::before {
-      display: none;
+        display: none;
     }
     /* 서브카테고리 공통 */
     .faq-sub-cate li {
-    width: auto;
-    padding: 0 10px;
-    text-align: center;
+        width: auto;
+        padding: 0 10px;
+        text-align: center;
     }
     .faq-sub-cate li:nth-child(2) {
-      padding-left: 1.2vw;
-  }
+        padding-left: 1.2vw;
+    }
     .faq-sub-cate li:nth-child(1) {
-      width: auto;
+        width: auto;
     }
     /* 질문/응답박스 li */
     .faq-content > ul > li {
-    font-size: max(4.1vw,12px);
+        font-size: max(4.1vw, 12px);
     }
     /* 더궁금 박스 */
     .qna-link {
-      padding: 9px;
-  }
+        padding: 9px;
+    }
     /* 더궁금 박스내용 */
     .qna-link-two > ul > li {
-    text-align-last: left;
+        text-align-last: left;
     }
 } /* 500px이하 미디어쿼리 종료 */

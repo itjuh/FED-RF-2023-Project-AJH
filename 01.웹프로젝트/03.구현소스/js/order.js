@@ -12,7 +12,25 @@ startFooterFn();
 // 달력 가져오기
 import makeCalendar from "./calendar.js";
 // 달력 만들기
-makeCalendar('.calendar-box');
+makeCalendar(".calendar-box");
+// 시간선택 가져오기
+import { timePicker } from "./timePicker.js";
+
+////////////// 저장 데이터 ///////////////////
+let orderPurpose = "";
+let orderDate = "";
+let orderTime = "";
+let pickUp = "";
+let pickUpName = "";
+let pickUpPhone = "";
+let orderProductType = "";
+let orderProduct = "";
+let orderTaste = "";
+let orderSize = "";
+let orderMessage = "";
+let orderRequest = "";
+let orderAdd = [];
+let nextPass = true;
 
 ////////////////////단계이동//////////////////////
 // 변경대상 : .proceed-list
@@ -52,7 +70,6 @@ domFn.addEvt(mainPvBtn, "click", stepFn);
 // 기능2. 눌린 단계에 따라서 페이지번호를 변화시킨다. navStepFn()
 // 기능3. 버튼외에 눌리는 요소에 따라서 페이지 번호를 변화시킨다.
 function stepFn() {
-  console.log(this);
   if (!this) {
     pageNum = 3;
   } else if (this.classList.contains("prev")) {
@@ -64,6 +81,10 @@ function stepFn() {
     }
     console.log("이전클릭;", pageNum);
   } else if (this.classList.contains("next")) {
+    stepPassError();
+    if (!nextPass) {
+      return nextPass;
+    }
     //다음버튼
     pageNum++;
     if (pageNum == 6) {
@@ -75,13 +96,21 @@ function stepFn() {
     switch (pageNum) {
       case 1: //목적선택완료
         updateData(0, stepBox1);
+        orderPurpose = upArea[0][1].innerText;
         break;
       case 2: //픽업선택완료
         updateData(2, pickUpLi);
+        pickUp = upArea[2][1].innerText;
         nameTxt = inputName.value;
         numberTxt = inputNumber.value;
-        if (!nameTxt == "") updateData2(3, nameTxt);
-        if (!numberTxt == "") updateData2(4, numberTxt);
+        if (!nameTxt == "") {
+          updateData2(3, nameTxt);
+          pickUpName = nameTxt;
+        }
+        if (!numberTxt == "") {
+          updateData2(4, numberTxt);
+          pickUpPhone = numberTxt;
+        }
         break;
       case 3: //상품선택완료
         break;
@@ -106,16 +135,25 @@ function stepFn() {
         // console.log(optionTxt);
         // 2. 주문서 업데이트
         updateData2(6, optionTxt);
+        // 데이터 업데이트
+        orderTaste = flaVal;
+        orderSize = sizeVal;
+        orderMessage = msgVal;
+        orderRequest = reqVal;
         // 3. 단계 업데이트
 
         // 4. 주문서 박스 크기바꾸기, 제품선택 박스 끄기
-        formBox.classList.remove("view");
         prodBox.classList.remove("view");
         // 5. 옵션선택 박스 끄기
         prodOptionBox.classList.remove("view");
         break;
       case 5: //추가 선택완료
-      updateData(7, stepBox5);
+        // 다중선택 결과
+        orderAdd = multyVerifFn(stepBox5);
+        updateData2(7, orderAdd.map((v) => v).join(", "));
+
+        // 주문완료 페이지 업데이트하기
+        orderFinalPage();
         break;
       case 6:
         break;
@@ -124,6 +162,11 @@ function stepFn() {
   stepchg(pageNum);
 } ///////////step 함수 /////////////////////
 
+function stepPassError() {
+  if (!nextPass) {
+    alert("필수입력 사항입니다. \n 입력해야 다음으로 넘어갑니다.");
+  }
+}
 // stepchg함수//////////////////////////////
 function stepchg(num) {
   // 변수설정
@@ -201,6 +244,17 @@ function verifFn(coll) {
   return bool;
 } /////////// 검증함수 verifFn //////////
 
+// 다중선택 on 검증 함수
+function multyVerifFn(coll) {
+  let boolList = [];
+  coll.forEach((ele) => {
+    if (ele.classList.contains("on")) {
+      boolList.push(ele.innerText.split("\n+")[0]);
+    }
+  });
+  return boolList;
+}
+
 //////////////////일정선택/////////////////////////
 // 일정 클릭하면 달력창 열리기
 // 달력창 다음 > 시간창 열리기 이전 > 닫기
@@ -247,11 +301,14 @@ function popOpen() {
     case "다음":
       calBox.style.display = "none";
       timeBox.style.display = "block";
+      timePicker();
       break;
     case "완료":
       hideBox.style.display = "none";
       timeBox.style.display = "none";
-      updateData2(1, "2023년 9월 30일 오후 1시 30분");
+      orderTime = document.querySelector(".time-picker-view").innerText;
+      orderDate = document.querySelector(".selected-date").value;
+      updateData2(1, orderDate + " " + orderTime);
       break;
     case "닫기":
       hideBox.style.display = "none";
@@ -268,7 +325,6 @@ function updateData2(num, txt) {
   //매개변수
   // area : 업데이트 위치
   // 주문서 타이틀 업데이트
-  console.log(txt);
   upArea[num][0].style.color = "#000";
   // 주문서 내용 업데이트
   upArea[num][1].style.color = "#000";
@@ -314,7 +370,8 @@ function verifNum() {
   let numVal = inputNumber.value;
   let numArr = numVal.split("");
   console.log(numVal, numArr);
-  if (isNaN(numVal)) { //입력문자가 숫자가 아님?
+  if (isNaN(numVal)) {
+    //입력문자가 숫자가 아님?
     // console.log('숫자아님:',numArr);
     numArr.pop(); //맨 마지막 입력문자 제거
     inputNumber.value = numArr.join(""); //문자제외 숫자입력
@@ -341,7 +398,6 @@ const subcate = domFn.qsa(".sub-menu span");
 // 바꿀대상 : .form-box, prod-box :view
 // 바꿀대상 : .prod-option :view제거
 const categoryParent = domFn.qs(".step-2>ul");
-const formBox = domFn.qs(".form-box");
 const prodBox = domFn.qs(".prod-box");
 const prodOptionBox = domFn.qs(".prod-option");
 // 이벤트 설정 : category li,
@@ -354,12 +410,14 @@ subcate.forEach((ele) => {
 // 데이터 가져오기변수
 let atxt = "";
 
-// 3. 누른 카테고리 읽기함수
+// 3. 누른 카테고리 읽기함수 - 상위목록
 function cataOpen() {
+  // 제품명 초기화
+  orderProductType = "";
   let clickCode = this.innerHTML;
   if (this.innerHTML !== this.innerText) {
-    //하위메뉴 있는경우
-    // console.log(clickCode,this);
+    // 하위메뉴 있는경우
+    // console.log(clickCode,"\n",this);
     // 상위 ul 클래스 주기
     categoryParent.classList.add("open");
     // 기존 li 클래스 삭제
@@ -370,6 +428,8 @@ function cataOpen() {
     // click한 li 클래스 주기
     this.classList.add("on");
     this.classList.add("open");
+    // 목록 카테고리 저장
+    orderProductType = clickCode.split("<div")[0].trim();
   } else {
     //하위메뉴 없는 경우
     // 상위 ul 클래스 삭제
@@ -384,18 +444,19 @@ function cataOpen() {
     // li안쪽 text 가져오기
     atxt = clickCode;
     // 왼쪽 열기
-    formBox.classList.add("view");
     prodBox.classList.add("view");
     // 왼쪽 옵션박스가 열려있다면 닫기
     if (prodOptionBox.classList.contains("view")) {
       prodOptionBox.classList.remove("view");
     }
+    // 목록 카테고리 저장
+    orderProductType = atxt;
     // 코드 만들어서 뿌리기
     prodCodeMake(atxt);
   }
 } ////////cateOpen함수//////////////
 
-// 4. 누른 서브메뉴 읽기 함수
+// 4. 누른 서브메뉴 읽기 함수 - 하위목록
 function subOpen() {
   let clickCode = this.innerText;
   // console.log(clickCode,this);
@@ -405,22 +466,43 @@ function subOpen() {
   });
   // click한 li 클래스 주기
   this.classList.add("open");
-  // span안쪽 text 가져오기
-  atxt = clickCode;
+  // // span안쪽 text 가져오기
+  // atxt = clickCode;
   // 왼쪽 열기
-  formBox.classList.add("view");
   prodBox.classList.add("view");
   // 왼쪽 옵션박스가 열려있다면 닫기
   if (prodOptionBox.classList.contains("view")) {
     prodOptionBox.classList.remove("view");
   }
   // 코드 만들어서 뿌리기
-  prodCodeMake(atxt);
+  prodCodeMake(clickCode);
 } ////////subOpen함수//////////////
 
-// 상품 데이터 뿌리기
-// 대상: .list>ol
-let itemBox = domFn.qs(".prod-box .list>ol");
+/////////////////////////////////////////////
+// 서브 선택창 닫기
+/////////////////////////////////////////////
+// 클릭대상 : .list-type .title-box button
+/////////////////////////////////////////////
+// 변경대상 : prodBox.classList.remove("view");
+const prodboxCloseButton = document.querySelector(".list-type .title-box button");
+prodboxCloseButton.addEventListener("click", prodboxClose);
+function prodboxClose() {
+  prodBox.classList.remove("view");
+}
+// 숫자가공 함수
+function addCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+function removeCommas(x) {
+  return x.toString().replace(/,/g, "");
+}
+//////////////////////////////////////////////////
+// 상품 데이터 뿌리기 /////////////////////////////
+// 우측 절차내용에 선택사항 넣기 ///////////////////
+// 대상: .list>ol , .selected-option-view
+const itemBox = domFn.qs(".prod-box .list>ol");
+const selectedProductView = domFn.qs(".selected-product-view");
+const selectedOptionView = domFn.qs(".selected-option-view");
 // 코드변수
 let cateCode = "";
 let titleCode = "";
@@ -455,12 +537,10 @@ function prodCodeMake(atxt) {
                 <div class="img-box">
                     <img src="${prod_info[x]["src"]}" alt="상품이미지1">
                 </div>
-                <div class="txt-box">
-                    <ul>
+                  <ul class="txt-box">
                         <li class="prod-name">${prod_info[x]["prod_name"]}</li>
-                        <li class="prod-price">${prod_info[x]["prod_price"]}</li>
-                    </ul>
-                </div>
+                        <li class="prod-price">${addCommas(prod_info[x]["prod_price"])}</li>
+                  </ul>
             </div>
             </li>
             `;
@@ -481,7 +561,16 @@ function prodCodeMake(atxt) {
     // 옵션창 보내기 함수
     domFn.addEvt(ele, "click", sendInfo);
     // upArea 업데이트
-    domFn.addEvt(ele, "click", updateData2(5, domFn.qsEl(ele, ".prod-name").innerText));
+    domFn.addEvt(ele, "click", () => {
+      // 클릭 상품 이름 전달
+      updateData2(5, domFn.qsEl(ele, ".prod-name").innerText);
+      // 클릭 상품명 저장
+      orderProduct = domFn.qsEl(ele, ".prod-name").innerText;
+      // 선택카테고리와 상품이름 넣기
+      selectedProductView.innerHTML = `${orderProductType} > ${orderProduct}`;
+      // 옵션 변경상태 초기값 넣기
+      optionViewChangeFn();
+    });
   });
 } /////////제품코드 만들기 함수
 // console.log(hCode);
@@ -493,6 +582,14 @@ function sameTag(arr, txt) {
   }
 } //////태그 검증 함수 sameTag///////////
 
+// 옵션 변경상태 적용함수
+function optionViewChangeFn() {
+  const flaVal = domFn.qs('input[name="flavor"]:checked').value;
+  const sizeVal = domFn.qs('input[name="size"]:checked').value;
+
+  // 옵션상태 넣기
+  selectedOptionView.innerHTML = `${flaVal},${sizeVal}`;
+}
 // 옵션 데이터 뿌리기
 
 // 1. 대상선정 : 고정옵션/선택옵션
@@ -571,6 +668,13 @@ option.forEach((ele, idx) => {
 // console.log(hCode);
 basic.innerHTML = hCode;
 
+// 선택옵션 이벤트 등록
+const flavorList = domFn.qsa('input[name="flavor"]');
+const sizeList = domFn.qsa('input[name="size"]');
+// console.log(flavorList, sizeList);
+flavorList.forEach((ele) => ele.addEventListener("change", optionViewChangeFn));
+sizeList.forEach((ele) => ele.addEventListener("change", optionViewChangeFn));
+
 // 함수 만들기
 // 1.서서브 코드구성 함수
 function depth2(list) {
@@ -580,9 +684,9 @@ function depth2(list) {
   for (let x in list) {
     // console.log(list[x].name);
     depCode += `
-        <input type="radio" name="${list[x].img ? "flavor" : "size"}" id="${
-      list[x].img ? "flavor" : "size"
-    }${radioNum}" value="${list[x].name}"${radioNum == 0 ? " checked" : ""}>
+        <input type="radio" name="${list[x].img ? "flavor" : "size"}" id="${list[x].img ? "flavor" : "size"}${radioNum}" value="${
+      list[x].name
+    }"${radioNum == 0 ? " checked" : ""}>
         <div class="details ${list[x].img ? "flavor" : "size-box"}">
         <label for="${list[x].img ? "flavor" : "size"}${radioNum}">
                 <div class="${list[x].img ? "img-box" : "container"}">
@@ -642,16 +746,14 @@ function chgReq() {
   reqSpan.innerText = this.value.length;
 } ///////// 요청사항창 함수////////////////////
 
-////////////////옵션박스 닫기/////////////////////
-// 1. 대상 : prodOptionBox  .aside-btn btn
+//////////////옵션박스 닫기/////////////////////
+// 1. 대상 : prodOptionBox .close-btn
 // 2. 이벤트 : click
 // 3. 변경사항 : view 제거
-const asideBtn = domFn.qsa(".aside-btn .btn");
-asideBtn.forEach((ele) => {
+const closeBtn = domFn.qsa(".option-select .close-btn");
+closeBtn.forEach((ele) => {
   // 열고 닫기 함수
   domFn.addEvt(ele, "click", optionClose);
-  // 단계변화 함수
-  domFn.addEvt(ele, "click", stepFn);
 });
 function optionClose() {
   prodOptionBox.classList.remove("view");
@@ -662,39 +764,121 @@ function optionClose() {
 // 1. 대상 : .step-5 ul
 // 2. 이벤트 : load
 // 3. 변경사항 : 코드입력
-const addOptionBox = domFn.qs('.step-5 ul');
+const addOptionBox = domFn.qs(".step-5 ul");
 // 2. 이벤트 설정
 
-  // add_option 객체를 배열로 만들어서 뿌리기
-  // 1. add_option 객체 만들기
-  const addOptionName = Object.keys(add_option);
-  const addOptionPrice = Object.keys(add_option).map(val=>add_option[val]);
-  // 2. 맵핑해서 뿌리기
-  addOptionBox.innerHTML += `
-    ${addOptionName.map((val,idx)=>`
+// add_option 객체를 배열로 만들어서 뿌리기
+// 1. add_option 객체 만들기
+const addOptionName = Object.keys(add_option);
+const addOptionPrice = Object.keys(add_option).map((val) => add_option[val]);
+// 2. 맵핑해서 뿌리기
+addOptionBox.innerHTML += `
+    ${addOptionName
+      .map(
+        (val, idx) => `
     <li>
       <span>${val}</span>
       <em>+${addOptionPrice[idx].toLocaleString()}</em>
     </li>
-    `).join('')}
+    `
+      )
+      .join("")}
   `;
-  // 대상선정
-  const stepBox5 = domFn.qsa(".step-5 li");
-  console.log(stepBox5);
-  // 클릭이벤트 주기
-  stepBox5.forEach((ele) => {
-    domFn.addEvt(ele, "click", () => {
-      if (ele.classList.contains("on")) {
-        //on 이미 있으면
-        ele.classList.remove("on");
-      } else {
-        //on 없으면
-        stepBox5.forEach((ele) => {
-          ele.classList.remove("on");
+// 대상선정
+const stepBox5 = domFn.qsa(".step-5 li");
+console.log(stepBox5);
+// 클릭이벤트 주기
+stepBox5.forEach((ele) => {
+  domFn.addEvt(ele, "click", () => {
+    if (ele.classList.contains("on")) {
+      //on 이미 있으면
+      ele.classList.remove("on");
+    } else {
+      //on 없으면
+      // 중복선택이 가능하므로 하단코드 제거
+      // stepBox5.forEach((ele) => {
+      //   ele.classList.remove("on");
+      // });
+      ele.classList.add("on");
+    } ///////////if else//////////////
+  });
+}); /////////stepBox5 click이벤트 설정////////
+
+function orderFinalPage() {
+  // 주문완료 페이지
+  const searchProductPrice = (name) => {
+    let prodPrice = "";
+    for (let x in prod_info) {
+      if (prod_info[x]["prod_name"] == name) {
+        prodPrice = prod_info[x]["prod_price"];
+      }
+    }
+    return addCommas(prodPrice);
+  }
+  const searchOptionPrice = (name) => {
+    let optionPrice = "";
+    for (let x in option_list) {
+      if (Array.isArray(option_list[x])) {
+        // 맛선택과 사이즈만 해당
+        option_list[x].forEach((item) => {
+          if (item["name"] == name) {
+            optionPrice = item["price"];
+          }
         });
-        ele.classList.add("on");
-      } ///////////if else//////////////
+      }
+    }
+    return addCommas(optionPrice);
+  }
+  const searchAddPrice = (name) => {
+    for (let x in add_option) {
+      if (x == name) {
+        return addCommas(add_option[x]);
+      }
+    }
+  }
+  const addPriceList = (orderAddList) => {
+    let codeData = ``;
+    orderAddList.forEach((item) => {
+      codeData += `<li>
+      <span>${item}</span>
+      <span class="bill-price">${searchAddPrice(item)}</span>
+    </li>`;
     });
-  }); /////////stepBox5 click이벤트 설정////////
+    return codeData;
+  }
+  const totalPrice = ()=>{
+    let total = 0;
+    let target = document.querySelectorAll(".bill-price");
+    console.log(target);
+    target.forEach((item) => {
+      total += parseInt(removeCommas(item.innerText));
+    });
+    document.querySelector(".total-cost > span").innerText = addCommas(total);
+  }
 
-
+  let orderFinalBill = `<div class="total-title">
+  <i class="fa-solid fa-won-sign"></i>
+  <h3>결제금액</h3>
+  </div>
+  <ol class="total-content scbar">
+  <li>
+    <span>${orderProduct}</span>
+    <span class="bill-price">${searchProductPrice(orderProduct)}</span>
+  </li>
+  <li>
+    <span>${orderTaste}</span>
+    <span class="bill-price">${searchOptionPrice(orderTaste)}</span>
+  </li>
+  <li>
+    <span>${orderSize}</span>
+    <span class="bill-price">${searchOptionPrice(orderSize)}</span>
+  </li>
+  ${addPriceList(orderAdd)}
+  </ol>
+  <div class="total-cost">
+  <h3>합계액</h3>
+  <span></span>
+  </div>`;
+  document.querySelector(".step-6 > div").innerHTML = orderFinalBill;
+  totalPrice();
+}

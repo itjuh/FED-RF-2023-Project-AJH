@@ -9,11 +9,11 @@
 /* 2. 메인영역 */
 
 /* 메인페이지 배경 */
+/* 메인페이지 배경 */
 #main {
-    background-color: #ffffff00;
-    background-image: linear-gradient(to bottom, var(--co-ongreen) , var(--co-onlightgreen));
+    background-color: #eeeeee;
     overflow: hidden;
-    color: #fff;
+    color: #1a1a1a;
 }
 /* 메인페이지 구분박스 첫박스 */
 .main .group-box:first-child {
@@ -21,173 +21,164 @@
 }
 /* 2-1.타이틀 */
 .main .top-title {
-  height: 80px;
-  line-height: 120px;
+    height: 80px;
+    line-height: 120px;
 }
 .top-title h1 {
-  max-width: 1400px;
-  height: 100%;
-  margin: 0 auto;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #fff;
-  font-size: var(--fz-biger);
+    max-width: 1400px;
+    height: 100%;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    font-size: var(--fz-biger);
+    text-indent: 2vw;
+    color: #1a1a1a;
 }
 /* 2-2.맵링크 */
 /* 맵링크 박스 */
 .main .map {
-  position: relative;
-  /* .map-box부모 */
-  max-width: 1400px;
-  margin: 40px auto;
+    position: relative;
+    /* .map-box부모 */
+    max-width: 1400px;
+    margin: 40px auto;
 }
 /* 로딩구역 박스 */
 .map .loading-area {
-  position: absolute;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  animation: map-box-hide-ani 1s linear 1s forwards;
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    animation: map-box-hide-ani 1s linear 1s forwards;
 }
-.map .loading-area .loading-dot{
-  width: 10px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0px 0px 2px #00000080;
+.map .loading-area .loading-dot {
+    width: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px #00000080;
 }
-.loading-dot:nth-child(1){
-  animation: loading .3s linear 0s alternate infinite;
+.loading-dot:nth-child(1) {
+    animation: loading 0.3s linear 0s alternate infinite;
 }
-.loading-dot:nth-child(2){
-  animation: loading .3s linear .15s alternate infinite;
+.loading-dot:nth-child(2) {
+    animation: loading 0.3s linear 0.15s alternate infinite;
 }
-.loading-dot:nth-child(3){
-  animation: loading .3s linear .3s alternate infinite;
+.loading-dot:nth-child(3) {
+    animation: loading 0.3s linear 0.3s alternate infinite;
 }
 @keyframes loading {
-  to{
-    transform: scale(1.5);
-  }
+    to {
+        transform: scale(1.5);
+    }
 }
 @keyframes map-box-hide-ani {
-  to {
-    opacity: 0;
-    z-index: -1;
-  }
+    to {
+        opacity: 0;
+        z-index: -1;
+    }
 }
 .map iframe {
-  box-shadow: 3px 4px 5px rgba(11, 58, 22, 0.322);
-  border-radius: 10px;
-  width: 650px;
-  aspect-ratio: 7/5;
-  border: 0;
+    box-shadow: 3px 4px 5px rgba(11, 58, 22, 0.322);
+    border-radius: 10px;
+    width: 650px;
+    aspect-ratio: 7/5;
+    border: 0;
 }
 /* 2-3.정보 */
 /* 2-3. 정보그룹 */
 .main .info-group {
-  display: flex;
-  height: 350px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding-bottom: 50px;
+    display: flex;
+    height: 350px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 50px;
 }
 /* 정보그룹 타이틀 박스*/
 .sub-title {
-  /* 타이틀 밑줄 아이콘 부모 */
-  position: relative;
+    /* 타이틀 밑줄 아이콘 부모 */
+    position: relative;
 }
 /* 정보그룹 타이틀공통 */
 .main div .sub-title span {
-  display: block;
-  position: relative;
-  /* 밑줄 위에 두기위해서 */
-  font-size: var(--fz-big);
-  height: 20%;
-  line-height: 80px;
-  text-indent: 40px;
+    display: block;
+    position: relative;
+    /* 밑줄 위에 두기위해서 */
+    font-size: var(--fz-big);
+    height: 20%;
+    line-height: 80px;
+    text-indent: 40px;
 }
 /* 2-3-1-1. 오시는법 타이틀 아이콘 */
 .contact.sub-title::after {
-  content: "\f5a0";
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 40px;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  color: #fff;
-  transform: translateY(-50%);
+    content: "\f5a0";
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: var(--co-ongreen);
+    transform: translateY(-50%);
 }
 /* 2-3-1. 오시는법 */
 .main div .contact {
-  flex-basis: 65%;
+    flex-basis: 65%;
 }
 
-/* 2-3-1. 오시는법 타이틀 밑줄 */
-/* .contact.sub-title::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100px;
-  height: 10px;
-  background-color: lightyellow;
-  transform: translateY(-50%);
-} */
 /* 2-3-1-2. 오시는법 */
 .contact-info {
-  /* 타이틀 밑줄 아이콘 부모 */
-  position: relative;
-  font-size: var(--fz-big);
-  height: 80%;
-  color: var(--co-ondarkgreen);
+    /* 타이틀 밑줄 아이콘 부모 */
+    position: relative;
+    font-size: var(--fz-big);
+    height: 80%;
+    color: var(--co-ondarkgreen);
 }
 /* 지하철, 버스, 차량 카테고리 */
 .contact-info ul {
-  display: flex;
+    display: flex;
 }
 /* 오시는법 상세 설명박스 */
 .contact-way {
-  position: relative;
-  width: min(17vw, 120px);
-  height: 50px;
-  background: #fff;
-  text-align: center;
-  line-height: 52px;
-  filter: drop-shadow(3px 4px 5px rgb(11 58 22 / 10%));
+    position: relative;
+    width: min(17vw, 120px);
+    height: 50px;
+    background: #fff;
+    text-align: center;
+    line-height: 52px;
+    filter: drop-shadow(3px 4px 5px rgb(11 58 22 / 10%));
+    cursor: pointer;
 }
 .contact-way.on {
-  background: #eee;
-  z-index: 1;
+    background: #eee;
+    z-index: 1;
 }
 .contact-way::after {
-  content: "";
-  position: absolute;
-  top: 50px;
-  left: 40px;
-  width: 700px;
-  height: 220px;
-  background: #eee;
-  padding: 20px 30px;
-  box-sizing: border-box;
+    content: "";
+    position: absolute;
+    top: 50px;
+    left: 40px;
+    width: 700px;
+    height: 220px;
+    background: #eee;
+    padding: 20px 30px;
+    box-sizing: border-box;
 }
 .subway::after {
-  content: "7호선 먹골역 2번출구 일룸건물 뒤 골목 안쪽";
-  left: 0px;
-  text-align: left;
+    content: "7호선 먹골역 2번출구 일룸건물 뒤 골목 안쪽";
+    left: 0px;
+    text-align: left;
 }
 .bus::after {
-  content: "146,105,202,1224,1227 먹골역, 묵동자이아파트방면 하차 200m 도보 이동 일룸건물 뒤 골목 안쪽";
-  left: max(-17vw, -120px);
-  text-align: left;
+    content: "146,105,202,1224,1227 먹골역, 묵동자이아파트방면 하차 200m 도보 이동 일룸건물 뒤 골목 안쪽";
+    left: max(-17vw, -120px);
+    text-align: left;
 }
 .car::after {
-  content: "서울특별시 중랑구 동일로 160길 8 1층 온고롱";
-  left: max(-34vw, -240px);
-  text-align: left;
+    content: "서울특별시 중랑구 동일로 160길 8 1층 온고롱";
+    left: max(-34vw, -240px);
+    text-align: left;
 }
 /* 2-3-2. 이용안내 */
 /* 2-3-1-1. 이용안내 타이틀 아이콘*/
@@ -199,120 +190,121 @@
     height: 40px;
     font-family: "Font Awesome 5 Free";
     font-weight: 400;
-    color: #fff;
+    color: var(--co-ongreen);
     transform: translateY(-50%);
 }
 /* 2-3-1-2. 이용안내 */
 .use-info {
-  width: 250px;
-  /* height: 280px; */
-  /* padding: 30px 200px 30px 30px; */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto;
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
-  box-sizing: border-box;
-  font-size: min(14px, 1.6vw);
+    width: 250px;
+    /* height: 280px; */
+    /* padding: 30px 200px 30px 30px; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    box-sizing: border-box;
+    font-size: min(14px, 1.6vw);
 }
 /* 이용안내 문구 */
 .use-info dl {
-  width: 100px;
-  aspect-ratio: 1/1;
-  text-align: center;
-  font-size: var(--fz-top);
+    width: 100px;
+    aspect-ratio: 1/1;
+    text-align: center;
+    font-size: var(--fz-top);
 }
 /* 이용안내 아이콘 공통 */
 .use-info-icon {
-  content: "\f059";
-  width: 100%;
-  height: calc(100% - 20px);
-  background: url(../images/images/info.png) no-repeat;
-  background-position: 0px 0px;
-  background-size: 1046px 711px;
-  overflow: hidden;
+    content: "\f059";
+    width: 100%;
+    height: calc(100% - 20px);
+    background: url(../images/images/info.png) no-repeat;
+    background-position: 0px 0px;
+    background-size: 1046px 711px;
+    overflow: hidden;
 }
 /* 이용안내 아이콘 개별 */
 .use-info dl:nth-child(1) > dt {
-    background-position: -510px -353px;
-  }
-  .use-info dl:nth-child(2) > dt {
-    background-position: -593px -350px;
-  }
-  .use-info dl:nth-child(3) > dt {
-    background-position: -677px -353px;
-  }
-  .use-info dl:nth-child(4) > dt {
-    background-position: -762px -350px;
-  }
+    background-position: -528px 3px;
+}
+.use-info dl:nth-child(2) > dt {
+    background-position: -613px 6px;
+}
+.use-info dl:nth-child(3) > dt {
+    background-position: -697px -3px;
+}
+.use-info dl:nth-child(4) > dt {
+    background-position: -782px -3px;
+}
 
 /*****************미디어쿼리*****************/
 /* 1450px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1450px) {
-  /* 메인박스 */
-  .main.inbox {
-    padding-left: 3vw;
-  }
-  /* 오시는길 설명 */
-  .contact-way::after {
-    width: 650px;
-  }
+    /* 메인박스 */
+    .main.inbox {
+        padding-left: 3vw;
+    }
+    /* 오시는길 설명 */
+    .contact-way::after {
+        width: 650px;
+    }
 } /* 1450px이하 미디어쿼리 종료 */
 /* 1050px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 1050px) {
-  /* 오시는법 소개그룹 */
-  .main .info-group {
-    height: auto;
-    flex-direction: column;
-  }
-  /* 오시는법 */
-  .contact-info {
-    height: 300px;
-  }
-  /* 이용안내 */
-  .use-info {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    /* 오시는법 소개그룹 */
+    .main .info-group {
+        height: auto;
+        flex-direction: column;
+    }
+    /* 오시는법 */
+    .contact-info {
+        height: 300px;
+    }
+    /* 이용안내 */
+    .use-info {
+        grid-template-columns: repeat(4, 1fr);
+    }
 } /* 1050px이하 미디어쿼리 종료 */
 /* 750px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 750px) {
-   /* 지도크기 */
-  .map iframe {
-    width: 90vw;
-  }
-  /* 로딩구역 박스 */
-.map .loading-area {
-  width: 100%;
-}
-  /* 오시는법 가상요소 공통 */
-  .contact-way::after {
-    width: 95vw;
-  }
-  /* 오시는법 상세 설명박스 */
-  .contact-way {
-    width: min(17vw, 100px);
-  }
-  .bus::after {
-    left: max(-17vw, -100px);
-  }
-  .car::after {
-    left: max(-34vw, -200px);
-  }
+    /* 지도크기 */
+    .map iframe {
+        width: 90vw;
+    }
+    /* 로딩구역 박스 */
+    .map .loading-area {
+        width: 100%;
+    }
+    /* 오시는법 가상요소 공통 */
+    .contact-way::after {
+        width: 95vw;
+    }
+    /* 오시는법 상세 설명박스 */
+    .contact-way {
+        width: min(20vw, 100px);
+    }
+    .bus::after {
+        left: max(-20vw, -100px);
+    }
+    .car::after {
+        left: max(-40vw, -200px);
+    }
 } /* 750px이하 미디어쿼리 종료 */
 /* 500px 이하 미디어쿼리 시작 */
 @media screen and (max-width: 500px) {
-  /* 메인박스 */
-  .main.inbox {
-    padding-left: 1.5vw;
-  }
+    /* 메인박스 */
+    .main.inbox {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     /* 지도 크기 */
     .map iframe {
         width: 97vw;
         aspect-ratio: 5/5;
     }
     /* 지도이미지 */
-    .map .map-box{
-    width: 97vw;
+    .map .map-box {
+        width: 97vw;
         aspect-ratio: 5/5;
     }
     /* 이용안내 */

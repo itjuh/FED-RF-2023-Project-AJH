@@ -22,7 +22,7 @@ const company_info = {
 // 이벤트정보 
 // key이벤트명 src,소개,타이틀,내용으로 구성
 const event_info = {
-    "event01":{"src":"./images/ongorong_prod/img_event01.jpeg","tit":"온고롱 2023 추석선물세트 출시","cont":"출시기념 이벤트로 9월 5일부터 9월 12일까지 주문예약 시 추석 선물세트를 5% 할인해드립니다."},
+    "event01":{"src":"./images/ongorong_prod/img_event01.jpeg","tit":"2023 추석선물세트 출시","cont":"출시기념 이벤트로 9월 5일부터 9월 12일까지 주문예약 시 추석 선물세트를 5% 할인해드립니다."},
     "event02":{"src":"./images/ongorong_prod/img_event02.jpeg","tit":"선물세트 배송기간 안내","cont":"사전예약마감은 9월 12일 택배마감은 18일입니다. 택배발송은 20일과 21일에 진행되며 이후에는 픽업만 가능합니다."},
     "event03":{"src":"./images/ongorong_prod/img_event03.jpeg","tit":"앙금 모나카 8종 세트","cont":"앙금 모나카 8개입에 무료보자기포장까지! 모나카맛은 다채롭게 흑임자, 고구마, 쑥, 피넛, 팥, 앙버터, 유자, 딸기로 구성되어 있습니다."},
     "event04":{"src":"./images/ongorong_prod/img_event04.jpeg","tit":"모나카 견과칩 세트A","cont":"모나카 견과칩 24개를 한 번에 만나는 구성 A상품입니다. 맛은 현미씨앗, 검은깨, 피넛피칸칩으로 구성되어 있습니다."},
@@ -191,7 +191,7 @@ const option_list = {
    "맛 선택":[
       {"name":"꿀설기","price":0,"img":"./images/images/fla1.png","alt":"기본 꿀설기"},
       {"name":"단호박","price":5000,"img":"./images/images/fla2.png","alt":"단호박 맛"},
-      {"name":"무화과","price":5000,"img":"./images/images/fla4.png","alt":"무화과 맛"},
+      {"name":"흑임자","price":5000,"img":"./images/images/fla4.png","alt":"흑임자 맛"},
    ],
    "사이즈":[
       {"name":"1호(15cm)","price":0},
@@ -206,10 +206,10 @@ const option_list = {
 const step_title = [
    "어떤 목적으로 주문하세요?",
    "언제 필요하세요?",
-   "상품을 골라주세요",
-   "옵션을 선택해주세요",
+   "상품을 선택하세요",
+   "옵션을 선택하세요",
    "추가하실 상품이 있으신가요?",
-   "주문신청서 작성이 완료 되었습니다.",
+   "작성이 완료 되었습니다.",
 ];
 
 // 추가옵션

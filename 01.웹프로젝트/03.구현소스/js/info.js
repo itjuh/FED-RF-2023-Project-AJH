@@ -7,7 +7,6 @@ import domFn from "./dom.js";
 // footer영역 실행
 startFooterFn();
 
-
 // 로드함수
 domFn.addEvt(window,'load',loadFn);
 function loadFn(){
@@ -16,7 +15,8 @@ function loadFn(){
     // 1-1. 변경대상 : .intro-grad
     const introGrad = domFn.qs('.intro-grad');
     // delay시간 지정상수
-    const DELAY_TIME = .8;
+    const DELAY_TIME = .4;
+    const PLAY_TIME = .8;
     // html 코드저장 함수
     let hcode = '';
     // 코드 저장하기
@@ -66,6 +66,7 @@ function loadFn(){
         for(i = 0; i < moveSpan.length; i++){
             moveSpan[i].style.transform = 'translateY(0)';
             moveSpan[i].style.transitionDelay = i*DELAY_TIME + 's';
+            moveSpan[i].style.transitionDuration = PLAY_TIME + 's';
             moveSpan[i].style.opacity = 1;
         }
     }, 0);
@@ -74,10 +75,9 @@ function loadFn(){
         // 1. 대상선정
         // 1-1. 변경대상 : .background-box
         const bgBox = domFn.qs('.background-box');
-
         // 2. 변경내용
         bgBox.style.transform = 'translateX(-20%)';
-        bgBox.style.transitionDelay= DELAY_TIME*7 + 's';
+        bgBox.style.transitionDelay= DELAY_TIME*6 + 's';
     }, 0);
     /* 배경박스 나오고 글자 올라오기, 그림 움직이기 */
     setTimeout(()=>{
@@ -85,7 +85,7 @@ function loadFn(){
         const infoAside = domFn.qs('.info-box aside');
         // 2. 변경내용 : 투명도 조절 1로
         infoAside.style.opacity = '1';
-    }, 7500);
+    }, PLAY_TIME*5*1000);
     /* 그림 움직이기 */ 
     setTimeout(()=>{
         // 1. 대상선정 : 재료박스 .intro-grad
@@ -93,44 +93,7 @@ function loadFn(){
         // 2-1. 위치이동(1회성)
         // gradBox.style.transform = 'translateX(0)';
         gradBox.style.opacity = '1';
-    }, 8000);
-
-    // 원리 : ul을 이동, li의 2번째와 ul왼쪽이 만나면 
-    // 잘라붙이기
-    // 대상선정 : 
-    // 움직일 대상 .grad-list>ul이 왼쪽으로 움직임
-    // appendClide 사용할 예정
-    // 1. 대상 : .grad-list>ul
-    // let listUl = domFn.qs('.intro-grad');
-    // console.log(listUl);
-    // 2. 이벤트 선정 ( 시간에 따른 이벤트 )
-    // setTimeout(()=>{
-        // const myFn = ()=> setInterval(scrollGrad, 3000);
-
-        // setTimeout(myFn,9000);
-    // },8000);
-
-
-    // let sldNum = 0;
-    // // listUl.style.transition='.02s linear';
-
-    // // 재료이미지 자동스크롤 함수
-    // function scrollGrad(){
-    //     sldNum--;
-    //     listUl.style.left = sldNum+'px';
-    //     // 1. 트랜지션 주기
-    //     // -------
-    //     if(sldNum==-450) {
-    //         let newli = listUl.querySelectorAll('li');
-    //         listUl.appendChild(newli[0]);
-    //         listUl.style.left = '0';
-    //         sldNum = 0;
-    //     }
-    //     console.log(sldNum);
-    //     setTimeout(scrollGrad, 20);
-    // } ////////scrollGrad///////////
-
-    // setTimeout(scrollGrad,9000);
+    }, PLAY_TIME*5*1000);
 
     //////////////////////////////////////////////////////
     ////////////////주문절차 on 넣고빼기 //////////////////
@@ -222,22 +185,6 @@ function loadFn(){
             // console.log(eleB,eleH,winH);
             outOn();
         }
-    }
-    /////////////////////////////////////////////
-    ///////// 제품소개 중 클릭한 대상 /////////////
-    /////////////////////////////////////////////
-    // 1. 대상선정 //
-    const prod = domFn.qsa('.product');
-    // 2. 이벤트 설정
-    prod.forEach(ele=>{
-        domFn.addEvt(ele,'click',setPrev);
-    });
-    function setPrev(){
-        console.log('클릭한 대상',this);
-        prod.forEach(ele=>{
-            ele.classList.remove('prev');
-        });
-        this.classList.add('prev');
     }
 
     ////////////////////////////////////////////

@@ -224,6 +224,28 @@
                 <!-- 절차 내용(6. 주문) li -->
                 <li class="proceed-list step-6">
                   <div>
+                    <div class="total-title">
+                      <i class="fa-solid fa-won-sign"></i>
+                      <h3>결제금액</h3>
+                    </div>
+                    <ol class="total-content scbar">
+                      <li>
+                        <span>상품명</span>
+                        <span>10000</span>
+                      </li>
+                      <li>
+                        <span>엄청길고긴상품명이야</span>
+                        <span>10</span>
+                      </li>
+                      <li>
+                        <span>상품명</span>
+                        <span>10000</span>
+                      </li>
+                    </ol>
+                    <div class="total-cost">
+                      <h3>합계액</h3>
+                      <span>10000</span>
+                    </div>
                   </div>
                 </li>
               </ol>
@@ -234,40 +256,58 @@
               <div class="calendar-box popup-box"></div>
               <!-- 시간선택 -->
               <div class="timer popup-box">
-                <div class="time-picker-area">
-                  <section class="time-picker-header">
-                    <h1 class="time-picker-title">방문예정 시간</h1>
-                    <h2 class="time-picker-view"></h2>
-                  </section>
-                  <section class="time-picker-body">
-                    <div class="time-pick-box blue-back"><span>:</span></div>
-                    <div class="time-slider am-pm-slider">
-                      <button class="arrow-button up-arrow" aria-label="previous" data-type="am-pm"></button>
-                      <div class="time-slider-wraper">
-                        <ol>
-                          <li data-pick="0">오전</li>
-                          <li data-pick="1">오후</li>
-                        </ol>
-                      </div>
-                      <button class="arrow-button down-arrow" aria-label="next" data-type="am-pm"></button>
-                    </div>
-                    <div class="time-slider hour-slider"></div>
-                    <div class="time-slider minute-slider"></div>
-                    <!-- <div class="time-pick-box"></div> -->
-                  </section>
-                  <section class="time-picker-footer">
-                    <div class="notify-box"><span>💡영업시간💡 오전 9:00 ~ 오후 7:00</span></div>
-                    <div class="proceed-btn-box pop-btn cal-btn">
-                      <button class="btn prev">
-                        <i class="fa-solid fa-circle-play fa-rotate-180"></i>
-                        &nbsp;이전
-                      </button>
-                      <button class="btn next">
-                        완료&nbsp;
-                        <i class="fa-solid fa-circle-play"></i>
-                      </button>
-                    </div>
-                  </section>
+                <!-- 시간 타이틀 -->
+                <div class="pop-head">
+                  <span class="pop-head-tit">찾아가실 시간</span>
+                </div>
+                <!-- 시간 선택 -->
+                <div class="pop-body">
+                  <aside class="up-btn thr-btn-box">
+                    <i class="fa-solid fa-caret-up"></i>
+                    <i class="fa-solid fa-caret-up"></i>
+                    <i class="fa-solid fa-caret-up"></i>
+                  </aside>
+                  <div class="select-box"></div>
+                  <div class="time-box">
+                    <ul class="time-part">
+                      <li>오전</li>
+                      <li>오후</li>
+                    </ul>
+                    <ul class="time-h">
+                      <li>10</li>
+                      <li>11</li>
+                      <li>12</li>
+                      <li>1</li>
+                      <li>2</li>
+                      <li>3</li>
+                    </ul>
+                    <ul class="time-m">
+                      <li>0</li>
+                      <li>15</li>
+                      <li>30</li>
+                      <li>45</li>
+                    </ul>
+                  </div>
+                  <div class="white-box wbox1"></div>
+                  <div class="white-box wbox2"></div>
+                  <aside class="down-btn thr-btn-box">
+                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                    <i class="fa-solid fa-caret-up fa-rotate-180"></i>
+                  </aside>
+                </div>
+                <!-- 취소/다음버튼 -->
+                <div class="pop-footer">
+                  <div class="proceed-btn-box pop-btn time-btn">
+                    <button class="btn prev">
+                      <i class="fa-solid fa-circle-play fa-rotate-180"></i>
+                      &nbsp;이전
+                    </button>
+                    <button class="btn next">
+                      완료&nbsp;
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

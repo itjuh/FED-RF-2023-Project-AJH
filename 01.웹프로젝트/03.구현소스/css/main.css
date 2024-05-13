@@ -8,13 +8,8 @@
 
 /* 메인페이지 배경 */
 #main {
-    background-color: #ffffff00;
-    background-image: linear-gradient(to bottom, var(--co-ondarkgreen) 50%, var(--co-ongreen) 70%, var(--co-onlightgreen));
+    background-color: #eeeeee;
     overflow: hidden;
-}
-/* 메인페이지 구분박스 첫박스 */
-.main .group-box:first-child {
-    padding-top: min(3vw, 50px);
 }
 /* 2-1. 이벤트배너 banner-area*/
 /* 2-1-2. 배너박스 */
@@ -23,7 +18,6 @@
     /* 배너 설명박스용 부모 */
 }
 .banner-area {
-    width: min(55vw, 900px);
     aspect-ratio: 1/1;
     overflow: hidden;
     margin-left: min(6vw, 200px);
@@ -49,14 +43,13 @@
 .banner-desc {
     position: absolute;
     /* 부모는 ul>li박스 */
-    top: 50%;
+    top: 55%;
     /* 이미지크기 800 */
-    right: min(8vw, 200px);
+    right: min(4vw, 200px);
     transform: translateY(-50%);
-    max-width: 400px;
+    max-width: 350px;
     aspect-ratio: 4/3;
     overflow: hidden;
-    color: #fff;
 }
 /* 배너설명박스 전체 ol */
 .banner-desc ol {
@@ -77,19 +70,35 @@
 /* 설명타이틀.banner-desc>ol>li.tit */
 .banner-desc .tit {
     display: block;
+    position: relative;
     flex-basis: 20%;
-    background-color: var(--co-ondarkblue);
+    color: var(--co-ondarkblue);
     /* 타이틀 글자 */
     font-size: var(--fz-big);
     text-align: center;
     line-height: 60px;
+}
+.banner-desc .tit::after{
+    content: '';
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    width: 0%;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, var(--co-ondgop) 60%, transparent);
+    transition: .3s;
+    opacity: 0;
+}
+.banner-desc .tit:hover::after{
+    opacity: 1;
+    width: 90%;
 }
 /* 설명내용.banner-desc>ol>li.txt */
 .banner-desc .txt {
     display: block;
     flex-basis: 80%;
     font-size: var(--fz-top);
-    background-color: var(--co-ondgop);
+    color: var(--co-ongreen);
     padding: 10px 30px;
     line-height: 1.5;
 }
@@ -100,32 +109,27 @@
 /* 배너이동 버튼.move-btn 공통설정 */
 .move-btn {
     position: absolute;
-    width: 45px;
-    height: 51px;
+    font-size: 6rem;
     top: calc(50% - 51px / 2);
-    background: url(../images/images/direc_icon.png) no-repeat;
+    cursor: pointer;
+    color: var(--co-ongray);
+    background-color: transparent;
 }
 /* 왼쪽 배너로 이동 .prev-btn*/
 .prev-btn {
     left: min(2vw, 100px);
-    background-size: 625px 375px;
-    background-position: -289px -179px;
-    filter: drop-shadow(2px 0px 1px #fff);
 }
 /* 왼쪽 배너로 이동 오버시*/
 .prev-btn:hover {
-    filter: drop-shadow(2px 0px 3px #fff);
+    color: var(--co-onlightgreen);
 }
 /* 오른쪽 배너로 이동  next-btn*/
 .next-btn {
     right: min(2vw, 100px);
-    background-size: 625px 375px;
-    background-position: -393px -180px;
-    filter: drop-shadow(-1px 0px 1px #fff);
 }
 /* 오른쪽 배너로 이동 오버시*/
 .next-btn:hover {
-    filter: drop-shadow(-1px 0px 3px #fff);
+    color: var(--co-onlightgreen);
 }
 /* 2-2. 메인테마 */
 .main-thema {
@@ -135,10 +139,7 @@
     flex-basis: 100%;
 }
 .main-thema img {
-    position: relative;
-    left: 50%;
     height: min(30vw, 300px);
-    transform: translateX(-60%);
 }
 /* 2-3. 컨셉이미지 */
 .main-scroll-banner {
@@ -170,7 +171,7 @@
     left: 0;
     width: 200px;
     height: 100%;
-    background-image: linear-gradient(to right, var(--co-ondarkgreen), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to right, #eee, rgba(255, 255, 255, 0));
 }
 /* 오른쪽 흐릿박스 */
 .white-box:last-child {
@@ -180,7 +181,7 @@
     right: 0;
     width: 200px;
     height: 100%;
-    background-image: linear-gradient(to left, var(--co-ondarkgreen), rgba(255, 255, 255, 0));
+    background-image: linear-gradient(to left, #eee, rgba(255, 255, 255, 0));
 }
 .scroll-banner-box li {
     border-radius: 3px;
@@ -211,23 +212,17 @@
 }
 /* 인기상품 타이틀 테두리 */
 .list-type h1.tit {
-    display: block;
-    position: relative;
-    top: 50%;
-    margin: 0 auto;
-    width: 100px;
     height: 40px;
-    border-radius: 45%;
-    box-shadow: 1px 1px 3px #00000080;
     /* 글자세팅 */
-    font-size: var(--fz-top);
-    text-align: center;
+    font-size: var(--fz-big);
+    text-indent: 35px;
     line-height: 42px;
     letter-spacing: 2px;
     /* 중앙정렬 */
     transform: translateY(-50%);
-    padding: 0 10px;
-    background-color: #fff;
+    margin-top: 20px;
+    padding: 10px 20px;
+    /* background-color: #fff; */
 }
 /* 인기상품 타이틀 이미지 */
 .list-type h1.tit::before {
@@ -235,18 +230,15 @@
     position: absolute;
     display: block;
     left: -25px;
-    line-height: 37px;
-    color: rgba(243, 243, 243);
+    line-height: 30px;
+    font-size: 3rem;
+    color: #ffc404;
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    text-shadow: -1px 2px 2px #00000080;
+    text-shadow: -1px 2px 2px #ff000080;
 }
 /* 2-4-2. 인기상품 리스트 */
 /* 2-7-2. 리뷰 리스트 */
-.list-type .list {
-    max-width: 1400px;
-    margin: 0 auto;
-}
 .list-type ol {
     display: flex;
     gap: 0px 50px;
@@ -302,7 +294,7 @@
     box-sizing: border-box;
     width: 100%;
     aspect-ratio: 3/1;
-    padding: 10px;
+    padding: 20px;
 }
 /* 상품정보 공통 */
 .txt-box li {
@@ -324,7 +316,7 @@
     width: 100%;
     /* 이미지 크기를 제외한 크기가 정보박스 */
     height: calc(100% - 200px);
-    padding: 20px 10px;
+    padding: 20px;
 }
 .review-list .txt-box ul {
     display: flex;
@@ -369,8 +361,8 @@
     font-size: var(--fz-tit);
     text-align: center;
     height: 100%;
-    color: rgba(243, 243, 243);
-    text-shadow: 0px 0px 3px #000;
+    color: #1a1a1a;
+    text-shadow: 0px 0px 3px #fff;
 }
 /* 추천검색 검색구역(검색부) */
 
@@ -388,9 +380,9 @@
     font-size: var(--fz-sign);
     color: white;
     line-height: 65px;
-    font-family: "GangwonEdu_OTFBoldA";
     /* box-shadow대신 filter:drop-shadow를 써야 클립패쓰까지 그림자 적용됨!!! */
     filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    cursor: pointer;
 }
 /* 말풍선 위치 개별 */
 .bubble-key.b1 {
@@ -776,15 +768,19 @@
     }
     /* 무한스크롤 배너 높이 */
     .main-scroll-banner {
-        height: 360px;
+        height: 250px;
     }
     /* 무한스크롤 배너 */
     .scroll-banner-box li {
-        flex-basis: 150px;
+        flex-basis: 100px;
     }
     /* 스크롤 무한배너 ul */
     .scroll-banner-box ul {
         gap: 0 10px;
+    }
+    /* 스크롤 무한배너 옆 white box */
+    .white-box {
+        width: 100px;
     }
     /* 스크롤 배너 애니메이션 */
     @keyframes scroll-ani {
